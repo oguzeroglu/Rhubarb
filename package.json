@@ -1,0 +1,51 @@
+{
+  "name": "Rhubarb",
+  "version": "1.0.0",
+  "description": "A WebSocket library for multiplayer JS games.",
+  "main": "build/Rhubarb.js",
+  "module": "build/Rhubarb.mjs",
+  "jsnext:main": "build/Rhubarb.mjs",
+  "scripts": {
+    "prebuild": "eslint lib test",
+    "build": "rollup -c --environment BUILD:production",
+    "test": "mocha",
+    "prepublish": "BUILD=production npm test",
+    "dev": "rollup -c -w & webpack-dev-server"
+  },
+  "repository": "oguzeroglu/Rhubarb",
+  "keywords": [
+    "html5",
+    "multiplayer",
+    "websocket",
+    "webworker",
+    "webgl"
+  ],
+  "author": "Oğuz Eroğlu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oguzeroglu/Rhubarb/issues"
+  },
+  "files": [
+    "js",
+    "build"
+  ],
+  "homepage": "https://github.com/oguzeroglu/Rhubarb#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-external-helpers": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "babelrc-rollup": "^3.0.0",
+    "eslint": "^4.1.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-istanbul": "^1.1.0",
+    "rollup-watch": "^4.3.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
