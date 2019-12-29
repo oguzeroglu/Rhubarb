@@ -3,10 +3,13 @@ import WorkerBridge from "./worker/WorkerBridge";
 
 var Rhubarb = function(){
   this.IS_NODE = (typeof window == "undefined");
+}
+
+Rhubarb.prototype.initWorker = function(workerPath){
   if (!this.IS_NODE && typeof Worker == "undefined"){
     throw new Error("This browser does not support web workers.");
   }else if (!this.IS_NODE){
-    WorkerBridge.initialize();
+    WorkerBridge.initialize(workerPath);
   }
 }
 
@@ -28,7 +31,7 @@ Rhubarb.prototype.initNode = function(protocolDefinitionPath){
   }
 }
 
-Rhubarb.prototype.init = function(protocolDefinitionPath){
+Rhubarb.prototype.init = function(protocolDefinitionPath, workerPath){
   this.protocols = new Object();
   if (this.IS_NODE){
     this.initNode(protocolDefinitionPath);
@@ -49,10 +52,11 @@ Rhubarb.prototype.init = function(protocolDefinitionPath){
       for (var key in protocols){
         this.protocols[key] = protocols[key];
       }
+      this.initWorker(workerPath);
     }else if (xhttpRequest.readyState == 4){
       throw new Error("Protocol definition file not found.");
     }
-  }.bind({protocols: this.protocols});
+  }.bind({protocols: this.protocols, initWorker: this.initWorker});
   xhttpRequest.send(null);
 }
 
