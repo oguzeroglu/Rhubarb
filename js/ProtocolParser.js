@@ -15,27 +15,29 @@ ProtocolParser.prototype.parseCharacterType = function(characterType){
   }
   return false;
 }
-ProtocolParser.prototype.parseProtocol = function(protocolInfo){
+ProtocolParser.prototype.parseProtocol = function(protocolInfo, protocolName){
+  var protocol = new Protocol(protocolName);
   for (var parameterName in protocolInfo){
     var parameterType = protocolInfo[parameterName];
     if (parameterType == this.NUMERICAL_TYPE){
-
+      protocol.addNumericalParameter(parameterName);
     }else if (parameterType.startsWith(this.CHARACTER_TYPE)){
       var maxLength = this.parseCharacterType(parameterType);
       if (!maxLength){
         throw new Error("Char types must be in format char_N, where N is the char length.")
       }
-
+      protocol.addStringParameter(parameterName, maxLength);
     }else{
       throw new Error("Invalid parameter type.");
     }
   }
+  protocol.init();
 }
 
 ProtocolParser.prototype.parse = function(jsonData){
   for (var protocolName in jsonData){
     var protocolInfo = jsonData[protocolName];
-    this.parseProtocol(protocolInfo);
+    this.parseProtocol(protocolInfo, protocolName);
   }
 }
 
