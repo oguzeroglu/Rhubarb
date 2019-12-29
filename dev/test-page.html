@@ -22,7 +22,11 @@
 
       console.log(banner, "background: black; color: lime");
 
-      Rhubarb.init('./dev/example-protocol-definition.json', './build/RhubarbWorker.js');
+      Rhubarb.init({
+        protocolDefinitionPath: './dev/example-protocol-definition.json',
+        workerPath: './build/RhubarbWorker.js',
+        serverAddress: 'ws://localhost:8087' 
+      });
 
     </script>
 
