@@ -1,5 +1,5 @@
 import ReusableBufferCache from "./ReusableBufferCache";
-import CharByteMap from "./CharByteMap";
+import {charByteMap, byteCharMap} from "./CharByteMap";
 
 
 var Protocol = function(name){
@@ -14,7 +14,32 @@ Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
 Protocol.prototype.typeNumerical = {isNumerical: true, requiredBufferLen: 2};
 
 Protocol.prototype.getCharByte = function(char){
-  return CharByteMap[char] || 0;
+  return charByteMap[char] || 0;
+}
+
+Protocol.prototype.getParameterFromBuffer = function(parameterName){
+  var parameter = this.parameters[parameterName];
+  if (!parameter){
+    throw new Error("No such parameter: "+parameterName+" in protocol: "+this.name);
+  }
+  var startIndex = this.parameterBufferIndicesByParameterName[parameterName];
+  if (parameter.isNumerical){
+    return this.buffer[startIndex + 1];
+  }
+  var computationBuffers = ReusableBufferCache.get(parameter.requiredBufferLen);
+  var float32 = computationBuffers.float32;
+  for (var i = 0; i<parameter.requiredBufferLen; i++){
+    float32[i] = this.buffer[startIndex + 1 + i];
+  }
+  var uint8 = computationBuffers.uint8;
+  var value = "";
+  for (var i = 0; i<uint8.length; i++){
+    if (uint8[i] == 0){
+      break;
+    }
+    value += byteCharMap[uint8[i]];
+  }
+  return value;
 }
 
 Protocol.prototype.setParameterToBuffer = function(parameterName, value){

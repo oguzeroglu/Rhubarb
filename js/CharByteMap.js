@@ -8,8 +8,10 @@ var supportedChars = [
 ];
 
 var charByteMap = new Object();
+var byteCharMap = new Object();
 for (var i = 0; i<supportedChars.length; i++){
   charByteMap[supportedChars[i]] = (i+1);
+  byteCharMap[(i+1)] = supportedChars[i];
 }
 
-export default charByteMap;
+export {charByteMap, byteCharMap};
