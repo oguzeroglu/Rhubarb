@@ -8,7 +8,9 @@ var WebSocketWorker = function WebSocketWorker() {
   this.isInitialized = false;
 };
 
-WebSocketWorker.prototype.onWSOpen = function () {};
+WebSocketWorker.prototype.onWSOpen = function () {
+  postMessage({ isConnected: true });
+};
 
 WebSocketWorker.prototype.onWSMessage = function (event) {};
 

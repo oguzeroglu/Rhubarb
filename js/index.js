@@ -1,6 +1,7 @@
 import ProtocolParser from "./handler/ProtocolParser";
 import WorkerBridge from "./worker/WorkerBridge";
-import Server from "./server/Server";
+import Server from "./node/Server";
+import Globals from "./util/Globals";
 
 var Rhubarb = function(){
   this.IS_NODE = (typeof window == "undefined");
@@ -54,12 +55,10 @@ Rhubarb.prototype.initNode = function(parameters){
     throw new Error("Protocol definition file is not a valid JSON: " + err);
   }
   var protocols = ProtocolParser.parse(parsedJSON);
-  for (var key in protocols){
-    this.protocols[key] = protocols[key];
-  }
+  Globals.set(protocols);
 
+  var ws = require("ws");
   if (isServer){
-    var ws = require("ws");
     var server = new Server(ws);
     server.init(serverListenPort);
   }
@@ -72,7 +71,6 @@ Rhubarb.prototype.init = function(parameters){
   var workerPath = parameters.workerPath;
   var serverAddress = parameters.serverAddress;
 
-  this.protocols = new Object();
   if (this.IS_NODE){
     this.initNode(parameters);
     return;
@@ -89,14 +87,12 @@ Rhubarb.prototype.init = function(parameters){
         throw new Error("Protocol definition file is not a valid JSON: " + err);
       }
       var protocols = ProtocolParser.parse(parsedJSON);
-      for (var key in protocols){
-        this.protocols[key] = protocols[key];
-      }
+      Globals.set(protocols);
       this.initWorker(workerPath, serverAddress);
     }else if (xhttpRequest.readyState == 4){
       throw new Error("Protocol definition file not found.");
     }
-  }.bind({protocols: this.protocols, initWorker: this.initWorker});
+  }.bind({initWorker: this.initWorker});
   xhttpRequest.send(null);
 }
 

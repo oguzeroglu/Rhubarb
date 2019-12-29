@@ -11,7 +11,12 @@ WorkerBridge.prototype.initialize = function(workerPath, serverURL){
     if (data.isError){
       throw new Error("Cannot connect to the server.");
     }
-  }
+
+    if (data.isConnected){
+      this.isWorkerInitialized = true;
+      
+    }
+  }.bind(this);
 
   this.worker.postMessage({
     serverURL: serverURL

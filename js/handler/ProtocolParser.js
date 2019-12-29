@@ -3,6 +3,7 @@ import Protocol from "../core/Protocol";
 var ProtocolParser = function(){
   this.NUMERICAL_TYPE = "numerical";
   this.CHARACTER_TYPE = "char";
+  this.currentProtocolID = 1;
 }
 
 ProtocolParser.prototype.parseCharacterType = function(characterType){
@@ -15,8 +16,8 @@ ProtocolParser.prototype.parseCharacterType = function(characterType){
   }
   return false;
 }
-ProtocolParser.prototype.parseProtocol = function(protocolInfo, protocolName){
-  var protocol = new Protocol(protocolName);
+ProtocolParser.prototype.parseProtocol = function(protocolInfo, protocolName, protocolID){
+  var protocol = new Protocol(protocolName, protocolID);
   for (var parameterName in protocolInfo){
     var parameterType = protocolInfo[parameterName];
     if (parameterType == this.NUMERICAL_TYPE){
@@ -39,7 +40,7 @@ ProtocolParser.prototype.parse = function(jsonData){
   var parsedProtocols = new Object();
   for (var protocolName in jsonData){
     var protocolInfo = jsonData[protocolName];
-    var protocol = this.parseProtocol(protocolInfo, protocolName);
+    var protocol = this.parseProtocol(protocolInfo, protocolName, this.currentProtocolID ++);
     parsedProtocols[protocol.name] = protocol;
   }
   return parsedProtocols;

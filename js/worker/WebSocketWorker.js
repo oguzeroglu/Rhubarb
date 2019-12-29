@@ -3,7 +3,7 @@ var WebSocketWorker = function(){
 }
 
 WebSocketWorker.prototype.onWSOpen = function(){
-
+  postMessage({isConnected: true});
 }
 
 WebSocketWorker.prototype.onWSMessage = function(event){

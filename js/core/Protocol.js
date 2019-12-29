@@ -2,8 +2,9 @@ import ReusableBufferCache from "../util/ReusableBufferCache";
 import {charByteMap, byteCharMap} from "../util/CharByteMap";
 
 
-var Protocol = function(name){
+var Protocol = function(name, id){
   this.name = name;
+  this.id = id;
   this.parameters = new Object();
   this.parameterIDsByParameterName = new Object();
   this.parameterBufferIndicesByParameterName = new Object();
@@ -91,14 +92,14 @@ Protocol.prototype.init = function(){
   var curParameterID = 0;
   for (var parameterName in this.parameters){
     this.parameterIDsByParameterName[parameterName] = curParameterID ++;
-    this.parameterBufferIndicesByParameterName[parameterName] = requiredBufferLen;
+    this.parameterBufferIndicesByParameterName[parameterName] = requiredBufferLen + 1;
     var parameter = this.parameters[parameterName];
     requiredBufferLen += parameter.requiredBufferLen;
     if (!parameter.isNumerical){
       ReusableBufferCache.notify(requiredBufferLen);
     }
   }
-  this.buffer = new Float32Array(requiredBufferLen);
+  this.buffer = new Float32Array(requiredBufferLen + 1);
 }
 
 export default Protocol;
