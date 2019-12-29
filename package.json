@@ -10,7 +10,7 @@
     "build": "rollup -c --environment BUILD:production",
     "test": "echo not there yet",
     "prepublish": "BUILD=production npm test",
-    "dev": "rollup -c -w & webpack-dev-server"
+    "devClient": "rollup -c -w & webpack-dev-server"
   },
   "repository": "oguzeroglu/Rhubarb",
   "keywords": [

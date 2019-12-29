@@ -4,7 +4,7 @@ module.exports = {
   devServer: {
     port: 8086,
     historyApiFallback: {
-      index: 'test-page.html'
+      index: './dev/test-page.html'
     }
   }
 }
