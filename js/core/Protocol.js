@@ -8,11 +8,16 @@ var Protocol = function(name, id){
   this.parameters = new Object();
   this.parameterIDsByParameterName = new Object();
   this.parameterBufferIndicesByParameterName = new Object();
+  this.parameterValues = new Object();
 }
 
 Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
 
 Protocol.prototype.typeNumerical = {isNumerical: true, requiredBufferLen: 2};
+
+Protocol.prototype.onValuesReceived = function(){
+  
+}
 
 Protocol.prototype.onOwnershipReceived = function(transferableMessageBody){
   this.transferableMessageBody.array = transferableMessageBody.array;
@@ -31,7 +36,9 @@ Protocol.prototype.getParameterFromBuffer = function(parameterName){
   }
   var startIndex = this.parameterBufferIndicesByParameterName[parameterName];
   if (parameter.isNumerical){
-    return this.buffer[startIndex + 1];
+    var value =  this.buffer[startIndex + 1];
+    this.parameterValues[parameterName] = value;
+    return value;
   }
   var computationBuffers = ReusableBufferCache.get(parameter.requiredBufferLen);
   var float32 = computationBuffers.float32;
@@ -46,6 +53,7 @@ Protocol.prototype.getParameterFromBuffer = function(parameterName){
     }
     value += byteCharMap[uint8[i]];
   }
+  this.parameterValues[parameterName] = value;
   return value;
 }
 
@@ -78,6 +86,7 @@ Protocol.prototype.setParameterToBuffer = function(parameterName, value){
       this.buffer[curIndex ++] = float32[i];
     }
   }
+  this.parameterValues[parameterName] = value;
 }
 
 Protocol.prototype.addNumericalParameter = function(parameterName){

@@ -1,3 +1,5 @@
+import Globals from "../util/Globals";
+
 var Server = function(wsLib){
   this.wsLib = wsLib;
 }
@@ -11,7 +13,16 @@ Server.prototype.init = function(port){
       if (protocolID == 0){
         ws.send(data);
       }else{
-        
+        var protocol = Globals.protocolsByProtocolID[protocolID];
+        var bufIndex = 4;
+        for (var i = 1; i<protocol.buffer.length; i++){
+          protocol.buffer[i] = data.readFloatLE(bufIndex);
+          bufIndex += 4;
+        }
+        for (var paramName in protocol.parameters){
+          protocol.getParameterFromBuffer(paramName);
+        }
+        protocol.onValuesReceived();
       }
     });
   });
