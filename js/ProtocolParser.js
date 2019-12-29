@@ -32,13 +32,17 @@ ProtocolParser.prototype.parseProtocol = function(protocolInfo, protocolName){
     }
   }
   protocol.init();
+  return protocol;
 }
 
 ProtocolParser.prototype.parse = function(jsonData){
+  var parsedProtocols = new Object();
   for (var protocolName in jsonData){
     var protocolInfo = jsonData[protocolName];
-    this.parseProtocol(protocolInfo, protocolName);
+    var protocol = this.parseProtocol(protocolInfo, protocolName);
+    parsedProtocols[protocol.name] = protocol;
   }
+  return parsedProtocols;
 }
 
 export default new ProtocolParser();

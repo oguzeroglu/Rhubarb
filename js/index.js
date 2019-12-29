@@ -16,6 +16,7 @@ var Rhubarb = function(){
 }
 
 Rhubarb.prototype.init = function(protocolDefinitionPath){
+  this.protocols = new Object();
   var xhttpRequest = new XMLHttpRequest();
   xhttpRequest.overrideMimeType("application/json");
   xhttpRequest.open("GET", protocolDefinitionPath, true);
@@ -27,11 +28,14 @@ Rhubarb.prototype.init = function(protocolDefinitionPath){
       }catch(err){
         throw new Error("Protocol definition file is not a valid JSON: " + err);
       }
-      ProtocolParser.parse(parsedJSON);
+      var protocols = ProtocolParser.parse(parsedJSON);
+      for (var key in protocols){
+        this.protocols[key] = protocols[key];
+      }
     }else if (xhttpRequest.readyState == 4){
       throw new Error("Protocol definition file not found.");
     }
-  };
+  }.bind({protocols: this.protocols});
   xhttpRequest.send(null);
 }
 
