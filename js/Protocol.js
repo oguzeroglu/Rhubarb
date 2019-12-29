@@ -1,4 +1,6 @@
 import ReusableBufferCache from "./ReusableBufferCache";
+import CharByteMap from "./CharByteMap";
+
 
 var Protocol = function(name){
   this.name = name;
@@ -12,7 +14,7 @@ Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
 Protocol.prototype.typeNumerical = {isNumerical: true, requiredBufferLen: 2};
 
 Protocol.prototype.getCharByte = function(char){
-  return 100;
+  return CharByteMap[char] || 0;
 }
 
 Protocol.prototype.setParameterToBuffer = function(parameterName, value){
