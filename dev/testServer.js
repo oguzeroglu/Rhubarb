@@ -13,4 +13,10 @@ banner += "                                          " + "\n";
 
 console.log(banner);
 
-Rhubarb.init('./dev/example-protocol-definition.json');
+Rhubarb.init({
+  protocolDefinitionPath: './dev/example-protocol-definition.json',
+  isServer: true,
+  serverListenPort: 8087
+});
+
+process.stdin.resume();

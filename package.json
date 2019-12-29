@@ -32,7 +32,9 @@
     "build"
   ],
   "homepage": "https://github.com/oguzeroglu/Rhubarb#readme",
-  "dependencies": {},
+  "dependencies": {
+    "ws": "^7.2.1"
+  },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
     "babel-plugin-external-helpers": "^6.18.0",

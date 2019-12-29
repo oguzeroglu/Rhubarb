@@ -1,5 +1,6 @@
 import ProtocolParser from "./handler/ProtocolParser";
 import WorkerBridge from "./worker/WorkerBridge";
+import Server from "./server/Server";
 
 var Rhubarb = function(){
   this.IS_NODE = (typeof window == "undefined");
@@ -8,7 +9,7 @@ var Rhubarb = function(){
 Rhubarb.prototype.validateParameters = function(parameters){
   var protocolDefinitionPath = parameters.protocolDefinitionPath;
   var workerPath = parameters.workerPath;
-  var isServer = parameters.isClient;
+  var isServer = parameters.isServer;
   var serverAddress = parameters.serverAddress;
   var serverListenPort = parameters.serverListenPort;
   if (!protocolDefinitionPath){
@@ -38,8 +39,10 @@ Rhubarb.prototype.initWorker = function(workerPath, serverAddress){
 
 Rhubarb.prototype.initNode = function(parameters){
   var protocolDefinitionPath = parameters.protocolDefinitionPath;
-  var isClient = parameters.isClient;
-  var fs = require('fs');
+  var isServer = parameters.isServer;
+  var serverListenPort = parameters.serverListenPort;
+  var fs = require("fs");
+
   if (!fs.existsSync(protocolDefinitionPath)){
     throw new Error("Protocol definition file does not exist.");
   }
@@ -54,15 +57,21 @@ Rhubarb.prototype.initNode = function(parameters){
   for (var key in protocols){
     this.protocols[key] = protocols[key];
   }
+
+  if (isServer){
+    var ws = require("ws");
+    var server = new Server(ws);
+    server.init(serverListenPort);
+  }
 }
 
 Rhubarb.prototype.init = function(parameters){
   this.validateParameters(parameters);
+
   var protocolDefinitionPath = parameters.protocolDefinitionPath;
   var workerPath = parameters.workerPath;
-  var isServer = parameters.isClient;
   var serverAddress = parameters.serverAddress;
-  var serverListenPort = parameters.serverListenPort;
+
   this.protocols = new Object();
   if (this.IS_NODE){
     this.initNode(parameters);
