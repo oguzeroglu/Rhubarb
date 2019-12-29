@@ -9,7 +9,7 @@ Rhubarb works both on browsers and NodeJS.
 ## Philosophy
 
 Javascript is slow, therefore we want to have as much main-process-power as we can
-in order to do game related calculations, graphics rendering to achieve 60 FPS.
+in order to do game related calculations, graphics rendering and achieving 60 FPS.
 
 For multiplayer games achieving 60 FPS gets even more complicated given that transferring data
 over WebSockets is a slow operation. It also triggers GC activity by copying the transferred
