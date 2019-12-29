@@ -19,7 +19,7 @@ Rhubarb is designed to overcome these problems by:
 
 1. Using WebWorkers to handle networking out of main thread -> More time left for rendering in main thread
 2. Using transferables between the main thread and the worker to prevent GC activity (zero copy)
-3. Redefining/compressing and sending protocols using Float32Arrays -> Much less bandwidth than *JSON.stringify*.
+3. Redefining/compressing and sending protocols using Float32Arrays -> Much less bandwidth consumption than *JSON.stringify*.
 4. Allowing users to define their protocols in a high-level way and taking care of all the dirty bitwise operations internally.
 5. Allowing sharing same protocol definitions between server/client.
 6. Allocating objects only when being initialized. Reusing everything to prevent GC activity (That means *mutating* things, yeah get over it.)
