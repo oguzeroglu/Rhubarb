@@ -14,7 +14,6 @@ WorkerBridge.prototype.initialize = function(workerPath, serverURL){
 
     if (data.isConnected){
       this.isWorkerInitialized = true;
-      
     }
   }.bind(this);
 

@@ -11,8 +11,6 @@ Globals.prototype.set = function(protocols){
     this.protocolsByProtocolName[protocolName] = protocol;
     this.protocolsByProtocolID[protocol.id] = protocol;
   }
-
-  
 }
 
 export default new Globals();
