@@ -1,22 +1,33 @@
 import ProtocolParser from "./ProtocolParser";
 
 var Rhubarb = function(){
-  var banner = "%c";
-  banner += "______ _           _                _     " + "\n";
-  banner += "| ___ \\ |         | |              | |    " + "\n";
-  banner += "| |_/ / |__  _   _| |__   __ _ _ __| |__  " + "\n";
-  banner += "|    /| '_ \\| | | | '_ \\ / _` | '__| '_ \\ " + "\n";
-  banner += "| |\\ \\| | | | |_| | |_) | (_| | |  | |_) |" + "\n";
-  banner += "\\_| \\_|_| |_|\\__,_|_.__/ \\__,_|_|  |_.__/ " + "\n";
-  banner += "                                          " + "\n";
-  banner += "                           by Oguz Eroglu " + "\n";
-  banner += "                                          " + "\n";
+  this.IS_NODE = (typeof window == "undefined");
+}
 
-  console.log(banner, "background: black; color: lime");
+Rhubarb.prototype.initNode = function(protocolDefinitionPath){
+  var fs = require('fs');
+  if (!fs.existsSync(protocolDefinitionPath)){
+    throw new Error("Protocol definition file does not exist.");
+  }
+  var content = fs.readFileSync(protocolDefinitionPath, "utf8");
+  var parsedJSON;
+  try{
+    parsedJSON = JSON.parse(content);
+  }catch(err){
+    throw new Error("Protocol definition file is not a valid JSON: " + err);
+  }
+  var protocols = ProtocolParser.parse(parsedJSON);
+  for (var key in protocols){
+    this.protocols[key] = protocols[key];
+  }
 }
 
 Rhubarb.prototype.init = function(protocolDefinitionPath){
   this.protocols = new Object();
+  if (this.IS_NODE){
+    this.initNode(protocolDefinitionPath);
+    return;
+  }
   var xhttpRequest = new XMLHttpRequest();
   xhttpRequest.overrideMimeType("application/json");
   xhttpRequest.open("GET", protocolDefinitionPath, true);

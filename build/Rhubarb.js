@@ -4,50 +4,238 @@
 	(global.Rhubarb = factory());
 }(this, (function () { 'use strict';
 
-var __cov_2Umyg0kRgW7cg75iUPsMCg = (Function('return this'))();
-if (!__cov_2Umyg0kRgW7cg75iUPsMCg.__coverage__) { __cov_2Umyg0kRgW7cg75iUPsMCg.__coverage__ = {}; }
-__cov_2Umyg0kRgW7cg75iUPsMCg = __cov_2Umyg0kRgW7cg75iUPsMCg.__coverage__;
-if (!(__cov_2Umyg0kRgW7cg75iUPsMCg['/Users/ece/Desktop/Rhubarb/js/ReusableBufferCache.js'])) {
-   __cov_2Umyg0kRgW7cg75iUPsMCg['/Users/ece/Desktop/Rhubarb/js/ReusableBufferCache.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/ReusableBufferCache.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0},"b":{"1":[0,0],"2":[0,0]},"f":{"1":0,"2":0,"3":0},"fnMap":{"1":{"name":"ReusableBufferCache","line":1,"loc":{"start":{"line":1,"column":26},"end":{"line":1,"column":57}}},"2":{"name":"(anonymous_2)","line":5,"loc":{"start":{"line":5,"column":39},"end":{"line":5,"column":54}}},"3":{"name":"(anonymous_3)","line":16,"loc":{"start":{"line":16,"column":36},"end":{"line":16,"column":57}}}},"statementMap":{"1":{"start":{"line":1,"column":0},"end":{"line":3,"column":2}},"2":{"start":{"line":2,"column":2},"end":{"line":2,"column":28}},"3":{"start":{"line":5,"column":0},"end":{"line":14,"column":2}},"4":{"start":{"line":6,"column":2},"end":{"line":13,"column":3}},"5":{"start":{"line":7,"column":4},"end":{"line":7,"column":40}},"6":{"start":{"line":8,"column":4},"end":{"line":8,"column":47}},"7":{"start":{"line":9,"column":4},"end":{"line":12,"column":6}},"8":{"start":{"line":16,"column":0},"end":{"line":22,"column":2}},"9":{"start":{"line":17,"column":2},"end":{"line":17,"column":35}},"10":{"start":{"line":18,"column":2},"end":{"line":20,"column":3}},"11":{"start":{"line":19,"column":4},"end":{"line":19,"column":53}},"12":{"start":{"line":21,"column":2},"end":{"line":21,"column":14}}},"branchMap":{"1":{"line":6,"type":"if","locations":[{"start":{"line":6,"column":2},"end":{"line":6,"column":2}},{"start":{"line":6,"column":2},"end":{"line":6,"column":2}}]},"2":{"line":18,"type":"if","locations":[{"start":{"line":18,"column":2},"end":{"line":18,"column":2}},{"start":{"line":18,"column":2},"end":{"line":18,"column":2}}]}}};
-}
-__cov_2Umyg0kRgW7cg75iUPsMCg = __cov_2Umyg0kRgW7cg75iUPsMCg['/Users/ece/Desktop/Rhubarb/js/ReusableBufferCache.js'];
-__cov_2Umyg0kRgW7cg75iUPsMCg.s['1']++;var ReusableBufferCache=function ReusableBufferCache(){__cov_2Umyg0kRgW7cg75iUPsMCg.f['1']++;__cov_2Umyg0kRgW7cg75iUPsMCg.s['2']++;this.cache=new Object();};__cov_2Umyg0kRgW7cg75iUPsMCg.s['3']++;ReusableBufferCache.prototype.notify=function(len){__cov_2Umyg0kRgW7cg75iUPsMCg.f['2']++;__cov_2Umyg0kRgW7cg75iUPsMCg.s['4']++;if(!this.cache[len]){__cov_2Umyg0kRgW7cg75iUPsMCg.b['1'][0]++;__cov_2Umyg0kRgW7cg75iUPsMCg.s['5']++;var float32=new Float32Array(len);__cov_2Umyg0kRgW7cg75iUPsMCg.s['6']++;var uint8=new Uint8Array(float32.buffer);__cov_2Umyg0kRgW7cg75iUPsMCg.s['7']++;this.cache[len]={uint8:uint8,float32:float32};}else{__cov_2Umyg0kRgW7cg75iUPsMCg.b['1'][1]++;}};__cov_2Umyg0kRgW7cg75iUPsMCg.s['8']++;ReusableBufferCache.prototype.get=function(strLength){__cov_2Umyg0kRgW7cg75iUPsMCg.f['3']++;__cov_2Umyg0kRgW7cg75iUPsMCg.s['9']++;var elem=this.cache[strLength];__cov_2Umyg0kRgW7cg75iUPsMCg.s['10']++;if(!elem){__cov_2Umyg0kRgW7cg75iUPsMCg.b['2'][0]++;__cov_2Umyg0kRgW7cg75iUPsMCg.s['11']++;throw new Error('ReusableBufferCache is empty.');}else{__cov_2Umyg0kRgW7cg75iUPsMCg.b['2'][1]++;}__cov_2Umyg0kRgW7cg75iUPsMCg.s['12']++;return elem;};var ReusableBufferCache$1 = new ReusableBufferCache();
+var ReusableBufferCache = function ReusableBufferCache() {
+  this.cache = new Object();
+};
 
-var __cov_fjMPd6xJzMK8AglWof76jw = (Function('return this'))();
-if (!__cov_fjMPd6xJzMK8AglWof76jw.__coverage__) { __cov_fjMPd6xJzMK8AglWof76jw.__coverage__ = {}; }
-__cov_fjMPd6xJzMK8AglWof76jw = __cov_fjMPd6xJzMK8AglWof76jw.__coverage__;
-if (!(__cov_fjMPd6xJzMK8AglWof76jw['/Users/ece/Desktop/Rhubarb/js/CharByteMap.js'])) {
-   __cov_fjMPd6xJzMK8AglWof76jw['/Users/ece/Desktop/Rhubarb/js/CharByteMap.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/CharByteMap.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0},"b":{},"f":{},"fnMap":{},"statementMap":{"1":{"start":{"line":1,"column":0},"end":{"line":1,"column":495}},"2":{"start":{"line":3,"column":0},"end":{"line":3,"column":31}},"3":{"start":{"line":4,"column":0},"end":{"line":4,"column":31}},"4":{"start":{"line":5,"column":0},"end":{"line":8,"column":1}},"5":{"start":{"line":6,"column":2},"end":{"line":6,"column":41}},"6":{"start":{"line":7,"column":2},"end":{"line":7,"column":41}}},"branchMap":{}};
-}
-__cov_fjMPd6xJzMK8AglWof76jw = __cov_fjMPd6xJzMK8AglWof76jw['/Users/ece/Desktop/Rhubarb/js/CharByteMap.js'];
-__cov_fjMPd6xJzMK8AglWof76jw.s['1']++;var supportedChars=['!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','w','x','y','z','{','|','}','~','q','Q'];__cov_fjMPd6xJzMK8AglWof76jw.s['2']++;var charByteMap=new Object();__cov_fjMPd6xJzMK8AglWof76jw.s['3']++;var byteCharMap=new Object();__cov_fjMPd6xJzMK8AglWof76jw.s['4']++;for(var i=0;i<supportedChars.length;i++){__cov_fjMPd6xJzMK8AglWof76jw.s['5']++;charByteMap[supportedChars[i]]=i+1;__cov_fjMPd6xJzMK8AglWof76jw.s['6']++;byteCharMap[i+1]=supportedChars[i];}
+ReusableBufferCache.prototype.notify = function (len) {
+  if (!this.cache[len]) {
+    var float32 = new Float32Array(len);
+    var uint8 = new Uint8Array(float32.buffer);
+    this.cache[len] = {
+      uint8: uint8,
+      float32: float32
+    };
+  }
+};
 
-var __cov_e3MueJrswUK6Iv0BIypjuA = (Function('return this'))();
-if (!__cov_e3MueJrswUK6Iv0BIypjuA.__coverage__) { __cov_e3MueJrswUK6Iv0BIypjuA.__coverage__ = {}; }
-__cov_e3MueJrswUK6Iv0BIypjuA = __cov_e3MueJrswUK6Iv0BIypjuA.__coverage__;
-if (!(__cov_e3MueJrswUK6Iv0BIypjuA['/Users/ece/Desktop/Rhubarb/js/Protocol.js'])) {
-   __cov_e3MueJrswUK6Iv0BIypjuA['/Users/ece/Desktop/Rhubarb/js/Protocol.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/Protocol.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0,"50":0,"51":0,"52":0,"53":0,"54":0,"55":0,"56":0,"57":0,"58":0,"59":0,"60":0,"61":0,"62":0,"63":0,"64":0,"65":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0],"10":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0},"fnMap":{"1":{"name":"Protocol","line":4,"loc":{"start":{"line":4,"column":15},"end":{"line":4,"column":39}}},"2":{"name":"(anonymous_2)","line":15,"loc":{"start":{"line":15,"column":33},"end":{"line":15,"column":49}}},"3":{"name":"(anonymous_3)","line":19,"loc":{"start":{"line":19,"column":44},"end":{"line":19,"column":69}}},"4":{"name":"(anonymous_4)","line":44,"loc":{"start":{"line":44,"column":42},"end":{"line":44,"column":74}}},"5":{"name":"(anonymous_5)","line":75,"loc":{"start":{"line":75,"column":43},"end":{"line":75,"column":68}}},"6":{"name":"(anonymous_6)","line":79,"loc":{"start":{"line":79,"column":40},"end":{"line":79,"column":76}}},"7":{"name":"(anonymous_7)","line":88,"loc":{"start":{"line":88,"column":26},"end":{"line":88,"column":38}}}},"statementMap":{"1":{"start":{"line":4,"column":0},"end":{"line":9,"column":2}},"2":{"start":{"line":5,"column":2},"end":{"line":5,"column":19}},"3":{"start":{"line":6,"column":2},"end":{"line":6,"column":33}},"4":{"start":{"line":7,"column":2},"end":{"line":7,"column":50}},"5":{"start":{"line":8,"column":2},"end":{"line":8,"column":60}},"6":{"start":{"line":11,"column":0},"end":{"line":11,"column":53}},"7":{"start":{"line":13,"column":0},"end":{"line":13,"column":79}},"8":{"start":{"line":15,"column":0},"end":{"line":17,"column":2}},"9":{"start":{"line":16,"column":2},"end":{"line":16,"column":32}},"10":{"start":{"line":19,"column":0},"end":{"line":42,"column":2}},"11":{"start":{"line":20,"column":2},"end":{"line":20,"column":49}},"12":{"start":{"line":21,"column":2},"end":{"line":23,"column":3}},"13":{"start":{"line":22,"column":4},"end":{"line":22,"column":90}},"14":{"start":{"line":24,"column":2},"end":{"line":24,"column":77}},"15":{"start":{"line":25,"column":2},"end":{"line":27,"column":3}},"16":{"start":{"line":26,"column":4},"end":{"line":26,"column":39}},"17":{"start":{"line":28,"column":2},"end":{"line":28,"column":80}},"18":{"start":{"line":29,"column":2},"end":{"line":29,"column":43}},"19":{"start":{"line":30,"column":2},"end":{"line":32,"column":3}},"20":{"start":{"line":31,"column":4},"end":{"line":31,"column":49}},"21":{"start":{"line":33,"column":2},"end":{"line":33,"column":39}},"22":{"start":{"line":34,"column":2},"end":{"line":34,"column":17}},"23":{"start":{"line":35,"column":2},"end":{"line":40,"column":3}},"24":{"start":{"line":36,"column":4},"end":{"line":38,"column":5}},"25":{"start":{"line":37,"column":6},"end":{"line":37,"column":12}},"26":{"start":{"line":39,"column":4},"end":{"line":39,"column":35}},"27":{"start":{"line":41,"column":2},"end":{"line":41,"column":15}},"28":{"start":{"line":44,"column":0},"end":{"line":73,"column":2}},"29":{"start":{"line":45,"column":2},"end":{"line":45,"column":49}},"30":{"start":{"line":46,"column":2},"end":{"line":48,"column":3}},"31":{"start":{"line":47,"column":4},"end":{"line":47,"column":90}},"32":{"start":{"line":49,"column":2},"end":{"line":49,"column":77}},"33":{"start":{"line":50,"column":2},"end":{"line":50,"column":68}},"34":{"start":{"line":51,"column":2},"end":{"line":51,"column":40}},"35":{"start":{"line":52,"column":2},"end":{"line":72,"column":3}},"36":{"start":{"line":53,"column":4},"end":{"line":53,"column":40}},"37":{"start":{"line":55,"column":4},"end":{"line":57,"column":5}},"38":{"start":{"line":56,"column":6},"end":{"line":56,"column":92}},"39":{"start":{"line":58,"column":4},"end":{"line":58,"column":82}},"40":{"start":{"line":59,"column":4},"end":{"line":59,"column":41}},"41":{"start":{"line":60,"column":4},"end":{"line":66,"column":5}},"42":{"start":{"line":61,"column":6},"end":{"line":65,"column":7}},"43":{"start":{"line":62,"column":8},"end":{"line":62,"column":46}},"44":{"start":{"line":64,"column":8},"end":{"line":64,"column":21}},"45":{"start":{"line":67,"column":4},"end":{"line":67,"column":45}},"46":{"start":{"line":68,"column":4},"end":{"line":68,"column":34}},"47":{"start":{"line":69,"column":4},"end":{"line":71,"column":5}},"48":{"start":{"line":70,"column":6},"end":{"line":70,"column":43}},"49":{"start":{"line":75,"column":0},"end":{"line":77,"column":2}},"50":{"start":{"line":76,"column":2},"end":{"line":76,"column":54}},"51":{"start":{"line":79,"column":0},"end":{"line":86,"column":2}},"52":{"start":{"line":80,"column":2},"end":{"line":82,"column":3}},"53":{"start":{"line":81,"column":4},"end":{"line":81,"column":116}},"54":{"start":{"line":83,"column":2},"end":{"line":85,"column":4}},"55":{"start":{"line":88,"column":0},"end":{"line":101,"column":2}},"56":{"start":{"line":89,"column":2},"end":{"line":89,"column":28}},"57":{"start":{"line":90,"column":2},"end":{"line":90,"column":25}},"58":{"start":{"line":91,"column":2},"end":{"line":99,"column":3}},"59":{"start":{"line":92,"column":4},"end":{"line":92,"column":71}},"60":{"start":{"line":93,"column":4},"end":{"line":93,"column":82}},"61":{"start":{"line":94,"column":4},"end":{"line":94,"column":51}},"62":{"start":{"line":95,"column":4},"end":{"line":95,"column":53}},"63":{"start":{"line":96,"column":4},"end":{"line":98,"column":5}},"64":{"start":{"line":97,"column":6},"end":{"line":97,"column":52}},"65":{"start":{"line":100,"column":2},"end":{"line":100,"column":52}}},"branchMap":{"1":{"line":16,"type":"binary-expr","locations":[{"start":{"line":16,"column":9},"end":{"line":16,"column":26}},{"start":{"line":16,"column":30},"end":{"line":16,"column":31}}]},"2":{"line":21,"type":"if","locations":[{"start":{"line":21,"column":2},"end":{"line":21,"column":2}},{"start":{"line":21,"column":2},"end":{"line":21,"column":2}}]},"3":{"line":25,"type":"if","locations":[{"start":{"line":25,"column":2},"end":{"line":25,"column":2}},{"start":{"line":25,"column":2},"end":{"line":25,"column":2}}]},"4":{"line":36,"type":"if","locations":[{"start":{"line":36,"column":4},"end":{"line":36,"column":4}},{"start":{"line":36,"column":4},"end":{"line":36,"column":4}}]},"5":{"line":46,"type":"if","locations":[{"start":{"line":46,"column":2},"end":{"line":46,"column":2}},{"start":{"line":46,"column":2},"end":{"line":46,"column":2}}]},"6":{"line":52,"type":"if","locations":[{"start":{"line":52,"column":2},"end":{"line":52,"column":2}},{"start":{"line":52,"column":2},"end":{"line":52,"column":2}}]},"7":{"line":55,"type":"if","locations":[{"start":{"line":55,"column":4},"end":{"line":55,"column":4}},{"start":{"line":55,"column":4},"end":{"line":55,"column":4}}]},"8":{"line":61,"type":"if","locations":[{"start":{"line":61,"column":6},"end":{"line":61,"column":6}},{"start":{"line":61,"column":6},"end":{"line":61,"column":6}}]},"9":{"line":80,"type":"if","locations":[{"start":{"line":80,"column":2},"end":{"line":80,"column":2}},{"start":{"line":80,"column":2},"end":{"line":80,"column":2}}]},"10":{"line":96,"type":"if","locations":[{"start":{"line":96,"column":4},"end":{"line":96,"column":4}},{"start":{"line":96,"column":4},"end":{"line":96,"column":4}}]}}};
-}
-__cov_e3MueJrswUK6Iv0BIypjuA = __cov_e3MueJrswUK6Iv0BIypjuA['/Users/ece/Desktop/Rhubarb/js/Protocol.js'];
-__cov_e3MueJrswUK6Iv0BIypjuA.s['1']++;var Protocol=function Protocol(name){__cov_e3MueJrswUK6Iv0BIypjuA.f['1']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['2']++;this.name=name;__cov_e3MueJrswUK6Iv0BIypjuA.s['3']++;this.parameters=new Object();__cov_e3MueJrswUK6Iv0BIypjuA.s['4']++;this.parameterIDsByParameterName=new Object();__cov_e3MueJrswUK6Iv0BIypjuA.s['5']++;this.parameterBufferIndicesByParameterName=new Object();};__cov_e3MueJrswUK6Iv0BIypjuA.s['6']++;Protocol.prototype.MAX_STRING_PARAMETER_LENGTH=100;__cov_e3MueJrswUK6Iv0BIypjuA.s['7']++;Protocol.prototype.typeNumerical={isNumerical:true,requiredBufferLen:2};__cov_e3MueJrswUK6Iv0BIypjuA.s['8']++;Protocol.prototype.getCharByte=function(char){__cov_e3MueJrswUK6Iv0BIypjuA.f['2']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['9']++;return(__cov_e3MueJrswUK6Iv0BIypjuA.b['1'][0]++,charByteMap[char])||(__cov_e3MueJrswUK6Iv0BIypjuA.b['1'][1]++,0);};__cov_e3MueJrswUK6Iv0BIypjuA.s['10']++;Protocol.prototype.getParameterFromBuffer=function(parameterName){__cov_e3MueJrswUK6Iv0BIypjuA.f['3']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['11']++;var parameter=this.parameters[parameterName];__cov_e3MueJrswUK6Iv0BIypjuA.s['12']++;if(!parameter){__cov_e3MueJrswUK6Iv0BIypjuA.b['2'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['13']++;throw new Error('No such parameter: '+parameterName+' in protocol: '+this.name);}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['2'][1]++;}__cov_e3MueJrswUK6Iv0BIypjuA.s['14']++;var startIndex=this.parameterBufferIndicesByParameterName[parameterName];__cov_e3MueJrswUK6Iv0BIypjuA.s['15']++;if(parameter.isNumerical){__cov_e3MueJrswUK6Iv0BIypjuA.b['3'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['16']++;return this.buffer[startIndex+1];}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['3'][1]++;}__cov_e3MueJrswUK6Iv0BIypjuA.s['17']++;var computationBuffers=ReusableBufferCache$1.get(parameter.requiredBufferLen);__cov_e3MueJrswUK6Iv0BIypjuA.s['18']++;var float32=computationBuffers.float32;__cov_e3MueJrswUK6Iv0BIypjuA.s['19']++;for(var i=0;i<parameter.requiredBufferLen;i++){__cov_e3MueJrswUK6Iv0BIypjuA.s['20']++;float32[i]=this.buffer[startIndex+1+i];}__cov_e3MueJrswUK6Iv0BIypjuA.s['21']++;var uint8=computationBuffers.uint8;__cov_e3MueJrswUK6Iv0BIypjuA.s['22']++;var value='';__cov_e3MueJrswUK6Iv0BIypjuA.s['23']++;for(var i=0;i<uint8.length;i++){__cov_e3MueJrswUK6Iv0BIypjuA.s['24']++;if(uint8[i]==0){__cov_e3MueJrswUK6Iv0BIypjuA.b['4'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['25']++;break;}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['4'][1]++;}__cov_e3MueJrswUK6Iv0BIypjuA.s['26']++;value+=byteCharMap[uint8[i]];}__cov_e3MueJrswUK6Iv0BIypjuA.s['27']++;return value;};__cov_e3MueJrswUK6Iv0BIypjuA.s['28']++;Protocol.prototype.setParameterToBuffer=function(parameterName,value){__cov_e3MueJrswUK6Iv0BIypjuA.f['4']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['29']++;var parameter=this.parameters[parameterName];__cov_e3MueJrswUK6Iv0BIypjuA.s['30']++;if(!parameter){__cov_e3MueJrswUK6Iv0BIypjuA.b['5'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['31']++;throw new Error('No such parameter: '+parameterName+' in protocol: '+this.name);}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['5'][1]++;}__cov_e3MueJrswUK6Iv0BIypjuA.s['32']++;var startIndex=this.parameterBufferIndicesByParameterName[parameterName];__cov_e3MueJrswUK6Iv0BIypjuA.s['33']++;var parameterID=this.parameterIDsByParameterName[parameterName];__cov_e3MueJrswUK6Iv0BIypjuA.s['34']++;this.buffer[startIndex]=parameterID;__cov_e3MueJrswUK6Iv0BIypjuA.s['35']++;if(parameter.isNumerical){__cov_e3MueJrswUK6Iv0BIypjuA.b['6'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['36']++;this.buffer[startIndex+1]=value;}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['6'][1]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['37']++;if(value.length>parameter.maxLength){__cov_e3MueJrswUK6Iv0BIypjuA.b['7'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['38']++;throw new Error('Parameter overflow: '+parameterName+' in protocol '+this.name);}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['7'][1]++;}__cov_e3MueJrswUK6Iv0BIypjuA.s['39']++;var computationBuffers=ReusableBufferCache$1.get(parameter.requiredBufferLen);__cov_e3MueJrswUK6Iv0BIypjuA.s['40']++;var uint8=computationBuffers.uint8;__cov_e3MueJrswUK6Iv0BIypjuA.s['41']++;for(var i=0;i<uint8.length;i++){__cov_e3MueJrswUK6Iv0BIypjuA.s['42']++;if(i<value.length){__cov_e3MueJrswUK6Iv0BIypjuA.b['8'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['43']++;uint8[i]=this.getCharByte(value[i]);}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['8'][1]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['44']++;uint8[i]=0;}}__cov_e3MueJrswUK6Iv0BIypjuA.s['45']++;var float32=computationBuffers.float32;__cov_e3MueJrswUK6Iv0BIypjuA.s['46']++;var curIndex=startIndex+1;__cov_e3MueJrswUK6Iv0BIypjuA.s['47']++;for(var i=0;i<float32.length;i++){__cov_e3MueJrswUK6Iv0BIypjuA.s['48']++;this.buffer[curIndex++]=float32[i];}}};__cov_e3MueJrswUK6Iv0BIypjuA.s['49']++;Protocol.prototype.addNumericalParameter=function(parameterName){__cov_e3MueJrswUK6Iv0BIypjuA.f['5']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['50']++;this.parameters[parameterName]=this.typeNumerical;};__cov_e3MueJrswUK6Iv0BIypjuA.s['51']++;Protocol.prototype.addStringParameter=function(parameterName,maxLength){__cov_e3MueJrswUK6Iv0BIypjuA.f['6']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['52']++;if(maxLength>this.MAX_STRING_PARAMETER_LENGTH){__cov_e3MueJrswUK6Iv0BIypjuA.b['9'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['53']++;throw new Error('Parameter size exceeds max allowed string parameter size '+this.MAX_STRING_PARAMETER_LENGTH);}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['9'][1]++;}__cov_e3MueJrswUK6Iv0BIypjuA.s['54']++;this.parameters[parameterName]={isNumerical:false,maxLength:maxLength,requiredBufferLen:Math.ceil(maxLength/4)+1};};__cov_e3MueJrswUK6Iv0BIypjuA.s['55']++;Protocol.prototype.init=function(){__cov_e3MueJrswUK6Iv0BIypjuA.f['7']++;__cov_e3MueJrswUK6Iv0BIypjuA.s['56']++;var requiredBufferLen=0;__cov_e3MueJrswUK6Iv0BIypjuA.s['57']++;var curParameterID=0;__cov_e3MueJrswUK6Iv0BIypjuA.s['58']++;for(var parameterName in this.parameters){__cov_e3MueJrswUK6Iv0BIypjuA.s['59']++;this.parameterIDsByParameterName[parameterName]=curParameterID++;__cov_e3MueJrswUK6Iv0BIypjuA.s['60']++;this.parameterBufferIndicesByParameterName[parameterName]=requiredBufferLen;__cov_e3MueJrswUK6Iv0BIypjuA.s['61']++;var parameter=this.parameters[parameterName];__cov_e3MueJrswUK6Iv0BIypjuA.s['62']++;requiredBufferLen+=parameter.requiredBufferLen;__cov_e3MueJrswUK6Iv0BIypjuA.s['63']++;if(!parameter.isNumerical){__cov_e3MueJrswUK6Iv0BIypjuA.b['10'][0]++;__cov_e3MueJrswUK6Iv0BIypjuA.s['64']++;ReusableBufferCache$1.notify(requiredBufferLen);}else{__cov_e3MueJrswUK6Iv0BIypjuA.b['10'][1]++;}}__cov_e3MueJrswUK6Iv0BIypjuA.s['65']++;this.buffer=new Float32Array(requiredBufferLen);};
+ReusableBufferCache.prototype.get = function (strLength) {
+  var elem = this.cache[strLength];
+  if (!elem) {
+    throw new Error("ReusableBufferCache is empty.");
+  }
+  return elem;
+};
 
-var __cov_16pJKjYaOtwZzUvdQyEY4Q = (Function('return this'))();
-if (!__cov_16pJKjYaOtwZzUvdQyEY4Q.__coverage__) { __cov_16pJKjYaOtwZzUvdQyEY4Q.__coverage__ = {}; }
-__cov_16pJKjYaOtwZzUvdQyEY4Q = __cov_16pJKjYaOtwZzUvdQyEY4Q.__coverage__;
-if (!(__cov_16pJKjYaOtwZzUvdQyEY4Q['/Users/ece/Desktop/Rhubarb/js/ProtocolParser.js'])) {
-   __cov_16pJKjYaOtwZzUvdQyEY4Q['/Users/ece/Desktop/Rhubarb/js/ProtocolParser.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/ProtocolParser.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0},"fnMap":{"1":{"name":"ProtocolParser","line":3,"loc":{"start":{"line":3,"column":21},"end":{"line":3,"column":47}}},"2":{"name":"(anonymous_2)","line":8,"loc":{"start":{"line":8,"column":46},"end":{"line":8,"column":71}}},"3":{"name":"(anonymous_3)","line":18,"loc":{"start":{"line":18,"column":41},"end":{"line":18,"column":79}}},"4":{"name":"(anonymous_4)","line":38,"loc":{"start":{"line":38,"column":33},"end":{"line":38,"column":53}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":6,"column":2}},"2":{"start":{"line":4,"column":2},"end":{"line":4,"column":36}},"3":{"start":{"line":5,"column":2},"end":{"line":5,"column":31}},"4":{"start":{"line":8,"column":0},"end":{"line":17,"column":2}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":42}},"6":{"start":{"line":10,"column":2},"end":{"line":15,"column":3}},"7":{"start":{"line":11,"column":4},"end":{"line":13,"column":5}},"8":{"start":{"line":12,"column":6},"end":{"line":12,"column":19}},"9":{"start":{"line":14,"column":4},"end":{"line":14,"column":33}},"10":{"start":{"line":16,"column":2},"end":{"line":16,"column":15}},"11":{"start":{"line":18,"column":0},"end":{"line":36,"column":2}},"12":{"start":{"line":19,"column":2},"end":{"line":19,"column":44}},"13":{"start":{"line":20,"column":2},"end":{"line":33,"column":3}},"14":{"start":{"line":21,"column":4},"end":{"line":21,"column":52}},"15":{"start":{"line":22,"column":4},"end":{"line":32,"column":5}},"16":{"start":{"line":23,"column":6},"end":{"line":23,"column":52}},"17":{"start":{"line":24,"column":11},"end":{"line":32,"column":5}},"18":{"start":{"line":25,"column":6},"end":{"line":25,"column":61}},"19":{"start":{"line":26,"column":6},"end":{"line":28,"column":7}},"20":{"start":{"line":27,"column":8},"end":{"line":27,"column":92}},"21":{"start":{"line":29,"column":6},"end":{"line":29,"column":60}},"22":{"start":{"line":31,"column":6},"end":{"line":31,"column":49}},"23":{"start":{"line":34,"column":2},"end":{"line":34,"column":18}},"24":{"start":{"line":35,"column":2},"end":{"line":35,"column":18}},"25":{"start":{"line":38,"column":0},"end":{"line":46,"column":2}},"26":{"start":{"line":39,"column":2},"end":{"line":39,"column":37}},"27":{"start":{"line":40,"column":2},"end":{"line":44,"column":3}},"28":{"start":{"line":41,"column":4},"end":{"line":41,"column":46}},"29":{"start":{"line":42,"column":4},"end":{"line":42,"column":66}},"30":{"start":{"line":43,"column":4},"end":{"line":43,"column":46}},"31":{"start":{"line":45,"column":2},"end":{"line":45,"column":25}}},"branchMap":{"1":{"line":10,"type":"if","locations":[{"start":{"line":10,"column":2},"end":{"line":10,"column":2}},{"start":{"line":10,"column":2},"end":{"line":10,"column":2}}]},"2":{"line":11,"type":"if","locations":[{"start":{"line":11,"column":4},"end":{"line":11,"column":4}},{"start":{"line":11,"column":4},"end":{"line":11,"column":4}}]},"3":{"line":22,"type":"if","locations":[{"start":{"line":22,"column":4},"end":{"line":22,"column":4}},{"start":{"line":22,"column":4},"end":{"line":22,"column":4}}]},"4":{"line":24,"type":"if","locations":[{"start":{"line":24,"column":11},"end":{"line":24,"column":11}},{"start":{"line":24,"column":11},"end":{"line":24,"column":11}}]},"5":{"line":26,"type":"if","locations":[{"start":{"line":26,"column":6},"end":{"line":26,"column":6}},{"start":{"line":26,"column":6},"end":{"line":26,"column":6}}]}}};
-}
-__cov_16pJKjYaOtwZzUvdQyEY4Q = __cov_16pJKjYaOtwZzUvdQyEY4Q['/Users/ece/Desktop/Rhubarb/js/ProtocolParser.js'];
-__cov_16pJKjYaOtwZzUvdQyEY4Q.s['1']++;var ProtocolParser=function ProtocolParser(){__cov_16pJKjYaOtwZzUvdQyEY4Q.f['1']++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['2']++;this.NUMERICAL_TYPE='numerical';__cov_16pJKjYaOtwZzUvdQyEY4Q.s['3']++;this.CHARACTER_TYPE='char';};__cov_16pJKjYaOtwZzUvdQyEY4Q.s['4']++;ProtocolParser.prototype.parseCharacterType=function(characterType){__cov_16pJKjYaOtwZzUvdQyEY4Q.f['2']++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['5']++;var splitted=characterType.split('_');__cov_16pJKjYaOtwZzUvdQyEY4Q.s['6']++;if(splitted[0]==this.CHARACTER_TYPE){__cov_16pJKjYaOtwZzUvdQyEY4Q.b['1'][0]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['7']++;if(!splitted[1]){__cov_16pJKjYaOtwZzUvdQyEY4Q.b['2'][0]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['8']++;return false;}else{__cov_16pJKjYaOtwZzUvdQyEY4Q.b['2'][1]++;}__cov_16pJKjYaOtwZzUvdQyEY4Q.s['9']++;return parseInt(splitted[1]);}else{__cov_16pJKjYaOtwZzUvdQyEY4Q.b['1'][1]++;}__cov_16pJKjYaOtwZzUvdQyEY4Q.s['10']++;return false;};__cov_16pJKjYaOtwZzUvdQyEY4Q.s['11']++;ProtocolParser.prototype.parseProtocol=function(protocolInfo,protocolName){__cov_16pJKjYaOtwZzUvdQyEY4Q.f['3']++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['12']++;var protocol=new Protocol(protocolName);__cov_16pJKjYaOtwZzUvdQyEY4Q.s['13']++;for(var parameterName in protocolInfo){__cov_16pJKjYaOtwZzUvdQyEY4Q.s['14']++;var parameterType=protocolInfo[parameterName];__cov_16pJKjYaOtwZzUvdQyEY4Q.s['15']++;if(parameterType==this.NUMERICAL_TYPE){__cov_16pJKjYaOtwZzUvdQyEY4Q.b['3'][0]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['16']++;protocol.addNumericalParameter(parameterName);}else{__cov_16pJKjYaOtwZzUvdQyEY4Q.b['3'][1]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['17']++;if(parameterType.startsWith(this.CHARACTER_TYPE)){__cov_16pJKjYaOtwZzUvdQyEY4Q.b['4'][0]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['18']++;var maxLength=this.parseCharacterType(parameterType);__cov_16pJKjYaOtwZzUvdQyEY4Q.s['19']++;if(!maxLength){__cov_16pJKjYaOtwZzUvdQyEY4Q.b['5'][0]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['20']++;throw new Error('Char types must be in format char_N, where N is the char length.');}else{__cov_16pJKjYaOtwZzUvdQyEY4Q.b['5'][1]++;}__cov_16pJKjYaOtwZzUvdQyEY4Q.s['21']++;protocol.addStringParameter(parameterName,maxLength);}else{__cov_16pJKjYaOtwZzUvdQyEY4Q.b['4'][1]++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['22']++;throw new Error('Invalid parameter type.');}}}__cov_16pJKjYaOtwZzUvdQyEY4Q.s['23']++;protocol.init();__cov_16pJKjYaOtwZzUvdQyEY4Q.s['24']++;return protocol;};__cov_16pJKjYaOtwZzUvdQyEY4Q.s['25']++;ProtocolParser.prototype.parse=function(jsonData){__cov_16pJKjYaOtwZzUvdQyEY4Q.f['4']++;__cov_16pJKjYaOtwZzUvdQyEY4Q.s['26']++;var parsedProtocols=new Object();__cov_16pJKjYaOtwZzUvdQyEY4Q.s['27']++;for(var protocolName in jsonData){__cov_16pJKjYaOtwZzUvdQyEY4Q.s['28']++;var protocolInfo=jsonData[protocolName];__cov_16pJKjYaOtwZzUvdQyEY4Q.s['29']++;var protocol=this.parseProtocol(protocolInfo,protocolName);__cov_16pJKjYaOtwZzUvdQyEY4Q.s['30']++;parsedProtocols[protocol.name]=protocol;}__cov_16pJKjYaOtwZzUvdQyEY4Q.s['31']++;return parsedProtocols;};var ProtocolParser$1 = new ProtocolParser();
+var ReusableBufferCache$1 = new ReusableBufferCache();
 
-var __cov_WCjh_uH92UZxCfll7ZHM6g = (Function('return this'))();
-if (!__cov_WCjh_uH92UZxCfll7ZHM6g.__coverage__) { __cov_WCjh_uH92UZxCfll7ZHM6g.__coverage__ = {}; }
-__cov_WCjh_uH92UZxCfll7ZHM6g = __cov_WCjh_uH92UZxCfll7ZHM6g.__coverage__;
-if (!(__cov_WCjh_uH92UZxCfll7ZHM6g['/Users/ece/Desktop/Rhubarb/js/index.js'])) {
-   __cov_WCjh_uH92UZxCfll7ZHM6g['/Users/ece/Desktop/Rhubarb/js/index.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/index.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0]},"f":{"1":0,"2":0,"3":0},"fnMap":{"1":{"name":"Rhubarb","line":3,"loc":{"start":{"line":3,"column":14},"end":{"line":3,"column":33}}},"2":{"name":"(anonymous_2)","line":18,"loc":{"start":{"line":18,"column":25},"end":{"line":18,"column":59}}},"3":{"name":"(anonymous_3)","line":23,"loc":{"start":{"line":23,"column":36},"end":{"line":23,"column":48}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":16,"column":2}},"2":{"start":{"line":4,"column":2},"end":{"line":4,"column":20}},"3":{"start":{"line":5,"column":2},"end":{"line":5,"column":64}},"4":{"start":{"line":6,"column":2},"end":{"line":6,"column":65}},"5":{"start":{"line":7,"column":2},"end":{"line":7,"column":64}},"6":{"start":{"line":8,"column":2},"end":{"line":8,"column":67}},"7":{"start":{"line":9,"column":2},"end":{"line":9,"column":66}},"8":{"start":{"line":10,"column":2},"end":{"line":10,"column":68}},"9":{"start":{"line":11,"column":2},"end":{"line":11,"column":64}},"10":{"start":{"line":12,"column":2},"end":{"line":12,"column":64}},"11":{"start":{"line":13,"column":2},"end":{"line":13,"column":64}},"12":{"start":{"line":15,"column":2},"end":{"line":15,"column":56}},"13":{"start":{"line":18,"column":0},"end":{"line":40,"column":2}},"14":{"start":{"line":19,"column":2},"end":{"line":19,"column":32}},"15":{"start":{"line":20,"column":2},"end":{"line":20,"column":42}},"16":{"start":{"line":21,"column":2},"end":{"line":21,"column":52}},"17":{"start":{"line":22,"column":2},"end":{"line":22,"column":57}},"18":{"start":{"line":23,"column":2},"end":{"line":38,"column":40}},"19":{"start":{"line":24,"column":4},"end":{"line":37,"column":5}},"20":{"start":{"line":25,"column":6},"end":{"line":25,"column":21}},"21":{"start":{"line":26,"column":6},"end":{"line":30,"column":7}},"22":{"start":{"line":27,"column":8},"end":{"line":27,"column":59}},"23":{"start":{"line":29,"column":8},"end":{"line":29,"column":80}},"24":{"start":{"line":31,"column":6},"end":{"line":31,"column":55}},"25":{"start":{"line":32,"column":6},"end":{"line":34,"column":7}},"26":{"start":{"line":33,"column":8},"end":{"line":33,"column":45}},"27":{"start":{"line":35,"column":11},"end":{"line":37,"column":5}},"28":{"start":{"line":36,"column":6},"end":{"line":36,"column":61}},"29":{"start":{"line":39,"column":2},"end":{"line":39,"column":26}}},"branchMap":{"1":{"line":24,"type":"if","locations":[{"start":{"line":24,"column":4},"end":{"line":24,"column":4}},{"start":{"line":24,"column":4},"end":{"line":24,"column":4}}]},"2":{"line":24,"type":"binary-expr","locations":[{"start":{"line":24,"column":8},"end":{"line":24,"column":36}},{"start":{"line":24,"column":40},"end":{"line":24,"column":68}}]},"3":{"line":35,"type":"if","locations":[{"start":{"line":35,"column":11},"end":{"line":35,"column":11}},{"start":{"line":35,"column":11},"end":{"line":35,"column":11}}]}}};
+var supportedChars = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "q", "Q"];
+
+var charByteMap = new Object();
+var byteCharMap = new Object();
+for (var i = 0; i < supportedChars.length; i++) {
+  charByteMap[supportedChars[i]] = i + 1;
+  byteCharMap[i + 1] = supportedChars[i];
 }
-__cov_WCjh_uH92UZxCfll7ZHM6g = __cov_WCjh_uH92UZxCfll7ZHM6g['/Users/ece/Desktop/Rhubarb/js/index.js'];
-__cov_WCjh_uH92UZxCfll7ZHM6g.s['1']++;var Rhubarb=function Rhubarb(){__cov_WCjh_uH92UZxCfll7ZHM6g.f['1']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['2']++;var banner='%c';__cov_WCjh_uH92UZxCfll7ZHM6g.s['3']++;banner+='______ _           _                _     '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['4']++;banner+='| ___ \\ |         | |              | |    '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['5']++;banner+='| |_/ / |__  _   _| |__   __ _ _ __| |__  '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['6']++;banner+='|    /| \'_ \\| | | | \'_ \\ / _` | \'__| \'_ \\ '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['7']++;banner+='| |\\ \\| | | | |_| | |_) | (_| | |  | |_) |'+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['8']++;banner+='\\_| \\_|_| |_|\\__,_|_.__/ \\__,_|_|  |_.__/ '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['9']++;banner+='                                          '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['10']++;banner+='                           by Oguz Eroglu '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['11']++;banner+='                                          '+'\n';__cov_WCjh_uH92UZxCfll7ZHM6g.s['12']++;console.log(banner,'background: black; color: lime');};__cov_WCjh_uH92UZxCfll7ZHM6g.s['13']++;Rhubarb.prototype.init=function(protocolDefinitionPath){__cov_WCjh_uH92UZxCfll7ZHM6g.f['2']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['14']++;this.protocols=new Object();__cov_WCjh_uH92UZxCfll7ZHM6g.s['15']++;var xhttpRequest=new XMLHttpRequest();__cov_WCjh_uH92UZxCfll7ZHM6g.s['16']++;xhttpRequest.overrideMimeType('application/json');__cov_WCjh_uH92UZxCfll7ZHM6g.s['17']++;xhttpRequest.open('GET',protocolDefinitionPath,true);__cov_WCjh_uH92UZxCfll7ZHM6g.s['18']++;xhttpRequest.onreadystatechange=function(){__cov_WCjh_uH92UZxCfll7ZHM6g.f['3']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['19']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['2'][0]++,xhttpRequest.readyState==4)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['2'][1]++,xhttpRequest.status=='200')){__cov_WCjh_uH92UZxCfll7ZHM6g.b['1'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['20']++;var parsedJSON;__cov_WCjh_uH92UZxCfll7ZHM6g.s['21']++;try{__cov_WCjh_uH92UZxCfll7ZHM6g.s['22']++;parsedJSON=JSON.parse(xhttpRequest.responseText);}catch(err){__cov_WCjh_uH92UZxCfll7ZHM6g.s['23']++;throw new Error('Protocol definition file is not a valid JSON: '+err);}__cov_WCjh_uH92UZxCfll7ZHM6g.s['24']++;var protocols=ProtocolParser$1.parse(parsedJSON);__cov_WCjh_uH92UZxCfll7ZHM6g.s['25']++;for(var key in protocols){__cov_WCjh_uH92UZxCfll7ZHM6g.s['26']++;this.protocols[key]=protocols[key];}}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['1'][1]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['27']++;if(xhttpRequest.readyState==4){__cov_WCjh_uH92UZxCfll7ZHM6g.b['3'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['28']++;throw new Error('Protocol definition file not found.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['3'][1]++;}}}.bind({protocols:this.protocols});__cov_WCjh_uH92UZxCfll7ZHM6g.s['29']++;xhttpRequest.send(null);};var index = new Rhubarb();
+
+var Protocol = function Protocol(name) {
+  this.name = name;
+  this.parameters = new Object();
+  this.parameterIDsByParameterName = new Object();
+  this.parameterBufferIndicesByParameterName = new Object();
+};
+
+Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
+
+Protocol.prototype.typeNumerical = { isNumerical: true, requiredBufferLen: 2 };
+
+Protocol.prototype.getCharByte = function (char) {
+  return charByteMap[char] || 0;
+};
+
+Protocol.prototype.getParameterFromBuffer = function (parameterName) {
+  var parameter = this.parameters[parameterName];
+  if (!parameter) {
+    throw new Error("No such parameter: " + parameterName + " in protocol: " + this.name);
+  }
+  var startIndex = this.parameterBufferIndicesByParameterName[parameterName];
+  if (parameter.isNumerical) {
+    return this.buffer[startIndex + 1];
+  }
+  var computationBuffers = ReusableBufferCache$1.get(parameter.requiredBufferLen);
+  var float32 = computationBuffers.float32;
+  for (var i = 0; i < parameter.requiredBufferLen; i++) {
+    float32[i] = this.buffer[startIndex + 1 + i];
+  }
+  var uint8 = computationBuffers.uint8;
+  var value = "";
+  for (var i = 0; i < uint8.length; i++) {
+    if (uint8[i] == 0) {
+      break;
+    }
+    value += byteCharMap[uint8[i]];
+  }
+  return value;
+};
+
+Protocol.prototype.setParameterToBuffer = function (parameterName, value) {
+  var parameter = this.parameters[parameterName];
+  if (!parameter) {
+    throw new Error("No such parameter: " + parameterName + " in protocol: " + this.name);
+  }
+  var startIndex = this.parameterBufferIndicesByParameterName[parameterName];
+  var parameterID = this.parameterIDsByParameterName[parameterName];
+  this.buffer[startIndex] = parameterID;
+  if (parameter.isNumerical) {
+    this.buffer[startIndex + 1] = value;
+  } else {
+    if (value.length > parameter.maxLength) {
+      throw new Error("Parameter overflow: " + parameterName + " in protocol " + this.name);
+    }
+    var computationBuffers = ReusableBufferCache$1.get(parameter.requiredBufferLen);
+    var uint8 = computationBuffers.uint8;
+    for (var i = 0; i < uint8.length; i++) {
+      if (i < value.length) {
+        uint8[i] = this.getCharByte(value[i]);
+      } else {
+        uint8[i] = 0;
+      }
+    }
+    var float32 = computationBuffers.float32;
+    var curIndex = startIndex + 1;
+    for (var i = 0; i < float32.length; i++) {
+      this.buffer[curIndex++] = float32[i];
+    }
+  }
+};
+
+Protocol.prototype.addNumericalParameter = function (parameterName) {
+  this.parameters[parameterName] = this.typeNumerical;
+};
+
+Protocol.prototype.addStringParameter = function (parameterName, maxLength) {
+  if (maxLength > this.MAX_STRING_PARAMETER_LENGTH) {
+    throw new Error("Parameter size exceeds max allowed string parameter size " + this.MAX_STRING_PARAMETER_LENGTH);
+  }
+  this.parameters[parameterName] = {
+    isNumerical: false, maxLength: maxLength, requiredBufferLen: Math.ceil(maxLength / 4) + 1
+  };
+};
+
+Protocol.prototype.init = function () {
+  var requiredBufferLen = 0;
+  var curParameterID = 0;
+  for (var parameterName in this.parameters) {
+    this.parameterIDsByParameterName[parameterName] = curParameterID++;
+    this.parameterBufferIndicesByParameterName[parameterName] = requiredBufferLen;
+    var parameter = this.parameters[parameterName];
+    requiredBufferLen += parameter.requiredBufferLen;
+    if (!parameter.isNumerical) {
+      ReusableBufferCache$1.notify(requiredBufferLen);
+    }
+  }
+  this.buffer = new Float32Array(requiredBufferLen);
+};
+
+var ProtocolParser = function ProtocolParser() {
+  this.NUMERICAL_TYPE = "numerical";
+  this.CHARACTER_TYPE = "char";
+};
+
+ProtocolParser.prototype.parseCharacterType = function (characterType) {
+  var splitted = characterType.split("_");
+  if (splitted[0] == this.CHARACTER_TYPE) {
+    if (!splitted[1]) {
+      return false;
+    }
+    return parseInt(splitted[1]);
+  }
+  return false;
+};
+ProtocolParser.prototype.parseProtocol = function (protocolInfo, protocolName) {
+  var protocol = new Protocol(protocolName);
+  for (var parameterName in protocolInfo) {
+    var parameterType = protocolInfo[parameterName];
+    if (parameterType == this.NUMERICAL_TYPE) {
+      protocol.addNumericalParameter(parameterName);
+    } else if (parameterType.startsWith(this.CHARACTER_TYPE)) {
+      var maxLength = this.parseCharacterType(parameterType);
+      if (!maxLength) {
+        throw new Error("Char types must be in format char_N, where N is the char length.");
+      }
+      protocol.addStringParameter(parameterName, maxLength);
+    } else {
+      throw new Error("Invalid parameter type.");
+    }
+  }
+  protocol.init();
+  return protocol;
+};
+
+ProtocolParser.prototype.parse = function (jsonData) {
+  var parsedProtocols = new Object();
+  for (var protocolName in jsonData) {
+    var protocolInfo = jsonData[protocolName];
+    var protocol = this.parseProtocol(protocolInfo, protocolName);
+    parsedProtocols[protocol.name] = protocol;
+  }
+  return parsedProtocols;
+};
+
+var ProtocolParser$1 = new ProtocolParser();
+
+var Rhubarb = function Rhubarb() {
+  this.IS_NODE = typeof window == "undefined";
+};
+
+Rhubarb.prototype.initNode = function (protocolDefinitionPath) {
+  var fs = require('fs');
+  if (!fs.existsSync(protocolDefinitionPath)) {
+    throw new Error("Protocol definition file does not exist.");
+  }
+  var content = fs.readFileSync(protocolDefinitionPath, "utf8");
+  var parsedJSON;
+  try {
+    parsedJSON = JSON.parse(content);
+  } catch (err) {
+    throw new Error("Protocol definition file is not a valid JSON: " + err);
+  }
+  var protocols = ProtocolParser$1.parse(parsedJSON);
+  for (var key in protocols) {
+    this.protocols[key] = protocols[key];
+  }
+  console.log(this.protocols);
+};
+
+Rhubarb.prototype.init = function (protocolDefinitionPath) {
+  this.protocols = new Object();
+  if (this.IS_NODE) {
+    this.initNode(protocolDefinitionPath);
+    return;
+  }
+  var xhttpRequest = new XMLHttpRequest();
+  xhttpRequest.overrideMimeType("application/json");
+  xhttpRequest.open("GET", protocolDefinitionPath, true);
+  xhttpRequest.onreadystatechange = function () {
+    if (xhttpRequest.readyState == 4 && xhttpRequest.status == "200") {
+      var parsedJSON;
+      try {
+        parsedJSON = JSON.parse(xhttpRequest.responseText);
+      } catch (err) {
+        throw new Error("Protocol definition file is not a valid JSON: " + err);
+      }
+      var protocols = ProtocolParser$1.parse(parsedJSON);
+      for (var key in protocols) {
+        this.protocols[key] = protocols[key];
+      }
+    } else if (xhttpRequest.readyState == 4) {
+      throw new Error("Protocol definition file not found.");
+    }
+  }.bind({ protocols: this.protocols });
+  xhttpRequest.send(null);
+};
+
+var index = new Rhubarb();
 
 return index;
 

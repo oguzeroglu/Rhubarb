@@ -6,5 +6,8 @@ module.exports = {
     historyApiFallback: {
       index: './dev/test-page.html'
     }
+  },
+  node: {
+    fs: "empty"
   }
 }

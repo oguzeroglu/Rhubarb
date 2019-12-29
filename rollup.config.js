@@ -28,8 +28,9 @@ export default {
     },
     {
       dest: pkg.module,
-      format: 'es',
-      sourceMap: true
+      format: 'umd',
+      sourceMap: true,
+      moduleName: "Rhubarb"
     }
   ]
 };
