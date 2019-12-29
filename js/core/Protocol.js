@@ -14,6 +14,12 @@ Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
 
 Protocol.prototype.typeNumerical = {isNumerical: true, requiredBufferLen: 2};
 
+Protocol.prototype.onOwnershipReceived = function(transferableMessageBody){
+  this.transferableMessageBody.array = transferableMessageBody.array;
+  this.transferableList[0] = transferableMessageBody.array.buffer;
+  this.hasOwnership = true;
+}
+
 Protocol.prototype.getCharByte = function(char){
   return charByteMap[char] || 0;
 }
@@ -100,6 +106,10 @@ Protocol.prototype.init = function(){
     }
   }
   this.buffer = new Float32Array(requiredBufferLen + 1);
+  this.buffer[0] = this.id;
+  this.transferableMessageBody = { array: new Float32Array(requiredBufferLen + 1) };
+  this.transferableList = [this.transferableMessageBody.array.buffer];
+  this.hasOwnership = true;
 }
 
 export default Protocol;

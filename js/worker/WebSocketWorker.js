@@ -1,5 +1,7 @@
 var WebSocketWorker = function(){
   this.pingMsg = new Float32Array(1);
+  this.intermediateBuffers = new Object();
+  this.transferableList = [];
 }
 
 WebSocketWorker.prototype.sendPing = function(){
@@ -50,5 +52,18 @@ self.onmessage = function(message){
 
   if (data.serverURL){
     worker.connect(data.serverURL);
+  }else{
+    var length = data.array.length;
+    var intermediateBuffer = worker.intermediateBuffers[length];
+    if (!intermediateBuffer){
+      intermediateBuffer = new Float32Array(length);
+      worker.intermediateBuffers[length] = intermediateBuffer;
+    }
+    for (var i = 0; i<data.array.length; i++){
+      intermediateBuffer[i] = data.array[i];
+    }
+    worker.transferableList[0] = data.array.buffer;
+    postMessage(data, worker.transferableList);
+    worker.ws.send(intermediateBuffer.buffer);
   }
 }

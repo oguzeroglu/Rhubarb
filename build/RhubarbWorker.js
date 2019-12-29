@@ -6,13 +6,15 @@
 
 var WebSocketWorker = function WebSocketWorker() {
   this.pingMsg = new Float32Array(1);
+  this.intermediateBuffers = new Object();
+  this.transferableList = [];
 };
 
 WebSocketWorker.prototype.sendPing = function () {
   if (worker.isSocketClosed) {
     return;
   }
-  //worker.ws.send(worker.pingMsg.buffer);
+  worker.ws.send(worker.pingMsg.buffer);
   worker.lastPingSendTime = performance.now();
 };
 
@@ -32,7 +34,6 @@ WebSocketWorker.prototype.onWSMessage = function (event) {
 };
 
 WebSocketWorker.prototype.onWSClose = function () {
-  console.log("SDFSDF");
   worker.isSocketClosed = true;
 };
 
@@ -57,6 +58,19 @@ self.onmessage = function (message) {
 
   if (data.serverURL) {
     worker.connect(data.serverURL);
+  } else {
+    var length = data.array.length;
+    var intermediateBuffer = worker.intermediateBuffers[length];
+    if (!intermediateBuffer) {
+      intermediateBuffer = new Float32Array(length);
+      worker.intermediateBuffers[length] = intermediateBuffer;
+    }
+    for (var i = 0; i < data.array.length; i++) {
+      intermediateBuffer[i] = data.array[i];
+    }
+    worker.transferableList[0] = data.array.buffer;
+    postMessage(data, worker.transferableList);
+    worker.ws.send(intermediateBuffer.buffer);
   }
 };
 

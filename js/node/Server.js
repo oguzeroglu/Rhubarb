@@ -10,6 +10,8 @@ Server.prototype.init = function(port){
       var protocolID = data.readFloatLE(0);
       if (protocolID == 0){
         ws.send(data);
+      }else{
+        
       }
     });
   });
