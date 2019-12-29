@@ -17,7 +17,7 @@ data (if JSON is the preferred way), which eventually slows down the main thread
 
 Rhubarb is designed to overcome these problems by:
 
-1. Using WebWorkers to handle networking out of main thread -> More CPU power for graphics
+1. Using WebWorkers to handle networking out of main thread -> More time left for rendering in main thread
 2. Using transferables between the main thread and the worker to prevent GC activity (zero copy)
 3. Redefining/compressing protocols using Float32Arrays -> Much less bandwidth than *JSON.stringify*.
 4. Allowing users to define their protocols in a high-level way and taking care of all the dirty bitwise operations internally.
