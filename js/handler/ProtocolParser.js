@@ -1,4 +1,4 @@
-import Protocol from "./Protocol";
+import Protocol from "../core/Protocol";
 
 var ProtocolParser = function(){
   this.NUMERICAL_TYPE = "numerical";

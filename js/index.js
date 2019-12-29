@@ -1,7 +1,13 @@
-import ProtocolParser from "./ProtocolParser";
+import ProtocolParser from "./handler/ProtocolParser";
+import WorkerBridge from "./worker/WorkerBridge";
 
 var Rhubarb = function(){
   this.IS_NODE = (typeof window == "undefined");
+  if (!this.IS_NODE && typeof Worker == "undefined"){
+    throw new Error("This browser does not support web workers.");
+  }else if (!this.IS_NODE){
+    WorkerBridge.initialize();
+  }
 }
 
 Rhubarb.prototype.initNode = function(protocolDefinitionPath){

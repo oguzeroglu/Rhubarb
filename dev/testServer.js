@@ -11,4 +11,6 @@ banner += "                                          " + "\n";
 banner += "                           by Oguz Eroglu " + "\n";
 banner += "                                          " + "\n";
 
+console.log(banner);
+
 Rhubarb.init('./dev/example-protocol-definition.json');

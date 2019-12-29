@@ -1,5 +1,5 @@
-import ReusableBufferCache from "./ReusableBufferCache";
-import {charByteMap, byteCharMap} from "./CharByteMap";
+import ReusableBufferCache from "../util/ReusableBufferCache";
+import {charByteMap, byteCharMap} from "../util/CharByteMap";
 
 
 var Protocol = function(name){
