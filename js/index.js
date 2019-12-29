@@ -61,6 +61,8 @@ Rhubarb.prototype.initNode = function(parameters){
   if (isServer){
     var server = new Server(ws);
     server.init(serverListenPort);
+  }else{
+    throw new Error("NodeJS clients are not yet supported.");
   }
 }
 
