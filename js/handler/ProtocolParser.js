@@ -6,6 +6,10 @@ var ProtocolParser = function(){
   this.currentProtocolID = 1;
 }
 
+ProtocolParser.prototype.destroy = function(){
+  this.currentProtocolID = 1;
+}
+
 ProtocolParser.prototype.parseCharacterType = function(characterType){
   var splitted = characterType.split("_");
   if (splitted[0] == this.CHARACTER_TYPE){

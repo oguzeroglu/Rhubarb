@@ -9,19 +9,26 @@ var Protocol = function(name, id){
   this.parameterIDsByParameterName = new Object();
   this.parameterBufferIndicesByParameterName = new Object();
   this.parameterValues = new Object();
+  this.boundGetter = this.getter.bind(this);
 }
 
 Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
 
 Protocol.prototype.typeNumerical = {isNumerical: true, requiredBufferLen: 2};
 
-Protocol.prototype.onValuesReceived = function(){
-  
+Protocol.prototype.getter = function(parameterName){
+  return this.parameterValues[parameterName];
+}
+
+Protocol.prototype.onValuesReceived = function(clientID){
+  if (this.onReceived){
+    this.onReceived(this.boundGetter, clientID);
+  }
 }
 
 Protocol.prototype.onOwnershipReceived = function(transferableMessageBody){
-  this.transferableMessageBody.array = transferableMessageBody.array;
-  this.transferableList[0] = transferableMessageBody.array.buffer;
+  this.transferableMessageBody = transferableMessageBody;
+  this.transferableList[0] = transferableMessageBody.buffer;
   this.hasOwnership = true;
 }
 
@@ -116,8 +123,8 @@ Protocol.prototype.init = function(){
   }
   this.buffer = new Float32Array(requiredBufferLen + 1);
   this.buffer[0] = this.id;
-  this.transferableMessageBody = { array: new Float32Array(requiredBufferLen + 1) };
-  this.transferableList = [this.transferableMessageBody.array.buffer];
+  this.transferableMessageBody = new Float32Array(requiredBufferLen + 1);
+  this.transferableList = [this.transferableMessageBody.buffer];
   this.hasOwnership = true;
 }
 

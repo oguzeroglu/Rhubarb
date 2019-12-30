@@ -2,6 +2,10 @@ var ReusableBufferCache = function(){
   this.cache = new Object();
 }
 
+ReusableBufferCache.prototype.destroy = function(){
+  this.cache = new Object();
+}
+
 ReusableBufferCache.prototype.notify = function(len){
   if (!this.cache[len]){
     var float32 = new Float32Array(len);
