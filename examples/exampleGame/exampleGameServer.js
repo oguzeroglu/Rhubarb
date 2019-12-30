@@ -33,6 +33,9 @@ Rhubarb.onReceived("positionUpdated", function(getter, clientID){
 
 Rhubarb.onClientDisconnected(function(clientID){
   var userName = userNamesByClientID[clientID];
+  if (!userName){
+    return;
+  }
   console.log(userName + " disconnected --> "+clientID);
   delete userNamesByClientID[clientID];
   for (var cID in userNamesByClientID){
