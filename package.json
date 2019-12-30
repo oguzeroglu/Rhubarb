@@ -1,5 +1,5 @@
 {
-  "name": "Rhubarb",
+  "name": "rhubarb-js",
   "version": "1.0.0",
   "description": "A WebSocket library for multiplayer JS games.",
   "main": "build/Rhubarb.js",
