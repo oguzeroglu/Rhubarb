@@ -36,7 +36,8 @@ WorkerBridge.prototype.initialize = function(workerPath, serverURL){
     var data = event.data;
 
     if (data.isError){
-      throw new Error("Cannot connect to the server.");
+      this.onError("Cannot connect to the server.");
+      return;
     }
 
     if (data.isConnected || data.isDisconnected){

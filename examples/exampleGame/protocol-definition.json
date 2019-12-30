@@ -1,0 +1,13 @@
+{
+  "nicknameSelected": {
+    "value": "char_10"
+  },
+  "positionUpdated": {
+    "userName": "char_10",
+    "x": "numerical",
+    "y": "numerical"
+  },
+  "playerDisconnected": {
+    "userName": "char_10"
+  }
+}

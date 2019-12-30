@@ -11,8 +11,7 @@
     "build": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production",
     "test": "echo not there yet",
     "prepublish": "BUILD=production npm test",
-    "devClient": "rollup -c -w & webpack-dev-server",
-    "devServer": "node ./dev/testServer"
+    "exampleGame": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && webpack-dev-server --config ./webpack.config.exampleGame.js"
   },
   "repository": "oguzeroglu/Rhubarb",
   "keywords": [

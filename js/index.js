@@ -27,6 +27,7 @@ Rhubarb.prototype.init = function(parameters){
   var protocolDefinitionPath = parameters.protocolDefinitionPath;
   var workerPath = parameters.workerPath;
   var serverAddress = parameters.serverAddress;
+  var onError = parameters.onError;
 
   var xhttpRequest = new XMLHttpRequest();
   xhttpRequest.overrideMimeType("application/json");
@@ -37,13 +38,16 @@ Rhubarb.prototype.init = function(parameters){
       try{
         parsedJSON = JSON.parse(xhttpRequest.responseText);
       }catch(err){
-        throw new Error("Protocol definition file is not a valid JSON: " + err);
+        onError("Protocol definition file is not a valid JSON: " + err);
+        return;
       }
       var protocols = ProtocolParser.parse(parsedJSON);
       Globals.set(protocols);
+      WorkerBridge.onError = onError;
       this.initWorker(workerPath, serverAddress);
     }else if (xhttpRequest.readyState == 4){
-      throw new Error("Protocol definition file not found.");
+      onError("Protocol definition file not found.");
+      return;
     }
   }.bind({initWorker: this._initWorker});
   xhttpRequest.send(null);
@@ -177,6 +181,7 @@ Rhubarb.prototype._validateParameters = function(parameters){
   var serverAddress = parameters.serverAddress;
   var serverListenPort = parameters.serverListenPort;
   var onReady = parameters.onReady;
+  var onError = parameters.onError;
 
   if (!protocolDefinitionPath){
     throw new Error("protocolDefinitionPath is not defined within parameters.");
@@ -199,6 +204,12 @@ Rhubarb.prototype._validateParameters = function(parameters){
     }
     if (!onReady instanceof Function){
       throw new Error("onReady parameter is not a Function.");
+    }
+    if (!onError){
+      throw new Error("onError is not defined within parameters.");
+    }
+    if (!onError instanceof Function){
+      throw new Error("onError parameter is not a Function.");
     }
   }
 }

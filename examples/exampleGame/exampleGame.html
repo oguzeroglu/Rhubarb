@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <script src="../../build/Rhubarb.js"></script>
+
+    <title>Rhubarb example</title>
+
+    <style>
+      * {
+         margin:0;
+         padding:0;
+      }
+      html, body {
+        width:100%;
+        height:100%;
+      }
+      button {
+        width: 100px;
+      }
+      canvas {
+        display:block;
+      }
+      .container {
+        height: 200px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        border: 3px solid black;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="container" class="container">
+      <div class="center">
+        <p>Choose a nickname</p>
+        <input maxlength="10" type="text" id="nickname" />
+        <br /><br />
+        <button id="startButton"> Start! </button>
+      </div>
+    </div>
+
+    <script>
+      var containerDIV = document.getElementById("container");
+      var button = document.getElementById("startButton");
+      var input = document.getElementById("nickname");
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+
+      context.fillStyle = '#000';
+
+      containerDIV.style.display = "none";
+      canvas.style.display = "none";
+
+      var SPEED = 2.5;
+      var font = "30px Arial";
+      var players = new Object();
+      var reusableProtocolObject = {userName: "", x: 0, y: 0};
+      var currentUserName;
+      var isDisconnected;
+
+      var keyboardBuffer = new Object();
+
+      Rhubarb.init({
+        protocolDefinitionPath: "./examples/exampleGame/protocol-definition.json",
+        workerPath: "./build/RhubarbWorker.js",
+        serverAddress: "ws://localhost:8087",
+        onReady: function(){
+          start();
+        },
+        onError: function(err){
+          alert(err + " Make sure exampleGameServer.js is started.");
+        }
+      });
+
+      function start(){
+        console.log("Connected to server.");
+        containerDIV.style.display = "";
+
+        Rhubarb.onDisconnectedFromServer(function(){
+          isDisconnected = true;
+        });
+
+        Rhubarb.onReceived("positionUpdated", function(getter){
+          var playerName = getter("userName");
+          var x = getter("x");
+          var y = getter("y");
+          var player = players[playerName];
+          if (!player){
+            player = {
+              userName: playerName
+            };
+            players[playerName] = player;
+            console.log(playerName+" joined.");
+          }
+          player.x = x;
+          player.y = y;
+        });
+
+        Rhubarb.onReceived("playerDisconnected", function(getter){
+          var userName = getter("userName");
+          delete players[userName];
+          console.log(userName+" disconnected.");
+        });
+
+        button.onclick = function(){
+          if (!input.value){
+            alert("Input must be non-empty.");
+            return;
+          }
+          Rhubarb.send("nicknameSelected", { value: input.value });
+          containerDIV.parentNode.removeChild(containerDIV);
+          canvas.style.display = "";
+          window.addEventListener('resize', resizeCanvas, false);
+          resizeCanvas();
+
+          players[input.value] = {
+            x: 100,
+            y: 100
+          };
+
+          currentUserName = input.value;
+        }
+
+        window.addEventListener("keydown", function(event){
+          keyboardBuffer[event.keyCode] = true;
+        });
+        window.addEventListener("keyup", function(event){
+          keyboardBuffer[event.keyCode] = false;
+        });
+
+        canvas.focus();
+        render();
+      }
+
+      function resizeCanvas(){
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+
+      function processKeyBuffer(){
+        var player = players[currentUserName];
+        if (!player){
+          return;
+        }
+        if (keyboardBuffer[39]){
+          player.x += SPEED;
+        }
+        if (keyboardBuffer[37]){
+          player.x -= SPEED;
+        }
+        if (keyboardBuffer[38]){
+          player.y -= SPEED;
+        }
+        if (keyboardBuffer[40]){
+          player.y += SPEED;
+        }
+
+        if (player.x < 0){
+          player.x = 0;
+        }
+        if (player.x > window.innerWidth - 50){
+          player.x = window.innerWidth - 50;
+        }
+        if (player.y < 20){
+          player.y = 20;
+        }
+        if (player.y > window.innerHeight){
+          player.y = window.innerHeight;
+        }
+      }
+
+      function sendPositionToServer(){
+        var player = players[currentUserName];
+        if (!player){
+          return;
+        }
+
+        reusableProtocolObject.userName = currentUserName;
+        reusableProtocolObject.x = player.x;
+        reusableProtocolObject.y = player.y;
+
+        Rhubarb.send("positionUpdated", reusableProtocolObject);
+      }
+
+      function render(){
+        if (isDisconnected){
+          return;
+        }
+        requestAnimationFrame(render);
+
+        processKeyBuffer();
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        context.font = font;
+        for (var playerName in players){
+          var player = players[playerName];
+          context.fillText(playerName, player.x, player.y);
+        }
+
+        sendPositionToServer();
+      }
+    </script>
+  </body>
+</html>

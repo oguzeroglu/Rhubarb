@@ -4,77 +4,666 @@
 	(global.Rhubarb = factory());
 }(this, (function () { 'use strict';
 
-var __cov_BDdHPubctkemiXL3QgnG1Q = (Function('return this'))();
-if (!__cov_BDdHPubctkemiXL3QgnG1Q.__coverage__) { __cov_BDdHPubctkemiXL3QgnG1Q.__coverage__ = {}; }
-__cov_BDdHPubctkemiXL3QgnG1Q = __cov_BDdHPubctkemiXL3QgnG1Q.__coverage__;
-if (!(__cov_BDdHPubctkemiXL3QgnG1Q['/Users/ece/Desktop/Rhubarb/js/util/ReusableBufferCache.js'])) {
-   __cov_BDdHPubctkemiXL3QgnG1Q['/Users/ece/Desktop/Rhubarb/js/util/ReusableBufferCache.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/util/ReusableBufferCache.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0},"b":{"1":[0,0],"2":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0},"fnMap":{"1":{"name":"ReusableBufferCache","line":1,"loc":{"start":{"line":1,"column":26},"end":{"line":1,"column":57}}},"2":{"name":"(anonymous_2)","line":5,"loc":{"start":{"line":5,"column":40},"end":{"line":5,"column":52}}},"3":{"name":"(anonymous_3)","line":9,"loc":{"start":{"line":9,"column":39},"end":{"line":9,"column":54}}},"4":{"name":"(anonymous_4)","line":20,"loc":{"start":{"line":20,"column":36},"end":{"line":20,"column":57}}}},"statementMap":{"1":{"start":{"line":1,"column":0},"end":{"line":3,"column":2}},"2":{"start":{"line":2,"column":2},"end":{"line":2,"column":28}},"3":{"start":{"line":5,"column":0},"end":{"line":7,"column":2}},"4":{"start":{"line":6,"column":2},"end":{"line":6,"column":28}},"5":{"start":{"line":9,"column":0},"end":{"line":18,"column":2}},"6":{"start":{"line":10,"column":2},"end":{"line":17,"column":3}},"7":{"start":{"line":11,"column":4},"end":{"line":11,"column":40}},"8":{"start":{"line":12,"column":4},"end":{"line":12,"column":47}},"9":{"start":{"line":13,"column":4},"end":{"line":16,"column":6}},"10":{"start":{"line":20,"column":0},"end":{"line":26,"column":2}},"11":{"start":{"line":21,"column":2},"end":{"line":21,"column":35}},"12":{"start":{"line":22,"column":2},"end":{"line":24,"column":3}},"13":{"start":{"line":23,"column":4},"end":{"line":23,"column":53}},"14":{"start":{"line":25,"column":2},"end":{"line":25,"column":14}}},"branchMap":{"1":{"line":10,"type":"if","locations":[{"start":{"line":10,"column":2},"end":{"line":10,"column":2}},{"start":{"line":10,"column":2},"end":{"line":10,"column":2}}]},"2":{"line":22,"type":"if","locations":[{"start":{"line":22,"column":2},"end":{"line":22,"column":2}},{"start":{"line":22,"column":2},"end":{"line":22,"column":2}}]}}};
-}
-__cov_BDdHPubctkemiXL3QgnG1Q = __cov_BDdHPubctkemiXL3QgnG1Q['/Users/ece/Desktop/Rhubarb/js/util/ReusableBufferCache.js'];
-__cov_BDdHPubctkemiXL3QgnG1Q.s['1']++;var ReusableBufferCache=function ReusableBufferCache(){__cov_BDdHPubctkemiXL3QgnG1Q.f['1']++;__cov_BDdHPubctkemiXL3QgnG1Q.s['2']++;this.cache=new Object();};__cov_BDdHPubctkemiXL3QgnG1Q.s['3']++;ReusableBufferCache.prototype.destroy=function(){__cov_BDdHPubctkemiXL3QgnG1Q.f['2']++;__cov_BDdHPubctkemiXL3QgnG1Q.s['4']++;this.cache=new Object();};__cov_BDdHPubctkemiXL3QgnG1Q.s['5']++;ReusableBufferCache.prototype.notify=function(len){__cov_BDdHPubctkemiXL3QgnG1Q.f['3']++;__cov_BDdHPubctkemiXL3QgnG1Q.s['6']++;if(!this.cache[len]){__cov_BDdHPubctkemiXL3QgnG1Q.b['1'][0]++;__cov_BDdHPubctkemiXL3QgnG1Q.s['7']++;var float32=new Float32Array(len);__cov_BDdHPubctkemiXL3QgnG1Q.s['8']++;var uint8=new Uint8Array(float32.buffer);__cov_BDdHPubctkemiXL3QgnG1Q.s['9']++;this.cache[len]={uint8:uint8,float32:float32};}else{__cov_BDdHPubctkemiXL3QgnG1Q.b['1'][1]++;}};__cov_BDdHPubctkemiXL3QgnG1Q.s['10']++;ReusableBufferCache.prototype.get=function(strLength){__cov_BDdHPubctkemiXL3QgnG1Q.f['4']++;__cov_BDdHPubctkemiXL3QgnG1Q.s['11']++;var elem=this.cache[strLength];__cov_BDdHPubctkemiXL3QgnG1Q.s['12']++;if(!elem){__cov_BDdHPubctkemiXL3QgnG1Q.b['2'][0]++;__cov_BDdHPubctkemiXL3QgnG1Q.s['13']++;throw new Error('ReusableBufferCache is empty.');}else{__cov_BDdHPubctkemiXL3QgnG1Q.b['2'][1]++;}__cov_BDdHPubctkemiXL3QgnG1Q.s['14']++;return elem;};var ReusableBufferCache$1 = new ReusableBufferCache();
+var ReusableBufferCache = function ReusableBufferCache() {
+  this.cache = new Object();
+};
 
-var __cov_U3OhbAYMwZE6WBqP3V0dNg = (Function('return this'))();
-if (!__cov_U3OhbAYMwZE6WBqP3V0dNg.__coverage__) { __cov_U3OhbAYMwZE6WBqP3V0dNg.__coverage__ = {}; }
-__cov_U3OhbAYMwZE6WBqP3V0dNg = __cov_U3OhbAYMwZE6WBqP3V0dNg.__coverage__;
-if (!(__cov_U3OhbAYMwZE6WBqP3V0dNg['/Users/ece/Desktop/Rhubarb/js/util/CharByteMap.js'])) {
-   __cov_U3OhbAYMwZE6WBqP3V0dNg['/Users/ece/Desktop/Rhubarb/js/util/CharByteMap.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/util/CharByteMap.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0},"b":{},"f":{},"fnMap":{},"statementMap":{"1":{"start":{"line":1,"column":0},"end":{"line":1,"column":495}},"2":{"start":{"line":3,"column":0},"end":{"line":3,"column":31}},"3":{"start":{"line":4,"column":0},"end":{"line":4,"column":31}},"4":{"start":{"line":5,"column":0},"end":{"line":8,"column":1}},"5":{"start":{"line":6,"column":2},"end":{"line":6,"column":41}},"6":{"start":{"line":7,"column":2},"end":{"line":7,"column":41}}},"branchMap":{}};
-}
-__cov_U3OhbAYMwZE6WBqP3V0dNg = __cov_U3OhbAYMwZE6WBqP3V0dNg['/Users/ece/Desktop/Rhubarb/js/util/CharByteMap.js'];
-__cov_U3OhbAYMwZE6WBqP3V0dNg.s['1']++;var supportedChars=['!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','R','S','T','U','V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','w','x','y','z','{','|','}','~','q','Q'];__cov_U3OhbAYMwZE6WBqP3V0dNg.s['2']++;var charByteMap=new Object();__cov_U3OhbAYMwZE6WBqP3V0dNg.s['3']++;var byteCharMap=new Object();__cov_U3OhbAYMwZE6WBqP3V0dNg.s['4']++;for(var i=0;i<supportedChars.length;i++){__cov_U3OhbAYMwZE6WBqP3V0dNg.s['5']++;charByteMap[supportedChars[i]]=i+1;__cov_U3OhbAYMwZE6WBqP3V0dNg.s['6']++;byteCharMap[i+1]=supportedChars[i];}
+ReusableBufferCache.prototype.destroy = function () {
+  this.cache = new Object();
+};
 
-var __cov_F$71KKNTo2DxbgJ2LHz_iA = (Function('return this'))();
-if (!__cov_F$71KKNTo2DxbgJ2LHz_iA.__coverage__) { __cov_F$71KKNTo2DxbgJ2LHz_iA.__coverage__ = {}; }
-__cov_F$71KKNTo2DxbgJ2LHz_iA = __cov_F$71KKNTo2DxbgJ2LHz_iA.__coverage__;
-if (!(__cov_F$71KKNTo2DxbgJ2LHz_iA['/Users/ece/Desktop/Rhubarb/js/core/Protocol.js'])) {
-   __cov_F$71KKNTo2DxbgJ2LHz_iA['/Users/ece/Desktop/Rhubarb/js/core/Protocol.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/core/Protocol.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0,"50":0,"51":0,"52":0,"53":0,"54":0,"55":0,"56":0,"57":0,"58":0,"59":0,"60":0,"61":0,"62":0,"63":0,"64":0,"65":0,"66":0,"67":0,"68":0,"69":0,"70":0,"71":0,"72":0,"73":0,"74":0,"75":0,"76":0,"77":0,"78":0,"79":0,"80":0,"81":0,"82":0,"83":0,"84":0,"85":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0],"10":[0,0],"11":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0},"fnMap":{"1":{"name":"Protocol","line":4,"loc":{"start":{"line":4,"column":15},"end":{"line":4,"column":43}}},"2":{"name":"(anonymous_2)","line":18,"loc":{"start":{"line":18,"column":28},"end":{"line":18,"column":53}}},"3":{"name":"(anonymous_3)","line":22,"loc":{"start":{"line":22,"column":38},"end":{"line":22,"column":58}}},"4":{"name":"(anonymous_4)","line":28,"loc":{"start":{"line":28,"column":41},"end":{"line":28,"column":76}}},"5":{"name":"(anonymous_5)","line":34,"loc":{"start":{"line":34,"column":33},"end":{"line":34,"column":49}}},"6":{"name":"(anonymous_6)","line":38,"loc":{"start":{"line":38,"column":44},"end":{"line":38,"column":69}}},"7":{"name":"(anonymous_7)","line":66,"loc":{"start":{"line":66,"column":42},"end":{"line":66,"column":74}}},"8":{"name":"(anonymous_8)","line":98,"loc":{"start":{"line":98,"column":43},"end":{"line":98,"column":68}}},"9":{"name":"(anonymous_9)","line":102,"loc":{"start":{"line":102,"column":40},"end":{"line":102,"column":76}}},"10":{"name":"(anonymous_10)","line":111,"loc":{"start":{"line":111,"column":26},"end":{"line":111,"column":38}}}},"statementMap":{"1":{"start":{"line":4,"column":0},"end":{"line":12,"column":2}},"2":{"start":{"line":5,"column":2},"end":{"line":5,"column":19}},"3":{"start":{"line":6,"column":2},"end":{"line":6,"column":15}},"4":{"start":{"line":7,"column":2},"end":{"line":7,"column":33}},"5":{"start":{"line":8,"column":2},"end":{"line":8,"column":50}},"6":{"start":{"line":9,"column":2},"end":{"line":9,"column":60}},"7":{"start":{"line":10,"column":2},"end":{"line":10,"column":38}},"8":{"start":{"line":11,"column":2},"end":{"line":11,"column":44}},"9":{"start":{"line":14,"column":0},"end":{"line":14,"column":53}},"10":{"start":{"line":16,"column":0},"end":{"line":16,"column":79}},"11":{"start":{"line":18,"column":0},"end":{"line":20,"column":2}},"12":{"start":{"line":19,"column":2},"end":{"line":19,"column":45}},"13":{"start":{"line":22,"column":0},"end":{"line":26,"column":2}},"14":{"start":{"line":23,"column":2},"end":{"line":25,"column":3}},"15":{"start":{"line":24,"column":4},"end":{"line":24,"column":48}},"16":{"start":{"line":28,"column":0},"end":{"line":32,"column":2}},"17":{"start":{"line":29,"column":2},"end":{"line":29,"column":57}},"18":{"start":{"line":30,"column":2},"end":{"line":30,"column":60}},"19":{"start":{"line":31,"column":2},"end":{"line":31,"column":27}},"20":{"start":{"line":34,"column":0},"end":{"line":36,"column":2}},"21":{"start":{"line":35,"column":2},"end":{"line":35,"column":32}},"22":{"start":{"line":38,"column":0},"end":{"line":64,"column":2}},"23":{"start":{"line":39,"column":2},"end":{"line":39,"column":49}},"24":{"start":{"line":40,"column":2},"end":{"line":42,"column":3}},"25":{"start":{"line":41,"column":4},"end":{"line":41,"column":90}},"26":{"start":{"line":43,"column":2},"end":{"line":43,"column":77}},"27":{"start":{"line":44,"column":2},"end":{"line":48,"column":3}},"28":{"start":{"line":45,"column":4},"end":{"line":45,"column":44}},"29":{"start":{"line":46,"column":4},"end":{"line":46,"column":48}},"30":{"start":{"line":47,"column":4},"end":{"line":47,"column":17}},"31":{"start":{"line":49,"column":2},"end":{"line":49,"column":80}},"32":{"start":{"line":50,"column":2},"end":{"line":50,"column":43}},"33":{"start":{"line":51,"column":2},"end":{"line":53,"column":3}},"34":{"start":{"line":52,"column":4},"end":{"line":52,"column":49}},"35":{"start":{"line":54,"column":2},"end":{"line":54,"column":39}},"36":{"start":{"line":55,"column":2},"end":{"line":55,"column":17}},"37":{"start":{"line":56,"column":2},"end":{"line":61,"column":3}},"38":{"start":{"line":57,"column":4},"end":{"line":59,"column":5}},"39":{"start":{"line":58,"column":6},"end":{"line":58,"column":12}},"40":{"start":{"line":60,"column":4},"end":{"line":60,"column":35}},"41":{"start":{"line":62,"column":2},"end":{"line":62,"column":46}},"42":{"start":{"line":63,"column":2},"end":{"line":63,"column":15}},"43":{"start":{"line":66,"column":0},"end":{"line":96,"column":2}},"44":{"start":{"line":67,"column":2},"end":{"line":67,"column":49}},"45":{"start":{"line":68,"column":2},"end":{"line":70,"column":3}},"46":{"start":{"line":69,"column":4},"end":{"line":69,"column":90}},"47":{"start":{"line":71,"column":2},"end":{"line":71,"column":77}},"48":{"start":{"line":72,"column":2},"end":{"line":72,"column":68}},"49":{"start":{"line":73,"column":2},"end":{"line":73,"column":40}},"50":{"start":{"line":74,"column":2},"end":{"line":94,"column":3}},"51":{"start":{"line":75,"column":4},"end":{"line":75,"column":40}},"52":{"start":{"line":77,"column":4},"end":{"line":79,"column":5}},"53":{"start":{"line":78,"column":6},"end":{"line":78,"column":92}},"54":{"start":{"line":80,"column":4},"end":{"line":80,"column":82}},"55":{"start":{"line":81,"column":4},"end":{"line":81,"column":41}},"56":{"start":{"line":82,"column":4},"end":{"line":88,"column":5}},"57":{"start":{"line":83,"column":6},"end":{"line":87,"column":7}},"58":{"start":{"line":84,"column":8},"end":{"line":84,"column":46}},"59":{"start":{"line":86,"column":8},"end":{"line":86,"column":21}},"60":{"start":{"line":89,"column":4},"end":{"line":89,"column":45}},"61":{"start":{"line":90,"column":4},"end":{"line":90,"column":34}},"62":{"start":{"line":91,"column":4},"end":{"line":93,"column":5}},"63":{"start":{"line":92,"column":6},"end":{"line":92,"column":43}},"64":{"start":{"line":95,"column":2},"end":{"line":95,"column":46}},"65":{"start":{"line":98,"column":0},"end":{"line":100,"column":2}},"66":{"start":{"line":99,"column":2},"end":{"line":99,"column":54}},"67":{"start":{"line":102,"column":0},"end":{"line":109,"column":2}},"68":{"start":{"line":103,"column":2},"end":{"line":105,"column":3}},"69":{"start":{"line":104,"column":4},"end":{"line":104,"column":116}},"70":{"start":{"line":106,"column":2},"end":{"line":108,"column":4}},"71":{"start":{"line":111,"column":0},"end":{"line":128,"column":2}},"72":{"start":{"line":112,"column":2},"end":{"line":112,"column":28}},"73":{"start":{"line":113,"column":2},"end":{"line":113,"column":25}},"74":{"start":{"line":114,"column":2},"end":{"line":122,"column":3}},"75":{"start":{"line":115,"column":4},"end":{"line":115,"column":71}},"76":{"start":{"line":116,"column":4},"end":{"line":116,"column":86}},"77":{"start":{"line":117,"column":4},"end":{"line":117,"column":51}},"78":{"start":{"line":118,"column":4},"end":{"line":118,"column":53}},"79":{"start":{"line":119,"column":4},"end":{"line":121,"column":5}},"80":{"start":{"line":120,"column":6},"end":{"line":120,"column":52}},"81":{"start":{"line":123,"column":2},"end":{"line":123,"column":56}},"82":{"start":{"line":124,"column":2},"end":{"line":124,"column":27}},"83":{"start":{"line":125,"column":2},"end":{"line":125,"column":73}},"84":{"start":{"line":126,"column":2},"end":{"line":126,"column":64}},"85":{"start":{"line":127,"column":2},"end":{"line":127,"column":27}}},"branchMap":{"1":{"line":23,"type":"if","locations":[{"start":{"line":23,"column":2},"end":{"line":23,"column":2}},{"start":{"line":23,"column":2},"end":{"line":23,"column":2}}]},"2":{"line":35,"type":"binary-expr","locations":[{"start":{"line":35,"column":9},"end":{"line":35,"column":26}},{"start":{"line":35,"column":30},"end":{"line":35,"column":31}}]},"3":{"line":40,"type":"if","locations":[{"start":{"line":40,"column":2},"end":{"line":40,"column":2}},{"start":{"line":40,"column":2},"end":{"line":40,"column":2}}]},"4":{"line":44,"type":"if","locations":[{"start":{"line":44,"column":2},"end":{"line":44,"column":2}},{"start":{"line":44,"column":2},"end":{"line":44,"column":2}}]},"5":{"line":57,"type":"if","locations":[{"start":{"line":57,"column":4},"end":{"line":57,"column":4}},{"start":{"line":57,"column":4},"end":{"line":57,"column":4}}]},"6":{"line":68,"type":"if","locations":[{"start":{"line":68,"column":2},"end":{"line":68,"column":2}},{"start":{"line":68,"column":2},"end":{"line":68,"column":2}}]},"7":{"line":74,"type":"if","locations":[{"start":{"line":74,"column":2},"end":{"line":74,"column":2}},{"start":{"line":74,"column":2},"end":{"line":74,"column":2}}]},"8":{"line":77,"type":"if","locations":[{"start":{"line":77,"column":4},"end":{"line":77,"column":4}},{"start":{"line":77,"column":4},"end":{"line":77,"column":4}}]},"9":{"line":83,"type":"if","locations":[{"start":{"line":83,"column":6},"end":{"line":83,"column":6}},{"start":{"line":83,"column":6},"end":{"line":83,"column":6}}]},"10":{"line":103,"type":"if","locations":[{"start":{"line":103,"column":2},"end":{"line":103,"column":2}},{"start":{"line":103,"column":2},"end":{"line":103,"column":2}}]},"11":{"line":119,"type":"if","locations":[{"start":{"line":119,"column":4},"end":{"line":119,"column":4}},{"start":{"line":119,"column":4},"end":{"line":119,"column":4}}]}}};
-}
-__cov_F$71KKNTo2DxbgJ2LHz_iA = __cov_F$71KKNTo2DxbgJ2LHz_iA['/Users/ece/Desktop/Rhubarb/js/core/Protocol.js'];
-__cov_F$71KKNTo2DxbgJ2LHz_iA.s['1']++;var Protocol=function Protocol(name,id){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['1']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['2']++;this.name=name;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['3']++;this.id=id;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['4']++;this.parameters=new Object();__cov_F$71KKNTo2DxbgJ2LHz_iA.s['5']++;this.parameterIDsByParameterName=new Object();__cov_F$71KKNTo2DxbgJ2LHz_iA.s['6']++;this.parameterBufferIndicesByParameterName=new Object();__cov_F$71KKNTo2DxbgJ2LHz_iA.s['7']++;this.parameterValues=new Object();__cov_F$71KKNTo2DxbgJ2LHz_iA.s['8']++;this.boundGetter=this.getter.bind(this);};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['9']++;Protocol.prototype.MAX_STRING_PARAMETER_LENGTH=100;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['10']++;Protocol.prototype.typeNumerical={isNumerical:true,requiredBufferLen:2};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['11']++;Protocol.prototype.getter=function(parameterName){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['2']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['12']++;return this.parameterValues[parameterName];};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['13']++;Protocol.prototype.onValuesReceived=function(clientID){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['3']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['14']++;if(this.onReceived){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['1'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['15']++;this.onReceived(this.boundGetter,clientID);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['1'][1]++;}};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['16']++;Protocol.prototype.onOwnershipReceived=function(transferableMessageBody){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['4']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['17']++;this.transferableMessageBody=transferableMessageBody;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['18']++;this.transferableList[0]=transferableMessageBody.buffer;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['19']++;this.hasOwnership=true;};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['20']++;Protocol.prototype.getCharByte=function(char){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['5']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['21']++;return(__cov_F$71KKNTo2DxbgJ2LHz_iA.b['2'][0]++,charByteMap[char])||(__cov_F$71KKNTo2DxbgJ2LHz_iA.b['2'][1]++,0);};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['22']++;Protocol.prototype.getParameterFromBuffer=function(parameterName){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['6']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['23']++;var parameter=this.parameters[parameterName];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['24']++;if(!parameter){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['3'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['25']++;throw new Error('No such parameter: '+parameterName+' in protocol: '+this.name);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['3'][1]++;}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['26']++;var startIndex=this.parameterBufferIndicesByParameterName[parameterName];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['27']++;if(parameter.isNumerical){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['4'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['28']++;var value=this.buffer[startIndex+1];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['29']++;this.parameterValues[parameterName]=value;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['30']++;return value;}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['4'][1]++;}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['31']++;var computationBuffers=ReusableBufferCache$1.get(parameter.requiredBufferLen);__cov_F$71KKNTo2DxbgJ2LHz_iA.s['32']++;var float32=computationBuffers.float32;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['33']++;for(var i=0;i<parameter.requiredBufferLen;i++){__cov_F$71KKNTo2DxbgJ2LHz_iA.s['34']++;float32[i]=this.buffer[startIndex+1+i];}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['35']++;var uint8=computationBuffers.uint8;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['36']++;var value='';__cov_F$71KKNTo2DxbgJ2LHz_iA.s['37']++;for(var i=0;i<uint8.length;i++){__cov_F$71KKNTo2DxbgJ2LHz_iA.s['38']++;if(uint8[i]==0){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['5'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['39']++;break;}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['5'][1]++;}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['40']++;value+=byteCharMap[uint8[i]];}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['41']++;this.parameterValues[parameterName]=value;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['42']++;return value;};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['43']++;Protocol.prototype.setParameterToBuffer=function(parameterName,value){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['7']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['44']++;var parameter=this.parameters[parameterName];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['45']++;if(!parameter){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['6'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['46']++;throw new Error('No such parameter: '+parameterName+' in protocol: '+this.name);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['6'][1]++;}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['47']++;var startIndex=this.parameterBufferIndicesByParameterName[parameterName];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['48']++;var parameterID=this.parameterIDsByParameterName[parameterName];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['49']++;this.buffer[startIndex]=parameterID;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['50']++;if(parameter.isNumerical){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['7'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['51']++;this.buffer[startIndex+1]=value;}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['7'][1]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['52']++;if(value.length>parameter.maxLength){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['8'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['53']++;throw new Error('Parameter overflow: '+parameterName+' in protocol '+this.name);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['8'][1]++;}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['54']++;var computationBuffers=ReusableBufferCache$1.get(parameter.requiredBufferLen);__cov_F$71KKNTo2DxbgJ2LHz_iA.s['55']++;var uint8=computationBuffers.uint8;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['56']++;for(var i=0;i<uint8.length;i++){__cov_F$71KKNTo2DxbgJ2LHz_iA.s['57']++;if(i<value.length){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['9'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['58']++;uint8[i]=this.getCharByte(value[i]);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['9'][1]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['59']++;uint8[i]=0;}}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['60']++;var float32=computationBuffers.float32;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['61']++;var curIndex=startIndex+1;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['62']++;for(var i=0;i<float32.length;i++){__cov_F$71KKNTo2DxbgJ2LHz_iA.s['63']++;this.buffer[curIndex++]=float32[i];}}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['64']++;this.parameterValues[parameterName]=value;};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['65']++;Protocol.prototype.addNumericalParameter=function(parameterName){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['8']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['66']++;this.parameters[parameterName]=this.typeNumerical;};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['67']++;Protocol.prototype.addStringParameter=function(parameterName,maxLength){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['9']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['68']++;if(maxLength>this.MAX_STRING_PARAMETER_LENGTH){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['10'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['69']++;throw new Error('Parameter size exceeds max allowed string parameter size '+this.MAX_STRING_PARAMETER_LENGTH);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['10'][1]++;}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['70']++;this.parameters[parameterName]={isNumerical:false,maxLength:maxLength,requiredBufferLen:Math.ceil(maxLength/4)+1};};__cov_F$71KKNTo2DxbgJ2LHz_iA.s['71']++;Protocol.prototype.init=function(){__cov_F$71KKNTo2DxbgJ2LHz_iA.f['10']++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['72']++;var requiredBufferLen=0;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['73']++;var curParameterID=0;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['74']++;for(var parameterName in this.parameters){__cov_F$71KKNTo2DxbgJ2LHz_iA.s['75']++;this.parameterIDsByParameterName[parameterName]=curParameterID++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['76']++;this.parameterBufferIndicesByParameterName[parameterName]=requiredBufferLen+1;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['77']++;var parameter=this.parameters[parameterName];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['78']++;requiredBufferLen+=parameter.requiredBufferLen;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['79']++;if(!parameter.isNumerical){__cov_F$71KKNTo2DxbgJ2LHz_iA.b['11'][0]++;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['80']++;ReusableBufferCache$1.notify(requiredBufferLen);}else{__cov_F$71KKNTo2DxbgJ2LHz_iA.b['11'][1]++;}}__cov_F$71KKNTo2DxbgJ2LHz_iA.s['81']++;this.buffer=new Float32Array(requiredBufferLen+1);__cov_F$71KKNTo2DxbgJ2LHz_iA.s['82']++;this.buffer[0]=this.id;__cov_F$71KKNTo2DxbgJ2LHz_iA.s['83']++;this.transferableMessageBody=new Float32Array(requiredBufferLen+1);__cov_F$71KKNTo2DxbgJ2LHz_iA.s['84']++;this.transferableList=[this.transferableMessageBody.buffer];__cov_F$71KKNTo2DxbgJ2LHz_iA.s['85']++;this.hasOwnership=true;};
+ReusableBufferCache.prototype.notify = function (len) {
+  if (!this.cache[len]) {
+    var float32 = new Float32Array(len);
+    var uint8 = new Uint8Array(float32.buffer);
+    this.cache[len] = {
+      uint8: uint8,
+      float32: float32
+    };
+  }
+};
 
-var __cov_ISWueZfzXd5dQLrguTgZ6w = (Function('return this'))();
-if (!__cov_ISWueZfzXd5dQLrguTgZ6w.__coverage__) { __cov_ISWueZfzXd5dQLrguTgZ6w.__coverage__ = {}; }
-__cov_ISWueZfzXd5dQLrguTgZ6w = __cov_ISWueZfzXd5dQLrguTgZ6w.__coverage__;
-if (!(__cov_ISWueZfzXd5dQLrguTgZ6w['/Users/ece/Desktop/Rhubarb/js/handler/ProtocolParser.js'])) {
-   __cov_ISWueZfzXd5dQLrguTgZ6w['/Users/ece/Desktop/Rhubarb/js/handler/ProtocolParser.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/handler/ProtocolParser.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0},"fnMap":{"1":{"name":"ProtocolParser","line":3,"loc":{"start":{"line":3,"column":21},"end":{"line":3,"column":47}}},"2":{"name":"(anonymous_2)","line":9,"loc":{"start":{"line":9,"column":35},"end":{"line":9,"column":47}}},"3":{"name":"(anonymous_3)","line":13,"loc":{"start":{"line":13,"column":46},"end":{"line":13,"column":71}}},"4":{"name":"(anonymous_4)","line":23,"loc":{"start":{"line":23,"column":41},"end":{"line":23,"column":91}}},"5":{"name":"(anonymous_5)","line":43,"loc":{"start":{"line":43,"column":33},"end":{"line":43,"column":53}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":7,"column":2}},"2":{"start":{"line":4,"column":2},"end":{"line":4,"column":36}},"3":{"start":{"line":5,"column":2},"end":{"line":5,"column":31}},"4":{"start":{"line":6,"column":2},"end":{"line":6,"column":29}},"5":{"start":{"line":9,"column":0},"end":{"line":11,"column":2}},"6":{"start":{"line":10,"column":2},"end":{"line":10,"column":29}},"7":{"start":{"line":13,"column":0},"end":{"line":22,"column":2}},"8":{"start":{"line":14,"column":2},"end":{"line":14,"column":42}},"9":{"start":{"line":15,"column":2},"end":{"line":20,"column":3}},"10":{"start":{"line":16,"column":4},"end":{"line":18,"column":5}},"11":{"start":{"line":17,"column":6},"end":{"line":17,"column":19}},"12":{"start":{"line":19,"column":4},"end":{"line":19,"column":33}},"13":{"start":{"line":21,"column":2},"end":{"line":21,"column":15}},"14":{"start":{"line":23,"column":0},"end":{"line":41,"column":2}},"15":{"start":{"line":24,"column":2},"end":{"line":24,"column":56}},"16":{"start":{"line":25,"column":2},"end":{"line":38,"column":3}},"17":{"start":{"line":26,"column":4},"end":{"line":26,"column":52}},"18":{"start":{"line":27,"column":4},"end":{"line":37,"column":5}},"19":{"start":{"line":28,"column":6},"end":{"line":28,"column":52}},"20":{"start":{"line":29,"column":11},"end":{"line":37,"column":5}},"21":{"start":{"line":30,"column":6},"end":{"line":30,"column":61}},"22":{"start":{"line":31,"column":6},"end":{"line":33,"column":7}},"23":{"start":{"line":32,"column":8},"end":{"line":32,"column":92}},"24":{"start":{"line":34,"column":6},"end":{"line":34,"column":60}},"25":{"start":{"line":36,"column":6},"end":{"line":36,"column":49}},"26":{"start":{"line":39,"column":2},"end":{"line":39,"column":18}},"27":{"start":{"line":40,"column":2},"end":{"line":40,"column":18}},"28":{"start":{"line":43,"column":0},"end":{"line":51,"column":2}},"29":{"start":{"line":44,"column":2},"end":{"line":44,"column":37}},"30":{"start":{"line":45,"column":2},"end":{"line":49,"column":3}},"31":{"start":{"line":46,"column":4},"end":{"line":46,"column":46}},"32":{"start":{"line":47,"column":4},"end":{"line":47,"column":92}},"33":{"start":{"line":48,"column":4},"end":{"line":48,"column":46}},"34":{"start":{"line":50,"column":2},"end":{"line":50,"column":25}}},"branchMap":{"1":{"line":15,"type":"if","locations":[{"start":{"line":15,"column":2},"end":{"line":15,"column":2}},{"start":{"line":15,"column":2},"end":{"line":15,"column":2}}]},"2":{"line":16,"type":"if","locations":[{"start":{"line":16,"column":4},"end":{"line":16,"column":4}},{"start":{"line":16,"column":4},"end":{"line":16,"column":4}}]},"3":{"line":27,"type":"if","locations":[{"start":{"line":27,"column":4},"end":{"line":27,"column":4}},{"start":{"line":27,"column":4},"end":{"line":27,"column":4}}]},"4":{"line":29,"type":"if","locations":[{"start":{"line":29,"column":11},"end":{"line":29,"column":11}},{"start":{"line":29,"column":11},"end":{"line":29,"column":11}}]},"5":{"line":31,"type":"if","locations":[{"start":{"line":31,"column":6},"end":{"line":31,"column":6}},{"start":{"line":31,"column":6},"end":{"line":31,"column":6}}]}}};
-}
-__cov_ISWueZfzXd5dQLrguTgZ6w = __cov_ISWueZfzXd5dQLrguTgZ6w['/Users/ece/Desktop/Rhubarb/js/handler/ProtocolParser.js'];
-__cov_ISWueZfzXd5dQLrguTgZ6w.s['1']++;var ProtocolParser=function ProtocolParser(){__cov_ISWueZfzXd5dQLrguTgZ6w.f['1']++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['2']++;this.NUMERICAL_TYPE='numerical';__cov_ISWueZfzXd5dQLrguTgZ6w.s['3']++;this.CHARACTER_TYPE='char';__cov_ISWueZfzXd5dQLrguTgZ6w.s['4']++;this.currentProtocolID=1;};__cov_ISWueZfzXd5dQLrguTgZ6w.s['5']++;ProtocolParser.prototype.destroy=function(){__cov_ISWueZfzXd5dQLrguTgZ6w.f['2']++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['6']++;this.currentProtocolID=1;};__cov_ISWueZfzXd5dQLrguTgZ6w.s['7']++;ProtocolParser.prototype.parseCharacterType=function(characterType){__cov_ISWueZfzXd5dQLrguTgZ6w.f['3']++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['8']++;var splitted=characterType.split('_');__cov_ISWueZfzXd5dQLrguTgZ6w.s['9']++;if(splitted[0]==this.CHARACTER_TYPE){__cov_ISWueZfzXd5dQLrguTgZ6w.b['1'][0]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['10']++;if(!splitted[1]){__cov_ISWueZfzXd5dQLrguTgZ6w.b['2'][0]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['11']++;return false;}else{__cov_ISWueZfzXd5dQLrguTgZ6w.b['2'][1]++;}__cov_ISWueZfzXd5dQLrguTgZ6w.s['12']++;return parseInt(splitted[1]);}else{__cov_ISWueZfzXd5dQLrguTgZ6w.b['1'][1]++;}__cov_ISWueZfzXd5dQLrguTgZ6w.s['13']++;return false;};__cov_ISWueZfzXd5dQLrguTgZ6w.s['14']++;ProtocolParser.prototype.parseProtocol=function(protocolInfo,protocolName,protocolID){__cov_ISWueZfzXd5dQLrguTgZ6w.f['4']++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['15']++;var protocol=new Protocol(protocolName,protocolID);__cov_ISWueZfzXd5dQLrguTgZ6w.s['16']++;for(var parameterName in protocolInfo){__cov_ISWueZfzXd5dQLrguTgZ6w.s['17']++;var parameterType=protocolInfo[parameterName];__cov_ISWueZfzXd5dQLrguTgZ6w.s['18']++;if(parameterType==this.NUMERICAL_TYPE){__cov_ISWueZfzXd5dQLrguTgZ6w.b['3'][0]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['19']++;protocol.addNumericalParameter(parameterName);}else{__cov_ISWueZfzXd5dQLrguTgZ6w.b['3'][1]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['20']++;if(parameterType.startsWith(this.CHARACTER_TYPE)){__cov_ISWueZfzXd5dQLrguTgZ6w.b['4'][0]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['21']++;var maxLength=this.parseCharacterType(parameterType);__cov_ISWueZfzXd5dQLrguTgZ6w.s['22']++;if(!maxLength){__cov_ISWueZfzXd5dQLrguTgZ6w.b['5'][0]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['23']++;throw new Error('Char types must be in format char_N, where N is the char length.');}else{__cov_ISWueZfzXd5dQLrguTgZ6w.b['5'][1]++;}__cov_ISWueZfzXd5dQLrguTgZ6w.s['24']++;protocol.addStringParameter(parameterName,maxLength);}else{__cov_ISWueZfzXd5dQLrguTgZ6w.b['4'][1]++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['25']++;throw new Error('Invalid parameter type.');}}}__cov_ISWueZfzXd5dQLrguTgZ6w.s['26']++;protocol.init();__cov_ISWueZfzXd5dQLrguTgZ6w.s['27']++;return protocol;};__cov_ISWueZfzXd5dQLrguTgZ6w.s['28']++;ProtocolParser.prototype.parse=function(jsonData){__cov_ISWueZfzXd5dQLrguTgZ6w.f['5']++;__cov_ISWueZfzXd5dQLrguTgZ6w.s['29']++;var parsedProtocols=new Object();__cov_ISWueZfzXd5dQLrguTgZ6w.s['30']++;for(var protocolName in jsonData){__cov_ISWueZfzXd5dQLrguTgZ6w.s['31']++;var protocolInfo=jsonData[protocolName];__cov_ISWueZfzXd5dQLrguTgZ6w.s['32']++;var protocol=this.parseProtocol(protocolInfo,protocolName,this.currentProtocolID++);__cov_ISWueZfzXd5dQLrguTgZ6w.s['33']++;parsedProtocols[protocol.name]=protocol;}__cov_ISWueZfzXd5dQLrguTgZ6w.s['34']++;return parsedProtocols;};var ProtocolParser$1 = new ProtocolParser();
+ReusableBufferCache.prototype.get = function (strLength) {
+  var elem = this.cache[strLength];
+  if (!elem) {
+    throw new Error("ReusableBufferCache is empty.");
+  }
+  return elem;
+};
 
-var __cov_vPPqt7ZGUPOvPQa_ET1BfA = (Function('return this'))();
-if (!__cov_vPPqt7ZGUPOvPQa_ET1BfA.__coverage__) { __cov_vPPqt7ZGUPOvPQa_ET1BfA.__coverage__ = {}; }
-__cov_vPPqt7ZGUPOvPQa_ET1BfA = __cov_vPPqt7ZGUPOvPQa_ET1BfA.__coverage__;
-if (!(__cov_vPPqt7ZGUPOvPQa_ET1BfA['/Users/ece/Desktop/Rhubarb/js/util/Globals.js'])) {
-   __cov_vPPqt7ZGUPOvPQa_ET1BfA['/Users/ece/Desktop/Rhubarb/js/util/Globals.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/util/Globals.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0},"b":{"1":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0},"fnMap":{"1":{"name":"Globals","line":1,"loc":{"start":{"line":1,"column":14},"end":{"line":1,"column":33}}},"2":{"name":"(anonymous_2)","line":5,"loc":{"start":{"line":5,"column":28},"end":{"line":5,"column":40}}},"3":{"name":"(anonymous_3)","line":12,"loc":{"start":{"line":12,"column":29},"end":{"line":12,"column":41}}},"4":{"name":"(anonymous_4)","line":19,"loc":{"start":{"line":19,"column":24},"end":{"line":19,"column":45}}},"5":{"name":"(anonymous_5)","line":30,"loc":{"start":{"line":30,"column":30},"end":{"line":30,"column":48}}}},"statementMap":{"1":{"start":{"line":1,"column":0},"end":{"line":3,"column":2}},"2":{"start":{"line":2,"column":2},"end":{"line":2,"column":23}},"3":{"start":{"line":5,"column":0},"end":{"line":10,"column":2}},"4":{"start":{"line":6,"column":2},"end":{"line":6,"column":46}},"5":{"start":{"line":7,"column":2},"end":{"line":7,"column":44}},"6":{"start":{"line":8,"column":2},"end":{"line":8,"column":23}},"7":{"start":{"line":9,"column":2},"end":{"line":9,"column":21}},"8":{"start":{"line":12,"column":0},"end":{"line":17,"column":2}},"9":{"start":{"line":13,"column":2},"end":{"line":13,"column":22}},"10":{"start":{"line":14,"column":2},"end":{"line":16,"column":3}},"11":{"start":{"line":15,"column":4},"end":{"line":15,"column":19}},"12":{"start":{"line":19,"column":0},"end":{"line":28,"column":2}},"13":{"start":{"line":20,"column":2},"end":{"line":20,"column":46}},"14":{"start":{"line":21,"column":2},"end":{"line":21,"column":44}},"15":{"start":{"line":23,"column":2},"end":{"line":27,"column":3}},"16":{"start":{"line":24,"column":4},"end":{"line":24,"column":43}},"17":{"start":{"line":25,"column":4},"end":{"line":25,"column":58}},"18":{"start":{"line":26,"column":4},"end":{"line":26,"column":55}},"19":{"start":{"line":30,"column":0},"end":{"line":32,"column":2}},"20":{"start":{"line":31,"column":2},"end":{"line":31,"column":23}}},"branchMap":{"1":{"line":14,"type":"if","locations":[{"start":{"line":14,"column":2},"end":{"line":14,"column":2}},{"start":{"line":14,"column":2},"end":{"line":14,"column":2}}]}}};
-}
-__cov_vPPqt7ZGUPOvPQa_ET1BfA = __cov_vPPqt7ZGUPOvPQa_ET1BfA['/Users/ece/Desktop/Rhubarb/js/util/Globals.js'];
-__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['1']++;var Globals=function Globals(){__cov_vPPqt7ZGUPOvPQa_ET1BfA.f['1']++;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['2']++;this.isReady=false;};__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['3']++;Globals.prototype.destroy=function(){__cov_vPPqt7ZGUPOvPQa_ET1BfA.f['2']++;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['4']++;this.protocolsByProtocolName=new Object();__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['5']++;this.protocolsByProtocolID=new Object();__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['6']++;this.isReady=false;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['7']++;this.server=null;};__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['8']++;Globals.prototype.setReady=function(){__cov_vPPqt7ZGUPOvPQa_ET1BfA.f['3']++;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['9']++;this.isReady=true;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['10']++;if(this.onReady){__cov_vPPqt7ZGUPOvPQa_ET1BfA.b['1'][0]++;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['11']++;this.onReady();}else{__cov_vPPqt7ZGUPOvPQa_ET1BfA.b['1'][1]++;}};__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['12']++;Globals.prototype.set=function(protocols){__cov_vPPqt7ZGUPOvPQa_ET1BfA.f['4']++;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['13']++;this.protocolsByProtocolName=new Object();__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['14']++;this.protocolsByProtocolID=new Object();__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['15']++;for(var protocolName in protocols){__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['16']++;var protocol=protocols[protocolName];__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['17']++;this.protocolsByProtocolName[protocolName]=protocol;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['18']++;this.protocolsByProtocolID[protocol.id]=protocol;}};__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['19']++;Globals.prototype.setServer=function(server){__cov_vPPqt7ZGUPOvPQa_ET1BfA.f['5']++;__cov_vPPqt7ZGUPOvPQa_ET1BfA.s['20']++;this.server=server;};var Globals$1 = new Globals();
+var ReusableBufferCache$1 = new ReusableBufferCache();
 
-var __cov_wy7KjN8f69gLLY3Hx2x1hg = (Function('return this'))();
-if (!__cov_wy7KjN8f69gLLY3Hx2x1hg.__coverage__) { __cov_wy7KjN8f69gLLY3Hx2x1hg.__coverage__ = {}; }
-__cov_wy7KjN8f69gLLY3Hx2x1hg = __cov_wy7KjN8f69gLLY3Hx2x1hg.__coverage__;
-if (!(__cov_wy7KjN8f69gLLY3Hx2x1hg['/Users/ece/Desktop/Rhubarb/js/worker/WorkerBridge.js'])) {
-   __cov_wy7KjN8f69gLLY3Hx2x1hg['/Users/ece/Desktop/Rhubarb/js/worker/WorkerBridge.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/worker/WorkerBridge.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0},"fnMap":{"1":{"name":"WorkerBridge","line":3,"loc":{"start":{"line":3,"column":19},"end":{"line":3,"column":43}}},"2":{"name":"(anonymous_2)","line":8,"loc":{"start":{"line":8,"column":33},"end":{"line":8,"column":45}}},"3":{"name":"(anonymous_3)","line":14,"loc":{"start":{"line":14,"column":42},"end":{"line":14,"column":61}}},"4":{"name":"(anonymous_4)","line":20,"loc":{"start":{"line":20,"column":38},"end":{"line":20,"column":58}}},"5":{"name":"(anonymous_5)","line":32,"loc":{"start":{"line":32,"column":36},"end":{"line":32,"column":69}}},"6":{"name":"(anonymous_6)","line":35,"loc":{"start":{"line":35,"column":26},"end":{"line":35,"column":43}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":6,"column":2}},"2":{"start":{"line":4,"column":2},"end":{"line":4,"column":35}},"3":{"start":{"line":5,"column":2},"end":{"line":5,"column":26}},"4":{"start":{"line":8,"column":0},"end":{"line":12,"column":2}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":35}},"6":{"start":{"line":10,"column":2},"end":{"line":10,"column":26}},"7":{"start":{"line":11,"column":2},"end":{"line":11,"column":26}},"8":{"start":{"line":14,"column":0},"end":{"line":18,"column":2}},"9":{"start":{"line":15,"column":2},"end":{"line":17,"column":3}},"10":{"start":{"line":16,"column":4},"end":{"line":16,"column":34}},"11":{"start":{"line":20,"column":0},"end":{"line":30,"column":2}},"12":{"start":{"line":21,"column":2},"end":{"line":24,"column":3}},"13":{"start":{"line":22,"column":4},"end":{"line":22,"column":68}},"14":{"start":{"line":23,"column":4},"end":{"line":23,"column":11}},"15":{"start":{"line":25,"column":2},"end":{"line":27,"column":3}},"16":{"start":{"line":26,"column":4},"end":{"line":26,"column":61}},"17":{"start":{"line":28,"column":2},"end":{"line":28,"column":87}},"18":{"start":{"line":29,"column":2},"end":{"line":29,"column":32}},"19":{"start":{"line":32,"column":0},"end":{"line":79,"column":2}},"20":{"start":{"line":33,"column":2},"end":{"line":33,"column":39}},"21":{"start":{"line":35,"column":2},"end":{"line":74,"column":15}},"22":{"start":{"line":36,"column":4},"end":{"line":36,"column":26}},"23":{"start":{"line":38,"column":4},"end":{"line":40,"column":5}},"24":{"start":{"line":39,"column":6},"end":{"line":39,"column":55}},"25":{"start":{"line":42,"column":4},"end":{"line":73,"column":5}},"26":{"start":{"line":43,"column":6},"end":{"line":50,"column":7}},"27":{"start":{"line":44,"column":8},"end":{"line":44,"column":40}},"28":{"start":{"line":45,"column":8},"end":{"line":45,"column":27}},"29":{"start":{"line":47,"column":8},"end":{"line":49,"column":9}},"30":{"start":{"line":48,"column":10},"end":{"line":48,"column":42}},"31":{"start":{"line":52,"column":6},"end":{"line":70,"column":7}},"32":{"start":{"line":53,"column":8},"end":{"line":53,"column":62}},"33":{"start":{"line":54,"column":8},"end":{"line":56,"column":9}},"34":{"start":{"line":55,"column":10},"end":{"line":55,"column":43}},"35":{"start":{"line":57,"column":8},"end":{"line":57,"column":44}},"36":{"start":{"line":58,"column":8},"end":{"line":58,"column":58}},"37":{"start":{"line":59,"column":8},"end":{"line":61,"column":9}},"38":{"start":{"line":60,"column":10},"end":{"line":60,"column":57}},"39":{"start":{"line":62,"column":8},"end":{"line":62,"column":36}},"40":{"start":{"line":63,"column":8},"end":{"line":63,"column":15}},"41":{"start":{"line":64,"column":13},"end":{"line":70,"column":7}},"42":{"start":{"line":65,"column":8},"end":{"line":65,"column":30}},"43":{"start":{"line":66,"column":8},"end":{"line":66,"column":44}},"44":{"start":{"line":67,"column":8},"end":{"line":67,"column":58}},"45":{"start":{"line":68,"column":8},"end":{"line":68,"column":39}},"46":{"start":{"line":69,"column":8},"end":{"line":69,"column":15}},"47":{"start":{"line":71,"column":6},"end":{"line":71,"column":60}},"48":{"start":{"line":72,"column":6},"end":{"line":72,"column":41}},"49":{"start":{"line":76,"column":2},"end":{"line":78,"column":5}}},"branchMap":{"1":{"line":15,"type":"if","locations":[{"start":{"line":15,"column":2},"end":{"line":15,"column":2}},{"start":{"line":15,"column":2},"end":{"line":15,"column":2}}]},"2":{"line":21,"type":"if","locations":[{"start":{"line":21,"column":2},"end":{"line":21,"column":2}},{"start":{"line":21,"column":2},"end":{"line":21,"column":2}}]},"3":{"line":38,"type":"if","locations":[{"start":{"line":38,"column":4},"end":{"line":38,"column":4}},{"start":{"line":38,"column":4},"end":{"line":38,"column":4}}]},"4":{"line":42,"type":"if","locations":[{"start":{"line":42,"column":4},"end":{"line":42,"column":4}},{"start":{"line":42,"column":4},"end":{"line":42,"column":4}}]},"5":{"line":42,"type":"binary-expr","locations":[{"start":{"line":42,"column":8},"end":{"line":42,"column":24}},{"start":{"line":42,"column":28},"end":{"line":42,"column":47}}]},"6":{"line":43,"type":"if","locations":[{"start":{"line":43,"column":6},"end":{"line":43,"column":6}},{"start":{"line":43,"column":6},"end":{"line":43,"column":6}}]},"7":{"line":47,"type":"if","locations":[{"start":{"line":47,"column":8},"end":{"line":47,"column":8}},{"start":{"line":47,"column":8},"end":{"line":47,"column":8}}]},"8":{"line":52,"type":"if","locations":[{"start":{"line":52,"column":6},"end":{"line":52,"column":6}},{"start":{"line":52,"column":6},"end":{"line":52,"column":6}}]},"9":{"line":64,"type":"if","locations":[{"start":{"line":64,"column":13},"end":{"line":64,"column":13}},{"start":{"line":64,"column":13},"end":{"line":64,"column":13}}]}}};
-}
-__cov_wy7KjN8f69gLLY3Hx2x1hg = __cov_wy7KjN8f69gLLY3Hx2x1hg['/Users/ece/Desktop/Rhubarb/js/worker/WorkerBridge.js'];
-__cov_wy7KjN8f69gLLY3Hx2x1hg.s['1']++;var WorkerBridge=function WorkerBridge(){__cov_wy7KjN8f69gLLY3Hx2x1hg.f['1']++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['2']++;this.isWorkerInitialized=false;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['3']++;this.reusableArray=[];};__cov_wy7KjN8f69gLLY3Hx2x1hg.s['4']++;WorkerBridge.prototype.destroy=function(){__cov_wy7KjN8f69gLLY3Hx2x1hg.f['2']++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['5']++;this.isWorkerInitialized=false;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['6']++;this.reusableArray=[];__cov_wy7KjN8f69gLLY3Hx2x1hg.s['7']++;this.worker.terminate();};__cov_wy7KjN8f69gLLY3Hx2x1hg.s['8']++;WorkerBridge.prototype.onLatencyUpdated=function(latency){__cov_wy7KjN8f69gLLY3Hx2x1hg.f['3']++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['9']++;if(this.latencyCallback){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['1'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['10']++;this.latencyCallback(latency);}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['1'][1]++;}};__cov_wy7KjN8f69gLLY3Hx2x1hg.s['11']++;WorkerBridge.prototype.sendProtocol=function(protocol){__cov_wy7KjN8f69gLLY3Hx2x1hg.f['4']++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['12']++;if(!protocol.hasOwnership){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['2'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['13']++;console.error('Protocol does not have transferable ownership.');__cov_wy7KjN8f69gLLY3Hx2x1hg.s['14']++;return;}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['2'][1]++;}__cov_wy7KjN8f69gLLY3Hx2x1hg.s['15']++;for(var i=0;i<protocol.buffer.length;i++){__cov_wy7KjN8f69gLLY3Hx2x1hg.s['16']++;protocol.transferableMessageBody[i]=protocol.buffer[i];}__cov_wy7KjN8f69gLLY3Hx2x1hg.s['17']++;this.worker.postMessage(protocol.transferableMessageBody,protocol.transferableList);__cov_wy7KjN8f69gLLY3Hx2x1hg.s['18']++;protocol.hasOwnership=false;};__cov_wy7KjN8f69gLLY3Hx2x1hg.s['19']++;WorkerBridge.prototype.initialize=function(workerPath,serverURL){__cov_wy7KjN8f69gLLY3Hx2x1hg.f['5']++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['20']++;this.worker=new Worker(workerPath);__cov_wy7KjN8f69gLLY3Hx2x1hg.s['21']++;this.worker.onmessage=function(event){__cov_wy7KjN8f69gLLY3Hx2x1hg.f['6']++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['22']++;var data=event.data;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['23']++;if(data.isError){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['3'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['24']++;throw new Error('Cannot connect to the server.');}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['3'][1]++;}__cov_wy7KjN8f69gLLY3Hx2x1hg.s['25']++;if((__cov_wy7KjN8f69gLLY3Hx2x1hg.b['5'][0]++,data.isConnected)||(__cov_wy7KjN8f69gLLY3Hx2x1hg.b['5'][1]++,data.isDisconnected)){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['4'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['26']++;if(data.isConnected){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['6'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['27']++;this.isWorkerInitialized=true;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['28']++;Globals$1.setReady();}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['6'][1]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['29']++;if(this.onDisconnectedFromServer){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['7'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['30']++;this.onDisconnectedFromServer();}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['7'][1]++;}}}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['4'][1]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['31']++;if(data[0]==-1){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['8'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['32']++;var protocol=Globals$1.protocolsByProtocolID[data[1]];__cov_wy7KjN8f69gLLY3Hx2x1hg.s['33']++;for(var i=1;i<data.length;i++){__cov_wy7KjN8f69gLLY3Hx2x1hg.s['34']++;protocol.buffer[i-1]=data[i];}__cov_wy7KjN8f69gLLY3Hx2x1hg.s['35']++;this.reusableArray[0]=data.buffer;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['36']++;this.worker.postMessage(data,this.reusableArray);__cov_wy7KjN8f69gLLY3Hx2x1hg.s['37']++;for(var parameterName in protocol.parameters){__cov_wy7KjN8f69gLLY3Hx2x1hg.s['38']++;protocol.getParameterFromBuffer(parameterName);}__cov_wy7KjN8f69gLLY3Hx2x1hg.s['39']++;protocol.onValuesReceived();__cov_wy7KjN8f69gLLY3Hx2x1hg.s['40']++;return;}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['8'][1]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['41']++;if(data[0]==-2){__cov_wy7KjN8f69gLLY3Hx2x1hg.b['9'][0]++;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['42']++;var latency=data[1];__cov_wy7KjN8f69gLLY3Hx2x1hg.s['43']++;this.reusableArray[0]=data.buffer;__cov_wy7KjN8f69gLLY3Hx2x1hg.s['44']++;this.worker.postMessage(data,this.reusableArray);__cov_wy7KjN8f69gLLY3Hx2x1hg.s['45']++;this.onLatencyUpdated(latency);__cov_wy7KjN8f69gLLY3Hx2x1hg.s['46']++;return;}else{__cov_wy7KjN8f69gLLY3Hx2x1hg.b['9'][1]++;}}__cov_wy7KjN8f69gLLY3Hx2x1hg.s['47']++;var protocol=Globals$1.protocolsByProtocolID[data[0]];__cov_wy7KjN8f69gLLY3Hx2x1hg.s['48']++;protocol.onOwnershipReceived(data);}}.bind(this);__cov_wy7KjN8f69gLLY3Hx2x1hg.s['49']++;this.worker.postMessage({serverURL:serverURL});};var WorkerBridge$1 = new WorkerBridge();
+var supportedChars = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "q", "Q"];
 
-var __cov_TBTPO0f1OIbtdLUEsja8uQ = (Function('return this'))();
-if (!__cov_TBTPO0f1OIbtdLUEsja8uQ.__coverage__) { __cov_TBTPO0f1OIbtdLUEsja8uQ.__coverage__ = {}; }
-__cov_TBTPO0f1OIbtdLUEsja8uQ = __cov_TBTPO0f1OIbtdLUEsja8uQ.__coverage__;
-if (!(__cov_TBTPO0f1OIbtdLUEsja8uQ['/Users/ece/Desktop/Rhubarb/js/node/Server.js'])) {
-   __cov_TBTPO0f1OIbtdLUEsja8uQ['/Users/ece/Desktop/Rhubarb/js/node/Server.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/node/Server.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":1,"47":0,"48":0,"49":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0},"fnMap":{"1":{"name":"Server","line":3,"loc":{"start":{"line":3,"column":13},"end":{"line":3,"column":36}}},"2":{"name":"(anonymous_2)","line":9,"loc":{"start":{"line":9,"column":27},"end":{"line":9,"column":39}}},"3":{"name":"(anonymous_3)","line":22,"loc":{"start":{"line":22,"column":40},"end":{"line":22,"column":70}}},"4":{"name":"(anonymous_4)","line":30,"loc":{"start":{"line":30,"column":24},"end":{"line":30,"column":40}}},"5":{"name":"(anonymous_5)","line":33,"loc":{"start":{"line":33,"column":33},"end":{"line":33,"column":47}}},"6":{"name":"(anonymous_6)","line":42,"loc":{"start":{"line":42,"column":21},"end":{"line":42,"column":37}}},"7":{"name":"(anonymous_7)","line":60,"loc":{"start":{"line":60,"column":19},"end":{"line":60,"column":31}}},"8":{"name":"uuidv4","line":74,"loc":{"start":{"line":74,"column":0},"end":{"line":74,"column":18}}},"9":{"name":"(anonymous_9)","line":75,"loc":{"start":{"line":75,"column":65},"end":{"line":75,"column":78}}}},"statementMap":{"1":{"start":{"line":3,"column":0},"end":{"line":7,"column":2}},"2":{"start":{"line":4,"column":2},"end":{"line":4,"column":21}},"3":{"start":{"line":5,"column":2},"end":{"line":5,"column":35}},"4":{"start":{"line":6,"column":2},"end":{"line":6,"column":32}},"5":{"start":{"line":9,"column":0},"end":{"line":20,"column":2}},"6":{"start":{"line":10,"column":2},"end":{"line":13,"column":3}},"7":{"start":{"line":11,"column":4},"end":{"line":11,"column":41}},"8":{"start":{"line":12,"column":4},"end":{"line":12,"column":19}},"9":{"start":{"line":14,"column":2},"end":{"line":14,"column":24}},"10":{"start":{"line":16,"column":2},"end":{"line":16,"column":35}},"11":{"start":{"line":17,"column":2},"end":{"line":17,"column":32}},"12":{"start":{"line":19,"column":2},"end":{"line":19,"column":23}},"13":{"start":{"line":22,"column":0},"end":{"line":28,"column":2}},"14":{"start":{"line":23,"column":2},"end":{"line":23,"column":45}},"15":{"start":{"line":24,"column":2},"end":{"line":26,"column":3}},"16":{"start":{"line":25,"column":4},"end":{"line":25,"column":51}},"17":{"start":{"line":27,"column":2},"end":{"line":27,"column":33}},"18":{"start":{"line":30,"column":0},"end":{"line":72,"column":2}},"19":{"start":{"line":31,"column":2},"end":{"line":31,"column":56}},"20":{"start":{"line":32,"column":2},"end":{"line":32,"column":21}},"21":{"start":{"line":33,"column":2},"end":{"line":71,"column":16}},"22":{"start":{"line":35,"column":4},"end":{"line":35,"column":28}},"23":{"start":{"line":36,"column":4},"end":{"line":36,"column":37}},"24":{"start":{"line":37,"column":4},"end":{"line":37,"column":40}},"25":{"start":{"line":38,"column":4},"end":{"line":40,"column":5}},"26":{"start":{"line":39,"column":6},"end":{"line":39,"column":39}},"27":{"start":{"line":42,"column":4},"end":{"line":58,"column":36}},"28":{"start":{"line":43,"column":6},"end":{"line":43,"column":43}},"29":{"start":{"line":44,"column":6},"end":{"line":57,"column":7}},"30":{"start":{"line":45,"column":8},"end":{"line":45,"column":22}},"31":{"start":{"line":47,"column":8},"end":{"line":47,"column":65}},"32":{"start":{"line":48,"column":8},"end":{"line":48,"column":25}},"33":{"start":{"line":49,"column":8},"end":{"line":52,"column":9}},"34":{"start":{"line":50,"column":10},"end":{"line":50,"column":58}},"35":{"start":{"line":51,"column":10},"end":{"line":51,"column":24}},"36":{"start":{"line":53,"column":8},"end":{"line":55,"column":9}},"37":{"start":{"line":54,"column":10},"end":{"line":54,"column":53}},"38":{"start":{"line":56,"column":8},"end":{"line":56,"column":49}},"39":{"start":{"line":60,"column":4},"end":{"line":70,"column":58}},"40":{"start":{"line":61,"column":6},"end":{"line":61,"column":35}},"41":{"start":{"line":62,"column":6},"end":{"line":62,"column":31}},"42":{"start":{"line":64,"column":6},"end":{"line":64,"column":43}},"43":{"start":{"line":65,"column":6},"end":{"line":65,"column":42}},"44":{"start":{"line":67,"column":6},"end":{"line":69,"column":7}},"45":{"start":{"line":68,"column":8},"end":{"line":68,"column":56}},"46":{"start":{"line":74,"column":0},"end":{"line":80,"column":1}},"47":{"start":{"line":75,"column":2},"end":{"line":79,"column":5}},"48":{"start":{"line":76,"column":4},"end":{"line":77,"column":41}},"49":{"start":{"line":78,"column":4},"end":{"line":78,"column":26}}},"branchMap":{"1":{"line":24,"type":"if","locations":[{"start":{"line":24,"column":2},"end":{"line":24,"column":2}},{"start":{"line":24,"column":2},"end":{"line":24,"column":2}}]},"2":{"line":38,"type":"if","locations":[{"start":{"line":38,"column":4},"end":{"line":38,"column":4}},{"start":{"line":38,"column":4},"end":{"line":38,"column":4}}]},"3":{"line":44,"type":"if","locations":[{"start":{"line":44,"column":6},"end":{"line":44,"column":6}},{"start":{"line":44,"column":6},"end":{"line":44,"column":6}}]},"4":{"line":67,"type":"if","locations":[{"start":{"line":67,"column":6},"end":{"line":67,"column":6}},{"start":{"line":67,"column":6},"end":{"line":67,"column":6}}]},"5":{"line":77,"type":"cond-expr","locations":[{"start":{"line":77,"column":23},"end":{"line":77,"column":24}},{"start":{"line":77,"column":27},"end":{"line":77,"column":40}}]}}};
+var charByteMap = new Object();
+var byteCharMap = new Object();
+for (var i = 0; i < supportedChars.length; i++) {
+  charByteMap[supportedChars[i]] = i + 1;
+  byteCharMap[i + 1] = supportedChars[i];
 }
-__cov_TBTPO0f1OIbtdLUEsja8uQ = __cov_TBTPO0f1OIbtdLUEsja8uQ['/Users/ece/Desktop/Rhubarb/js/node/Server.js'];
-__cov_TBTPO0f1OIbtdLUEsja8uQ.s['1']++;var Server=function Server(wsLib){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['1']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['2']++;this.wsLib=wsLib;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['3']++;this.wsByClientID=new Object();__cov_TBTPO0f1OIbtdLUEsja8uQ.s['4']++;this.clientIDByWS=new Map();};__cov_TBTPO0f1OIbtdLUEsja8uQ.s['5']++;Server.prototype.destroy=function(){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['2']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['6']++;for(var clientID in this.wsByClientID){__cov_TBTPO0f1OIbtdLUEsja8uQ.s['7']++;var ws=this.wsByClientID[clientID];__cov_TBTPO0f1OIbtdLUEsja8uQ.s['8']++;ws.terminate();}__cov_TBTPO0f1OIbtdLUEsja8uQ.s['9']++;this.wsServer.close();__cov_TBTPO0f1OIbtdLUEsja8uQ.s['10']++;this.wsByClientID=new Object();__cov_TBTPO0f1OIbtdLUEsja8uQ.s['11']++;this.clientIDByWS=new Map();__cov_TBTPO0f1OIbtdLUEsja8uQ.s['12']++;delete this.wsServer;};__cov_TBTPO0f1OIbtdLUEsja8uQ.s['13']++;Server.prototype.sendProtocolToClient=function(clientID,protocol){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['3']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['14']++;var clientWS=this.wsByClientID[clientID];__cov_TBTPO0f1OIbtdLUEsja8uQ.s['15']++;if(!clientWS){__cov_TBTPO0f1OIbtdLUEsja8uQ.b['1'][0]++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['16']++;throw new Error('No such client: '+clientID);}else{__cov_TBTPO0f1OIbtdLUEsja8uQ.b['1'][1]++;}__cov_TBTPO0f1OIbtdLUEsja8uQ.s['17']++;clientWS.send(protocol.buffer);};__cov_TBTPO0f1OIbtdLUEsja8uQ.s['18']++;Server.prototype.init=function(port){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['4']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['19']++;this.wsServer=new this.wsLib.Server({port:port});__cov_TBTPO0f1OIbtdLUEsja8uQ.s['20']++;Globals$1.setReady();__cov_TBTPO0f1OIbtdLUEsja8uQ.s['21']++;this.wsServer.on('connection',function(ws){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['5']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['22']++;var clientID=uuidv4();__cov_TBTPO0f1OIbtdLUEsja8uQ.s['23']++;this.wsByClientID[clientID]=ws;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['24']++;this.clientIDByWS.set(ws,clientID);__cov_TBTPO0f1OIbtdLUEsja8uQ.s['25']++;if(this.onClientConnected){__cov_TBTPO0f1OIbtdLUEsja8uQ.b['2'][0]++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['26']++;this.onClientConnected(clientID);}else{__cov_TBTPO0f1OIbtdLUEsja8uQ.b['2'][1]++;}__cov_TBTPO0f1OIbtdLUEsja8uQ.s['27']++;ws.on('message',function(data){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['6']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['28']++;var protocolID=data.readFloatLE(0);__cov_TBTPO0f1OIbtdLUEsja8uQ.s['29']++;if(protocolID==0){__cov_TBTPO0f1OIbtdLUEsja8uQ.b['3'][0]++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['30']++;ws.send(data);}else{__cov_TBTPO0f1OIbtdLUEsja8uQ.b['3'][1]++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['31']++;var protocol=Globals$1.protocolsByProtocolID[protocolID];__cov_TBTPO0f1OIbtdLUEsja8uQ.s['32']++;var bufIndex=4;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['33']++;for(var i=1;i<protocol.buffer.length;i++){__cov_TBTPO0f1OIbtdLUEsja8uQ.s['34']++;protocol.buffer[i]=data.readFloatLE(bufIndex);__cov_TBTPO0f1OIbtdLUEsja8uQ.s['35']++;bufIndex+=4;}__cov_TBTPO0f1OIbtdLUEsja8uQ.s['36']++;for(var paramName in protocol.parameters){__cov_TBTPO0f1OIbtdLUEsja8uQ.s['37']++;protocol.getParameterFromBuffer(paramName);}__cov_TBTPO0f1OIbtdLUEsja8uQ.s['38']++;protocol.onValuesReceived(this.clientID);}}.bind({clientID:clientID}));__cov_TBTPO0f1OIbtdLUEsja8uQ.s['39']++;ws.on('close',function(){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['7']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['40']++;var clientID=this.clientID;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['41']++;var server=this.server;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['42']++;delete server.wsByClientID[clientID];__cov_TBTPO0f1OIbtdLUEsja8uQ.s['43']++;server.clientIDByWS.delete(this.ws);__cov_TBTPO0f1OIbtdLUEsja8uQ.s['44']++;if(this.server.onClientDisconnected){__cov_TBTPO0f1OIbtdLUEsja8uQ.b['4'][0]++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['45']++;this.server.onClientDisconnected(this.clientID);}else{__cov_TBTPO0f1OIbtdLUEsja8uQ.b['4'][1]++;}}.bind({clientID:clientID,server:this,ws:ws}));}.bind(this));};function uuidv4(){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['8']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['47']++;return'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){__cov_TBTPO0f1OIbtdLUEsja8uQ.f['9']++;__cov_TBTPO0f1OIbtdLUEsja8uQ.s['48']++;var r=Math.random()*16|0,v=c=='x'?(__cov_TBTPO0f1OIbtdLUEsja8uQ.b['5'][0]++,r):(__cov_TBTPO0f1OIbtdLUEsja8uQ.b['5'][1]++,r&3|8);__cov_TBTPO0f1OIbtdLUEsja8uQ.s['49']++;return v.toString(16);});}
 
-var __cov_WCjh_uH92UZxCfll7ZHM6g = (Function('return this'))();
-if (!__cov_WCjh_uH92UZxCfll7ZHM6g.__coverage__) { __cov_WCjh_uH92UZxCfll7ZHM6g.__coverage__ = {}; }
-__cov_WCjh_uH92UZxCfll7ZHM6g = __cov_WCjh_uH92UZxCfll7ZHM6g.__coverage__;
-if (!(__cov_WCjh_uH92UZxCfll7ZHM6g['/Users/ece/Desktop/Rhubarb/js/index.js'])) {
-   __cov_WCjh_uH92UZxCfll7ZHM6g['/Users/ece/Desktop/Rhubarb/js/index.js'] = {"path":"/Users/ece/Desktop/Rhubarb/js/index.js","s":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0,"31":0,"32":0,"33":0,"34":0,"35":0,"36":0,"37":0,"38":0,"39":0,"40":0,"41":0,"42":0,"43":0,"44":0,"45":0,"46":0,"47":0,"48":0,"49":0,"50":0,"51":0,"52":0,"53":0,"54":0,"55":0,"56":0,"57":0,"58":0,"59":0,"60":0,"61":0,"62":0,"63":0,"64":0,"65":0,"66":0,"67":0,"68":0,"69":0,"70":0,"71":0,"72":0,"73":0,"74":0,"75":0,"76":0,"77":0,"78":0,"79":0,"80":0,"81":0,"82":0,"83":0,"84":0,"85":0,"86":0,"87":0,"88":0,"89":0,"90":0,"91":0,"92":0,"93":0,"94":0,"95":0,"96":0,"97":0,"98":0,"99":0,"100":0,"101":0,"102":0,"103":0,"104":0,"105":0,"106":0,"107":0,"108":0,"109":0,"110":0,"111":0,"112":0,"113":0,"114":0,"115":0,"116":0,"117":0,"118":0,"119":0,"120":0,"121":0,"122":0,"123":0,"124":0,"125":0,"126":0,"127":0,"128":0,"129":0,"130":0,"131":0,"132":0,"133":0,"134":0,"135":0,"136":0,"137":0,"138":0,"139":0,"140":0,"141":0,"142":0,"143":0,"144":0,"145":0,"146":0,"147":0,"148":0,"149":0,"150":0},"b":{"1":[0,0],"2":[0,0],"3":[0,0],"4":[0,0],"5":[0,0],"6":[0,0],"7":[0,0],"8":[0,0],"9":[0,0],"10":[0,0],"11":[0,0],"12":[0,0],"13":[0,0],"14":[0,0],"15":[0,0],"16":[0,0],"17":[0,0],"18":[0,0],"19":[0,0],"20":[0,0],"21":[0,0],"22":[0,0],"23":[0,0],"24":[0,0],"25":[0,0],"26":[0,0],"27":[0,0],"28":[0,0],"29":[0,0],"30":[0,0],"31":[0,0],"32":[0,0],"33":[0,0],"34":[0,0],"35":[0,0],"36":[0,0],"37":[0,0],"38":[0,0],"39":[0,0],"40":[0,0],"41":[0,0],"42":[0,0],"43":[0,0],"44":[0,0],"45":[0,0],"46":[0,0],"47":[0,0],"48":[0,0],"49":[0,0]},"f":{"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":0},"fnMap":{"1":{"name":"Rhubarb","line":7,"loc":{"start":{"line":7,"column":14},"end":{"line":7,"column":33}}},"2":{"name":"(anonymous_2)","line":13,"loc":{"start":{"line":13,"column":25},"end":{"line":13,"column":47}}},"3":{"name":"(anonymous_3)","line":34,"loc":{"start":{"line":34,"column":36},"end":{"line":34,"column":48}}},"4":{"name":"(anonymous_4)","line":52,"loc":{"start":{"line":52,"column":25},"end":{"line":52,"column":82}}},"5":{"name":"(anonymous_5)","line":74,"loc":{"start":{"line":74,"column":31},"end":{"line":74,"column":65}}},"6":{"name":"(anonymous_6)","line":91,"loc":{"start":{"line":91,"column":45},"end":{"line":91,"column":65}}},"7":{"name":"(anonymous_7)","line":107,"loc":{"start":{"line":107,"column":38},"end":{"line":107,"column":58}}},"8":{"name":"(anonymous_8)","line":123,"loc":{"start":{"line":123,"column":41},"end":{"line":123,"column":61}}},"9":{"name":"(anonymous_9)","line":139,"loc":{"start":{"line":139,"column":37},"end":{"line":139,"column":57}}},"10":{"name":"(anonymous_10)","line":155,"loc":{"start":{"line":155,"column":28},"end":{"line":155,"column":40}}},"11":{"name":"(anonymous_11)","line":173,"loc":{"start":{"line":173,"column":40},"end":{"line":173,"column":62}}},"12":{"name":"(anonymous_12)","line":206,"loc":{"start":{"line":206,"column":32},"end":{"line":206,"column":69}}},"13":{"name":"(anonymous_13)","line":214,"loc":{"start":{"line":214,"column":30},"end":{"line":214,"column":52}}}},"statementMap":{"1":{"start":{"line":7,"column":0},"end":{"line":9,"column":2}},"2":{"start":{"line":8,"column":2},"end":{"line":8,"column":46}},"3":{"start":{"line":13,"column":0},"end":{"line":50,"column":2}},"4":{"start":{"line":14,"column":2},"end":{"line":16,"column":3}},"5":{"start":{"line":15,"column":4},"end":{"line":15,"column":75}},"6":{"start":{"line":18,"column":2},"end":{"line":18,"column":39}},"7":{"start":{"line":20,"column":2},"end":{"line":20,"column":39}},"8":{"start":{"line":22,"column":2},"end":{"line":25,"column":3}},"9":{"start":{"line":23,"column":4},"end":{"line":23,"column":31}},"10":{"start":{"line":24,"column":4},"end":{"line":24,"column":11}},"11":{"start":{"line":27,"column":2},"end":{"line":27,"column":65}},"12":{"start":{"line":28,"column":2},"end":{"line":28,"column":41}},"13":{"start":{"line":29,"column":2},"end":{"line":29,"column":47}},"14":{"start":{"line":31,"column":2},"end":{"line":31,"column":42}},"15":{"start":{"line":32,"column":2},"end":{"line":32,"column":52}},"16":{"start":{"line":33,"column":2},"end":{"line":33,"column":57}},"17":{"start":{"line":34,"column":2},"end":{"line":48,"column":43}},"18":{"start":{"line":35,"column":4},"end":{"line":47,"column":5}},"19":{"start":{"line":36,"column":6},"end":{"line":36,"column":21}},"20":{"start":{"line":37,"column":6},"end":{"line":41,"column":7}},"21":{"start":{"line":38,"column":8},"end":{"line":38,"column":59}},"22":{"start":{"line":40,"column":8},"end":{"line":40,"column":80}},"23":{"start":{"line":42,"column":6},"end":{"line":42,"column":55}},"24":{"start":{"line":43,"column":6},"end":{"line":43,"column":29}},"25":{"start":{"line":44,"column":6},"end":{"line":44,"column":49}},"26":{"start":{"line":45,"column":11},"end":{"line":47,"column":5}},"27":{"start":{"line":46,"column":6},"end":{"line":46,"column":61}},"28":{"start":{"line":49,"column":2},"end":{"line":49,"column":26}},"29":{"start":{"line":52,"column":0},"end":{"line":72,"column":2}},"30":{"start":{"line":53,"column":2},"end":{"line":55,"column":3}},"31":{"start":{"line":54,"column":4},"end":{"line":54,"column":55}},"32":{"start":{"line":56,"column":2},"end":{"line":56,"column":63}},"33":{"start":{"line":57,"column":2},"end":{"line":59,"column":3}},"34":{"start":{"line":58,"column":4},"end":{"line":58,"column":57}},"35":{"start":{"line":60,"column":2},"end":{"line":66,"column":3}},"36":{"start":{"line":61,"column":4},"end":{"line":61,"column":53}},"37":{"start":{"line":62,"column":4},"end":{"line":64,"column":5}},"38":{"start":{"line":63,"column":6},"end":{"line":63,"column":71}},"39":{"start":{"line":65,"column":4},"end":{"line":65,"column":87}},"40":{"start":{"line":67,"column":2},"end":{"line":71,"column":3}},"41":{"start":{"line":68,"column":4},"end":{"line":68,"column":40}},"42":{"start":{"line":70,"column":4},"end":{"line":70,"column":60}},"43":{"start":{"line":74,"column":0},"end":{"line":89,"column":2}},"44":{"start":{"line":75,"column":2},"end":{"line":77,"column":3}},"45":{"start":{"line":76,"column":4},"end":{"line":76,"column":55}},"46":{"start":{"line":78,"column":2},"end":{"line":78,"column":63}},"47":{"start":{"line":79,"column":2},"end":{"line":81,"column":3}},"48":{"start":{"line":80,"column":4},"end":{"line":80,"column":57}},"49":{"start":{"line":82,"column":2},"end":{"line":84,"column":3}},"50":{"start":{"line":83,"column":4},"end":{"line":83,"column":45}},"51":{"start":{"line":85,"column":2},"end":{"line":87,"column":3}},"52":{"start":{"line":86,"column":4},"end":{"line":86,"column":51}},"53":{"start":{"line":88,"column":2},"end":{"line":88,"column":33}},"54":{"start":{"line":91,"column":0},"end":{"line":105,"column":2}},"55":{"start":{"line":92,"column":2},"end":{"line":94,"column":3}},"56":{"start":{"line":93,"column":4},"end":{"line":93,"column":55}},"57":{"start":{"line":95,"column":2},"end":{"line":97,"column":3}},"58":{"start":{"line":96,"column":4},"end":{"line":96,"column":58}},"59":{"start":{"line":98,"column":2},"end":{"line":100,"column":3}},"60":{"start":{"line":99,"column":4},"end":{"line":99,"column":45}},"61":{"start":{"line":101,"column":2},"end":{"line":103,"column":3}},"62":{"start":{"line":102,"column":4},"end":{"line":102,"column":51}},"63":{"start":{"line":104,"column":2},"end":{"line":104,"column":51}},"64":{"start":{"line":107,"column":0},"end":{"line":121,"column":2}},"65":{"start":{"line":108,"column":2},"end":{"line":110,"column":3}},"66":{"start":{"line":109,"column":4},"end":{"line":109,"column":55}},"67":{"start":{"line":111,"column":2},"end":{"line":113,"column":3}},"68":{"start":{"line":112,"column":4},"end":{"line":112,"column":62}},"69":{"start":{"line":114,"column":2},"end":{"line":116,"column":3}},"70":{"start":{"line":115,"column":4},"end":{"line":115,"column":45}},"71":{"start":{"line":117,"column":2},"end":{"line":119,"column":3}},"72":{"start":{"line":118,"column":4},"end":{"line":118,"column":51}},"73":{"start":{"line":120,"column":2},"end":{"line":120,"column":46}},"74":{"start":{"line":123,"column":0},"end":{"line":137,"column":2}},"75":{"start":{"line":124,"column":2},"end":{"line":126,"column":3}},"76":{"start":{"line":125,"column":4},"end":{"line":125,"column":55}},"77":{"start":{"line":127,"column":2},"end":{"line":129,"column":3}},"78":{"start":{"line":128,"column":4},"end":{"line":128,"column":62}},"79":{"start":{"line":130,"column":2},"end":{"line":132,"column":3}},"80":{"start":{"line":131,"column":4},"end":{"line":131,"column":45}},"81":{"start":{"line":133,"column":2},"end":{"line":135,"column":3}},"82":{"start":{"line":134,"column":4},"end":{"line":134,"column":51}},"83":{"start":{"line":136,"column":2},"end":{"line":136,"column":49}},"84":{"start":{"line":139,"column":0},"end":{"line":153,"column":2}},"85":{"start":{"line":140,"column":2},"end":{"line":142,"column":3}},"86":{"start":{"line":141,"column":4},"end":{"line":141,"column":55}},"87":{"start":{"line":143,"column":2},"end":{"line":145,"column":3}},"88":{"start":{"line":144,"column":4},"end":{"line":144,"column":58}},"89":{"start":{"line":146,"column":2},"end":{"line":148,"column":3}},"90":{"start":{"line":147,"column":4},"end":{"line":147,"column":45}},"91":{"start":{"line":149,"column":2},"end":{"line":151,"column":3}},"92":{"start":{"line":150,"column":4},"end":{"line":150,"column":51}},"93":{"start":{"line":152,"column":2},"end":{"line":152,"column":42}},"94":{"start":{"line":155,"column":0},"end":{"line":169,"column":2}},"95":{"start":{"line":156,"column":2},"end":{"line":158,"column":3}},"96":{"start":{"line":157,"column":4},"end":{"line":157,"column":68}},"97":{"start":{"line":160,"column":2},"end":{"line":164,"column":3}},"98":{"start":{"line":161,"column":4},"end":{"line":161,"column":27}},"99":{"start":{"line":163,"column":4},"end":{"line":163,"column":29}},"100":{"start":{"line":166,"column":2},"end":{"line":166,"column":20}},"101":{"start":{"line":167,"column":2},"end":{"line":167,"column":32}},"102":{"start":{"line":168,"column":2},"end":{"line":168,"column":27}},"103":{"start":{"line":173,"column":0},"end":{"line":204,"column":2}},"104":{"start":{"line":174,"column":2},"end":{"line":174,"column":65}},"105":{"start":{"line":175,"column":2},"end":{"line":175,"column":41}},"106":{"start":{"line":176,"column":2},"end":{"line":176,"column":37}},"107":{"start":{"line":177,"column":2},"end":{"line":177,"column":47}},"108":{"start":{"line":178,"column":2},"end":{"line":178,"column":53}},"109":{"start":{"line":179,"column":2},"end":{"line":179,"column":35}},"110":{"start":{"line":181,"column":2},"end":{"line":183,"column":3}},"111":{"start":{"line":182,"column":4},"end":{"line":182,"column":80}},"112":{"start":{"line":184,"column":2},"end":{"line":186,"column":3}},"113":{"start":{"line":185,"column":4},"end":{"line":185,"column":68}},"114":{"start":{"line":187,"column":2},"end":{"line":189,"column":3}},"115":{"start":{"line":188,"column":4},"end":{"line":188,"column":55}},"116":{"start":{"line":190,"column":2},"end":{"line":192,"column":3}},"117":{"start":{"line":191,"column":4},"end":{"line":191,"column":74}},"118":{"start":{"line":193,"column":2},"end":{"line":195,"column":3}},"119":{"start":{"line":194,"column":4},"end":{"line":194,"column":71}},"120":{"start":{"line":196,"column":2},"end":{"line":203,"column":3}},"121":{"start":{"line":197,"column":4},"end":{"line":199,"column":5}},"122":{"start":{"line":198,"column":6},"end":{"line":198,"column":67}},"123":{"start":{"line":200,"column":4},"end":{"line":202,"column":5}},"124":{"start":{"line":201,"column":6},"end":{"line":201,"column":62}},"125":{"start":{"line":206,"column":0},"end":{"line":212,"column":2}},"126":{"start":{"line":207,"column":2},"end":{"line":211,"column":3}},"127":{"start":{"line":208,"column":4},"end":{"line":208,"column":66}},"128":{"start":{"line":209,"column":9},"end":{"line":211,"column":3}},"129":{"start":{"line":210,"column":4},"end":{"line":210,"column":55}},"130":{"start":{"line":214,"column":0},"end":{"line":242,"column":2}},"131":{"start":{"line":215,"column":2},"end":{"line":215,"column":65}},"132":{"start":{"line":216,"column":2},"end":{"line":216,"column":37}},"133":{"start":{"line":217,"column":2},"end":{"line":217,"column":53}},"134":{"start":{"line":218,"column":2},"end":{"line":218,"column":25}},"135":{"start":{"line":220,"column":2},"end":{"line":222,"column":3}},"136":{"start":{"line":221,"column":4},"end":{"line":221,"column":64}},"137":{"start":{"line":223,"column":2},"end":{"line":223,"column":64}},"138":{"start":{"line":224,"column":2},"end":{"line":224,"column":17}},"139":{"start":{"line":225,"column":2},"end":{"line":229,"column":3}},"140":{"start":{"line":226,"column":4},"end":{"line":226,"column":37}},"141":{"start":{"line":228,"column":4},"end":{"line":228,"column":76}},"142":{"start":{"line":230,"column":2},"end":{"line":230,"column":51}},"143":{"start":{"line":231,"column":2},"end":{"line":231,"column":25}},"144":{"start":{"line":233,"column":2},"end":{"line":233,"column":25}},"145":{"start":{"line":234,"column":2},"end":{"line":241,"column":3}},"146":{"start":{"line":235,"column":4},"end":{"line":235,"column":32}},"147":{"start":{"line":236,"column":4},"end":{"line":236,"column":34}},"148":{"start":{"line":237,"column":4},"end":{"line":237,"column":30}},"149":{"start":{"line":238,"column":4},"end":{"line":238,"column":23}},"150":{"start":{"line":240,"column":4},"end":{"line":240,"column":61}}},"branchMap":{"1":{"line":14,"type":"if","locations":[{"start":{"line":14,"column":2},"end":{"line":14,"column":2}},{"start":{"line":14,"column":2},"end":{"line":14,"column":2}}]},"2":{"line":22,"type":"if","locations":[{"start":{"line":22,"column":2},"end":{"line":22,"column":2}},{"start":{"line":22,"column":2},"end":{"line":22,"column":2}}]},"3":{"line":35,"type":"if","locations":[{"start":{"line":35,"column":4},"end":{"line":35,"column":4}},{"start":{"line":35,"column":4},"end":{"line":35,"column":4}}]},"4":{"line":35,"type":"binary-expr","locations":[{"start":{"line":35,"column":8},"end":{"line":35,"column":36}},{"start":{"line":35,"column":40},"end":{"line":35,"column":68}}]},"5":{"line":45,"type":"if","locations":[{"start":{"line":45,"column":11},"end":{"line":45,"column":11}},{"start":{"line":45,"column":11},"end":{"line":45,"column":11}}]},"6":{"line":53,"type":"if","locations":[{"start":{"line":53,"column":2},"end":{"line":53,"column":2}},{"start":{"line":53,"column":2},"end":{"line":53,"column":2}}]},"7":{"line":57,"type":"if","locations":[{"start":{"line":57,"column":2},"end":{"line":57,"column":2}},{"start":{"line":57,"column":2},"end":{"line":57,"column":2}}]},"8":{"line":62,"type":"if","locations":[{"start":{"line":62,"column":4},"end":{"line":62,"column":4}},{"start":{"line":62,"column":4},"end":{"line":62,"column":4}}]},"9":{"line":62,"type":"binary-expr","locations":[{"start":{"line":62,"column":8},"end":{"line":62,"column":26}},{"start":{"line":62,"column":30},"end":{"line":62,"column":43}}]},"10":{"line":67,"type":"if","locations":[{"start":{"line":67,"column":2},"end":{"line":67,"column":2}},{"start":{"line":67,"column":2},"end":{"line":67,"column":2}}]},"11":{"line":75,"type":"if","locations":[{"start":{"line":75,"column":2},"end":{"line":75,"column":2}},{"start":{"line":75,"column":2},"end":{"line":75,"column":2}}]},"12":{"line":79,"type":"if","locations":[{"start":{"line":79,"column":2},"end":{"line":79,"column":2}},{"start":{"line":79,"column":2},"end":{"line":79,"column":2}}]},"13":{"line":82,"type":"if","locations":[{"start":{"line":82,"column":2},"end":{"line":82,"column":2}},{"start":{"line":82,"column":2},"end":{"line":82,"column":2}}]},"14":{"line":85,"type":"if","locations":[{"start":{"line":85,"column":2},"end":{"line":85,"column":2}},{"start":{"line":85,"column":2},"end":{"line":85,"column":2}}]},"15":{"line":92,"type":"if","locations":[{"start":{"line":92,"column":2},"end":{"line":92,"column":2}},{"start":{"line":92,"column":2},"end":{"line":92,"column":2}}]},"16":{"line":95,"type":"if","locations":[{"start":{"line":95,"column":2},"end":{"line":95,"column":2}},{"start":{"line":95,"column":2},"end":{"line":95,"column":2}}]},"17":{"line":98,"type":"if","locations":[{"start":{"line":98,"column":2},"end":{"line":98,"column":2}},{"start":{"line":98,"column":2},"end":{"line":98,"column":2}}]},"18":{"line":101,"type":"if","locations":[{"start":{"line":101,"column":2},"end":{"line":101,"column":2}},{"start":{"line":101,"column":2},"end":{"line":101,"column":2}}]},"19":{"line":108,"type":"if","locations":[{"start":{"line":108,"column":2},"end":{"line":108,"column":2}},{"start":{"line":108,"column":2},"end":{"line":108,"column":2}}]},"20":{"line":111,"type":"if","locations":[{"start":{"line":111,"column":2},"end":{"line":111,"column":2}},{"start":{"line":111,"column":2},"end":{"line":111,"column":2}}]},"21":{"line":114,"type":"if","locations":[{"start":{"line":114,"column":2},"end":{"line":114,"column":2}},{"start":{"line":114,"column":2},"end":{"line":114,"column":2}}]},"22":{"line":117,"type":"if","locations":[{"start":{"line":117,"column":2},"end":{"line":117,"column":2}},{"start":{"line":117,"column":2},"end":{"line":117,"column":2}}]},"23":{"line":124,"type":"if","locations":[{"start":{"line":124,"column":2},"end":{"line":124,"column":2}},{"start":{"line":124,"column":2},"end":{"line":124,"column":2}}]},"24":{"line":127,"type":"if","locations":[{"start":{"line":127,"column":2},"end":{"line":127,"column":2}},{"start":{"line":127,"column":2},"end":{"line":127,"column":2}}]},"25":{"line":130,"type":"if","locations":[{"start":{"line":130,"column":2},"end":{"line":130,"column":2}},{"start":{"line":130,"column":2},"end":{"line":130,"column":2}}]},"26":{"line":133,"type":"if","locations":[{"start":{"line":133,"column":2},"end":{"line":133,"column":2}},{"start":{"line":133,"column":2},"end":{"line":133,"column":2}}]},"27":{"line":140,"type":"if","locations":[{"start":{"line":140,"column":2},"end":{"line":140,"column":2}},{"start":{"line":140,"column":2},"end":{"line":140,"column":2}}]},"28":{"line":143,"type":"if","locations":[{"start":{"line":143,"column":2},"end":{"line":143,"column":2}},{"start":{"line":143,"column":2},"end":{"line":143,"column":2}}]},"29":{"line":146,"type":"if","locations":[{"start":{"line":146,"column":2},"end":{"line":146,"column":2}},{"start":{"line":146,"column":2},"end":{"line":146,"column":2}}]},"30":{"line":149,"type":"if","locations":[{"start":{"line":149,"column":2},"end":{"line":149,"column":2}},{"start":{"line":149,"column":2},"end":{"line":149,"column":2}}]},"31":{"line":156,"type":"if","locations":[{"start":{"line":156,"column":2},"end":{"line":156,"column":2}},{"start":{"line":156,"column":2},"end":{"line":156,"column":2}}]},"32":{"line":160,"type":"if","locations":[{"start":{"line":160,"column":2},"end":{"line":160,"column":2}},{"start":{"line":160,"column":2},"end":{"line":160,"column":2}}]},"33":{"line":181,"type":"if","locations":[{"start":{"line":181,"column":2},"end":{"line":181,"column":2}},{"start":{"line":181,"column":2},"end":{"line":181,"column":2}}]},"34":{"line":184,"type":"if","locations":[{"start":{"line":184,"column":2},"end":{"line":184,"column":2}},{"start":{"line":184,"column":2},"end":{"line":184,"column":2}}]},"35":{"line":184,"type":"binary-expr","locations":[{"start":{"line":184,"column":6},"end":{"line":184,"column":19}},{"start":{"line":184,"column":23},"end":{"line":184,"column":34}}]},"36":{"line":187,"type":"if","locations":[{"start":{"line":187,"column":2},"end":{"line":187,"column":2}},{"start":{"line":187,"column":2},"end":{"line":187,"column":2}}]},"37":{"line":187,"type":"binary-expr","locations":[{"start":{"line":187,"column":6},"end":{"line":187,"column":19}},{"start":{"line":187,"column":23},"end":{"line":187,"column":31}}]},"38":{"line":190,"type":"if","locations":[{"start":{"line":190,"column":2},"end":{"line":190,"column":2}},{"start":{"line":190,"column":2},"end":{"line":190,"column":2}}]},"39":{"line":190,"type":"binary-expr","locations":[{"start":{"line":190,"column":6},"end":{"line":190,"column":14}},{"start":{"line":190,"column":18},"end":{"line":190,"column":35}}]},"40":{"line":193,"type":"if","locations":[{"start":{"line":193,"column":2},"end":{"line":193,"column":2}},{"start":{"line":193,"column":2},"end":{"line":193,"column":2}}]},"41":{"line":193,"type":"binary-expr","locations":[{"start":{"line":193,"column":6},"end":{"line":193,"column":15}},{"start":{"line":193,"column":19},"end":{"line":193,"column":33}}]},"42":{"line":196,"type":"if","locations":[{"start":{"line":196,"column":2},"end":{"line":196,"column":2}},{"start":{"line":196,"column":2},"end":{"line":196,"column":2}}]},"43":{"line":197,"type":"if","locations":[{"start":{"line":197,"column":4},"end":{"line":197,"column":4}},{"start":{"line":197,"column":4},"end":{"line":197,"column":4}}]},"44":{"line":200,"type":"if","locations":[{"start":{"line":200,"column":4},"end":{"line":200,"column":4}},{"start":{"line":200,"column":4},"end":{"line":200,"column":4}}]},"45":{"line":207,"type":"if","locations":[{"start":{"line":207,"column":2},"end":{"line":207,"column":2}},{"start":{"line":207,"column":2},"end":{"line":207,"column":2}}]},"46":{"line":207,"type":"binary-expr","locations":[{"start":{"line":207,"column":6},"end":{"line":207,"column":19}},{"start":{"line":207,"column":23},"end":{"line":207,"column":51}}]},"47":{"line":209,"type":"if","locations":[{"start":{"line":209,"column":9},"end":{"line":209,"column":9}},{"start":{"line":209,"column":9},"end":{"line":209,"column":9}}]},"48":{"line":220,"type":"if","locations":[{"start":{"line":220,"column":2},"end":{"line":220,"column":2}},{"start":{"line":220,"column":2},"end":{"line":220,"column":2}}]},"49":{"line":234,"type":"if","locations":[{"start":{"line":234,"column":2},"end":{"line":234,"column":2}},{"start":{"line":234,"column":2},"end":{"line":234,"column":2}}]}}};
+var Protocol = function Protocol(name, id) {
+  this.name = name;
+  this.id = id;
+  this.parameters = new Object();
+  this.parameterIDsByParameterName = new Object();
+  this.parameterBufferIndicesByParameterName = new Object();
+  this.parameterValues = new Object();
+  this.boundGetter = this.getter.bind(this);
+};
+
+Protocol.prototype.MAX_STRING_PARAMETER_LENGTH = 100;
+
+Protocol.prototype.typeNumerical = { isNumerical: true, requiredBufferLen: 2 };
+
+Protocol.prototype.getter = function (parameterName) {
+  return this.parameterValues[parameterName];
+};
+
+Protocol.prototype.onValuesReceived = function (clientID) {
+  if (this.onReceived) {
+    this.onReceived(this.boundGetter, clientID);
+  }
+};
+
+Protocol.prototype.onOwnershipReceived = function (transferableMessageBody) {
+  this.transferableMessageBody = transferableMessageBody;
+  this.transferableList[0] = transferableMessageBody.buffer;
+  this.hasOwnership = true;
+};
+
+Protocol.prototype.getCharByte = function (char) {
+  return charByteMap[char] || 0;
+};
+
+Protocol.prototype.getParameterFromBuffer = function (parameterName) {
+  var parameter = this.parameters[parameterName];
+  if (!parameter) {
+    throw new Error("No such parameter: " + parameterName + " in protocol: " + this.name);
+  }
+  var startIndex = this.parameterBufferIndicesByParameterName[parameterName];
+  if (parameter.isNumerical) {
+    var value = this.buffer[startIndex + 1];
+    this.parameterValues[parameterName] = value;
+    return value;
+  }
+  var computationBuffers = ReusableBufferCache$1.get(parameter.requiredBufferLen);
+  var float32 = computationBuffers.float32;
+  for (var i = 0; i < parameter.requiredBufferLen; i++) {
+    float32[i] = this.buffer[startIndex + 1 + i];
+  }
+  var uint8 = computationBuffers.uint8;
+  var value = "";
+  for (var i = 0; i < uint8.length; i++) {
+    if (uint8[i] == 0) {
+      break;
+    }
+    value += byteCharMap[uint8[i]];
+  }
+  this.parameterValues[parameterName] = value;
+  return value;
+};
+
+Protocol.prototype.setParameterToBuffer = function (parameterName, value) {
+  var parameter = this.parameters[parameterName];
+  if (!parameter) {
+    throw new Error("No such parameter: " + parameterName + " in protocol: " + this.name);
+  }
+  var startIndex = this.parameterBufferIndicesByParameterName[parameterName];
+  var parameterID = this.parameterIDsByParameterName[parameterName];
+  this.buffer[startIndex] = parameterID;
+  if (parameter.isNumerical) {
+    this.buffer[startIndex + 1] = value;
+  } else {
+    if (value.length > parameter.maxLength) {
+      throw new Error("Parameter overflow: " + parameterName + " in protocol " + this.name);
+    }
+    var computationBuffers = ReusableBufferCache$1.get(parameter.requiredBufferLen);
+    var uint8 = computationBuffers.uint8;
+    for (var i = 0; i < uint8.length; i++) {
+      if (i < value.length) {
+        uint8[i] = this.getCharByte(value[i]);
+      } else {
+        uint8[i] = 0;
+      }
+    }
+    var float32 = computationBuffers.float32;
+    var curIndex = startIndex + 1;
+    for (var i = 0; i < float32.length; i++) {
+      this.buffer[curIndex++] = float32[i];
+    }
+  }
+  this.parameterValues[parameterName] = value;
+};
+
+Protocol.prototype.addNumericalParameter = function (parameterName) {
+  this.parameters[parameterName] = this.typeNumerical;
+};
+
+Protocol.prototype.addStringParameter = function (parameterName, maxLength) {
+  if (maxLength > this.MAX_STRING_PARAMETER_LENGTH) {
+    throw new Error("Parameter size exceeds max allowed string parameter size " + this.MAX_STRING_PARAMETER_LENGTH);
+  }
+  this.parameters[parameterName] = {
+    isNumerical: false, maxLength: maxLength, requiredBufferLen: Math.ceil(maxLength / 4) + 1
+  };
+};
+
+Protocol.prototype.init = function () {
+  var requiredBufferLen = 0;
+  var curParameterID = 0;
+  for (var parameterName in this.parameters) {
+    this.parameterIDsByParameterName[parameterName] = curParameterID++;
+    this.parameterBufferIndicesByParameterName[parameterName] = requiredBufferLen + 1;
+    var parameter = this.parameters[parameterName];
+    requiredBufferLen += parameter.requiredBufferLen;
+    if (!parameter.isNumerical) {
+      ReusableBufferCache$1.notify(requiredBufferLen);
+    }
+  }
+  this.buffer = new Float32Array(requiredBufferLen + 1);
+  this.buffer[0] = this.id;
+  this.transferableMessageBody = new Float32Array(requiredBufferLen + 1);
+  this.transferableList = [this.transferableMessageBody.buffer];
+  this.hasOwnership = true;
+};
+
+var ProtocolParser = function ProtocolParser() {
+  this.NUMERICAL_TYPE = "numerical";
+  this.CHARACTER_TYPE = "char";
+  this.currentProtocolID = 1;
+};
+
+ProtocolParser.prototype.destroy = function () {
+  this.currentProtocolID = 1;
+};
+
+ProtocolParser.prototype.parseCharacterType = function (characterType) {
+  var splitted = characterType.split("_");
+  if (splitted[0] == this.CHARACTER_TYPE) {
+    if (!splitted[1]) {
+      return false;
+    }
+    return parseInt(splitted[1]);
+  }
+  return false;
+};
+ProtocolParser.prototype.parseProtocol = function (protocolInfo, protocolName, protocolID) {
+  var protocol = new Protocol(protocolName, protocolID);
+  for (var parameterName in protocolInfo) {
+    var parameterType = protocolInfo[parameterName];
+    if (parameterType == this.NUMERICAL_TYPE) {
+      protocol.addNumericalParameter(parameterName);
+    } else if (parameterType.startsWith(this.CHARACTER_TYPE)) {
+      var maxLength = this.parseCharacterType(parameterType);
+      if (!maxLength) {
+        throw new Error("Char types must be in format char_N, where N is the char length.");
+      }
+      protocol.addStringParameter(parameterName, maxLength);
+    } else {
+      throw new Error("Invalid parameter type.");
+    }
+  }
+  protocol.init();
+  return protocol;
+};
+
+ProtocolParser.prototype.parse = function (jsonData) {
+  var parsedProtocols = new Object();
+  for (var protocolName in jsonData) {
+    var protocolInfo = jsonData[protocolName];
+    var protocol = this.parseProtocol(protocolInfo, protocolName, this.currentProtocolID++);
+    parsedProtocols[protocol.name] = protocol;
+  }
+  return parsedProtocols;
+};
+
+var ProtocolParser$1 = new ProtocolParser();
+
+var Globals = function Globals() {
+  this.isReady = false;
+};
+
+Globals.prototype.destroy = function () {
+  this.protocolsByProtocolName = new Object();
+  this.protocolsByProtocolID = new Object();
+  this.isReady = false;
+  this.server = null;
+};
+
+Globals.prototype.setReady = function () {
+  this.isReady = true;
+  if (this.onReady) {
+    this.onReady();
+  }
+};
+
+Globals.prototype.set = function (protocols) {
+  this.protocolsByProtocolName = new Object();
+  this.protocolsByProtocolID = new Object();
+
+  for (var protocolName in protocols) {
+    var protocol = protocols[protocolName];
+    this.protocolsByProtocolName[protocolName] = protocol;
+    this.protocolsByProtocolID[protocol.id] = protocol;
+  }
+};
+
+Globals.prototype.setServer = function (server) {
+  this.server = server;
+};
+
+var Globals$1 = new Globals();
+
+var WorkerBridge = function WorkerBridge() {
+  this.isWorkerInitialized = false;
+  this.reusableArray = [];
+};
+
+WorkerBridge.prototype.destroy = function () {
+  this.isWorkerInitialized = false;
+  this.reusableArray = [];
+  this.worker.terminate();
+};
+
+WorkerBridge.prototype.onLatencyUpdated = function (latency) {
+  if (this.latencyCallback) {
+    this.latencyCallback(latency);
+  }
+};
+
+WorkerBridge.prototype.sendProtocol = function (protocol) {
+  if (!protocol.hasOwnership) {
+    console.error("Protocol does not have transferable ownership.");
+    return;
+  }
+  for (var i = 0; i < protocol.buffer.length; i++) {
+    protocol.transferableMessageBody[i] = protocol.buffer[i];
+  }
+  this.worker.postMessage(protocol.transferableMessageBody, protocol.transferableList);
+  protocol.hasOwnership = false;
+};
+
+WorkerBridge.prototype.initialize = function (workerPath, serverURL) {
+  this.worker = new Worker(workerPath);
+
+  this.worker.onmessage = function (event) {
+    var data = event.data;
+
+    if (data.isError) {
+      this.onError("Cannot connect to the server.");
+      return;
+    }
+
+    if (data.isConnected || data.isDisconnected) {
+      if (data.isConnected) {
+        this.isWorkerInitialized = true;
+        Globals$1.setReady();
+      } else {
+        if (this.onDisconnectedFromServer) {
+          this.onDisconnectedFromServer();
+        }
+      }
+    } else {
+      if (data[0] == -1) {
+        var protocol = Globals$1.protocolsByProtocolID[data[1]];
+        for (var i = 1; i < data.length; i++) {
+          protocol.buffer[i - 1] = data[i];
+        }
+        this.reusableArray[0] = data.buffer;
+        this.worker.postMessage(data, this.reusableArray);
+        for (var parameterName in protocol.parameters) {
+          protocol.getParameterFromBuffer(parameterName);
+        }
+        protocol.onValuesReceived();
+        return;
+      } else if (data[0] == -2) {
+        var latency = data[1];
+        this.reusableArray[0] = data.buffer;
+        this.worker.postMessage(data, this.reusableArray);
+        this.onLatencyUpdated(latency);
+        return;
+      }
+      var protocol = Globals$1.protocolsByProtocolID[data[0]];
+      protocol.onOwnershipReceived(data);
+    }
+  }.bind(this);
+
+  this.worker.postMessage({
+    serverURL: serverURL
+  });
+};
+
+var WorkerBridge$1 = new WorkerBridge();
+
+var Server = function Server(wsLib) {
+  this.wsLib = wsLib;
+  this.wsByClientID = new Object();
+  this.clientIDByWS = new Map();
+};
+
+Server.prototype.destroy = function () {
+  for (var clientID in this.wsByClientID) {
+    var ws = this.wsByClientID[clientID];
+    ws.terminate();
+  }
+  this.wsServer.close();
+
+  this.wsByClientID = new Object();
+  this.clientIDByWS = new Map();
+
+  delete this.wsServer;
+};
+
+Server.prototype.sendProtocolToClient = function (clientID, protocol) {
+  var clientWS = this.wsByClientID[clientID];
+  if (!clientWS) {
+    throw new Error("No such client: " + clientID);
+  }
+  clientWS.send(protocol.buffer);
+};
+
+Server.prototype.init = function (port) {
+  this.wsServer = new this.wsLib.Server({ port: port });
+  Globals$1.setReady();
+  this.wsServer.on("connection", function (ws) {
+
+    var clientID = uuidv4();
+    this.wsByClientID[clientID] = ws;
+    this.clientIDByWS.set(ws, clientID);
+    if (this.onClientConnected) {
+      this.onClientConnected(clientID);
+    }
+
+    ws.on("message", function (data) {
+      var protocolID = data.readFloatLE(0);
+      if (protocolID == 0) {
+        ws.send(data);
+      } else {
+        var protocol = Globals$1.protocolsByProtocolID[protocolID];
+        var bufIndex = 4;
+        for (var i = 1; i < protocol.buffer.length; i++) {
+          protocol.buffer[i] = data.readFloatLE(bufIndex);
+          bufIndex += 4;
+        }
+        for (var paramName in protocol.parameters) {
+          protocol.getParameterFromBuffer(paramName);
+        }
+        protocol.onValuesReceived(this.clientID);
+      }
+    }.bind({ clientID: clientID }));
+
+    ws.on("close", function () {
+      var clientID = this.clientID;
+      var server = this.server;
+
+      delete server.wsByClientID[clientID];
+      server.clientIDByWS.delete(this.ws);
+
+      if (this.server.onClientDisconnected) {
+        this.server.onClientDisconnected(this.clientID);
+      }
+    }.bind({ clientID: clientID, server: this, ws: ws }));
+  }.bind(this));
+};
+
+function uuidv4() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0,
+        v = c == 'x' ? r : r & 0x3 | 0x8;
+    return v.toString(16);
+  });
 }
-__cov_WCjh_uH92UZxCfll7ZHM6g = __cov_WCjh_uH92UZxCfll7ZHM6g['/Users/ece/Desktop/Rhubarb/js/index.js'];
-__cov_WCjh_uH92UZxCfll7ZHM6g.s['1']++;var Rhubarb=function Rhubarb(){__cov_WCjh_uH92UZxCfll7ZHM6g.f['1']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['2']++;this.IS_NODE=typeof window=='undefined';};__cov_WCjh_uH92UZxCfll7ZHM6g.s['3']++;Rhubarb.prototype.init=function(parameters){__cov_WCjh_uH92UZxCfll7ZHM6g.f['2']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['4']++;if(Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['1'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['5']++;throw new Error('Rhubarb already initialized. Use destroy API first.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['1'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['6']++;this._validateParameters(parameters);__cov_WCjh_uH92UZxCfll7ZHM6g.s['7']++;Globals$1.onReady=parameters.onReady;__cov_WCjh_uH92UZxCfll7ZHM6g.s['8']++;if(this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['2'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['9']++;this._initNode(parameters);__cov_WCjh_uH92UZxCfll7ZHM6g.s['10']++;return;}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['2'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['11']++;var protocolDefinitionPath=parameters.protocolDefinitionPath;__cov_WCjh_uH92UZxCfll7ZHM6g.s['12']++;var workerPath=parameters.workerPath;__cov_WCjh_uH92UZxCfll7ZHM6g.s['13']++;var serverAddress=parameters.serverAddress;__cov_WCjh_uH92UZxCfll7ZHM6g.s['14']++;var xhttpRequest=new XMLHttpRequest();__cov_WCjh_uH92UZxCfll7ZHM6g.s['15']++;xhttpRequest.overrideMimeType('application/json');__cov_WCjh_uH92UZxCfll7ZHM6g.s['16']++;xhttpRequest.open('GET',protocolDefinitionPath,true);__cov_WCjh_uH92UZxCfll7ZHM6g.s['17']++;xhttpRequest.onreadystatechange=function(){__cov_WCjh_uH92UZxCfll7ZHM6g.f['3']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['18']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['4'][0]++,xhttpRequest.readyState==4)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['4'][1]++,xhttpRequest.status=='200')){__cov_WCjh_uH92UZxCfll7ZHM6g.b['3'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['19']++;var parsedJSON;__cov_WCjh_uH92UZxCfll7ZHM6g.s['20']++;try{__cov_WCjh_uH92UZxCfll7ZHM6g.s['21']++;parsedJSON=JSON.parse(xhttpRequest.responseText);}catch(err){__cov_WCjh_uH92UZxCfll7ZHM6g.s['22']++;throw new Error('Protocol definition file is not a valid JSON: '+err);}__cov_WCjh_uH92UZxCfll7ZHM6g.s['23']++;var protocols=ProtocolParser$1.parse(parsedJSON);__cov_WCjh_uH92UZxCfll7ZHM6g.s['24']++;Globals$1.set(protocols);__cov_WCjh_uH92UZxCfll7ZHM6g.s['25']++;this.initWorker(workerPath,serverAddress);}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['3'][1]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['26']++;if(xhttpRequest.readyState==4){__cov_WCjh_uH92UZxCfll7ZHM6g.b['5'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['27']++;throw new Error('Protocol definition file not found.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['5'][1]++;}}}.bind({initWorker:this._initWorker});__cov_WCjh_uH92UZxCfll7ZHM6g.s['28']++;xhttpRequest.send(null);};__cov_WCjh_uH92UZxCfll7ZHM6g.s['29']++;Rhubarb.prototype.send=function(protocolName,valuesByParameterName,clientID){__cov_WCjh_uH92UZxCfll7ZHM6g.f['4']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['30']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['6'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['31']++;throw new Error('Rhubarb is not initialized yet.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['6'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['32']++;var protocol=Globals$1.protocolsByProtocolName[protocolName];__cov_WCjh_uH92UZxCfll7ZHM6g.s['33']++;if(!protocol){__cov_WCjh_uH92UZxCfll7ZHM6g.b['7'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['34']++;throw new Error('No such protocol: '+protocolName);}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['7'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['35']++;for(var parameterName in protocol.parameters){__cov_WCjh_uH92UZxCfll7ZHM6g.s['36']++;var value=valuesByParameterName[parameterName];__cov_WCjh_uH92UZxCfll7ZHM6g.s['37']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['9'][0]++,value==undefined)||(__cov_WCjh_uH92UZxCfll7ZHM6g.b['9'][1]++,value==null)){__cov_WCjh_uH92UZxCfll7ZHM6g.b['8'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['38']++;throw new Error('Parameter value not defined: '+parameterName);}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['8'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['39']++;protocol.setParameterToBuffer(parameterName,valuesByParameterName[parameterName]);}__cov_WCjh_uH92UZxCfll7ZHM6g.s['40']++;if(!this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['10'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['41']++;WorkerBridge$1.sendProtocol(protocol);}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['10'][1]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['42']++;Globals$1.server.sendProtocolToClient(clientID,protocol);}};__cov_WCjh_uH92UZxCfll7ZHM6g.s['43']++;Rhubarb.prototype.onReceived=function(protocolName,callback){__cov_WCjh_uH92UZxCfll7ZHM6g.f['5']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['44']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['11'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['45']++;throw new Error('Rhubarb is not initialized yet.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['11'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['46']++;var protocol=Globals$1.protocolsByProtocolName[protocolName];__cov_WCjh_uH92UZxCfll7ZHM6g.s['47']++;if(!protocol){__cov_WCjh_uH92UZxCfll7ZHM6g.b['12'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['48']++;throw new Error('No such protocol: '+protocolName);}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['12'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['49']++;if(!callback){__cov_WCjh_uH92UZxCfll7ZHM6g.b['13'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['50']++;throw new Error('Callback not defined.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['13'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['51']++;if(!callback instanceof Function){__cov_WCjh_uH92UZxCfll7ZHM6g.b['14'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['52']++;throw new Error('Callback is not a function.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['14'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['53']++;protocol.onReceived=callback;};__cov_WCjh_uH92UZxCfll7ZHM6g.s['54']++;Rhubarb.prototype.onDisconnectedFromServer=function(callback){__cov_WCjh_uH92UZxCfll7ZHM6g.f['6']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['55']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['15'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['56']++;throw new Error('Rhubarb is not initialized yet.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['15'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['57']++;if(this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['16'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['58']++;throw new Error('This Rhubarb instance is a server.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['16'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['59']++;if(!callback){__cov_WCjh_uH92UZxCfll7ZHM6g.b['17'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['60']++;throw new Error('Callback not defined.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['17'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['61']++;if(!callback instanceof Function){__cov_WCjh_uH92UZxCfll7ZHM6g.b['18'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['62']++;throw new Error('Callback is not a function.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['18'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['63']++;WorkerBridge$1.onDisconnectedFromServer=callback;};__cov_WCjh_uH92UZxCfll7ZHM6g.s['64']++;Rhubarb.prototype.onClientConnected=function(callback){__cov_WCjh_uH92UZxCfll7ZHM6g.f['7']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['65']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['19'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['66']++;throw new Error('Rhubarb is not initialized yet.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['19'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['67']++;if(!this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['20'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['68']++;throw new Error('This Rhubarb instance is not a server.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['20'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['69']++;if(!callback){__cov_WCjh_uH92UZxCfll7ZHM6g.b['21'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['70']++;throw new Error('Callback not defined.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['21'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['71']++;if(!callback instanceof Function){__cov_WCjh_uH92UZxCfll7ZHM6g.b['22'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['72']++;throw new Error('Callback is not a function.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['22'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['73']++;Globals$1.server.onClientConnected=callback;};__cov_WCjh_uH92UZxCfll7ZHM6g.s['74']++;Rhubarb.prototype.onClientDisconnected=function(callback){__cov_WCjh_uH92UZxCfll7ZHM6g.f['8']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['75']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['23'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['76']++;throw new Error('Rhubarb is not initialized yet.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['23'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['77']++;if(!this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['24'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['78']++;throw new Error('This Rhubarb instance is not a server.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['24'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['79']++;if(!callback){__cov_WCjh_uH92UZxCfll7ZHM6g.b['25'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['80']++;throw new Error('Callback not defined.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['25'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['81']++;if(!callback instanceof Function){__cov_WCjh_uH92UZxCfll7ZHM6g.b['26'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['82']++;throw new Error('Callback is not a function.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['26'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['83']++;Globals$1.server.onClientDisconnected=callback;};__cov_WCjh_uH92UZxCfll7ZHM6g.s['84']++;Rhubarb.prototype.onLatencyUpdated=function(callback){__cov_WCjh_uH92UZxCfll7ZHM6g.f['9']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['85']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['27'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['86']++;throw new Error('Rhubarb is not initialized yet.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['27'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['87']++;if(this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['28'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['88']++;throw new Error('This Rhubarb instance is a server.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['28'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['89']++;if(!callback){__cov_WCjh_uH92UZxCfll7ZHM6g.b['29'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['90']++;throw new Error('Callback not defined.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['29'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['91']++;if(!callback instanceof Function){__cov_WCjh_uH92UZxCfll7ZHM6g.b['30'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['92']++;throw new Error('Callback is not a function.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['30'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['93']++;WorkerBridge$1.latencyCallback=callback;};__cov_WCjh_uH92UZxCfll7ZHM6g.s['94']++;Rhubarb.prototype.destroy=function(){__cov_WCjh_uH92UZxCfll7ZHM6g.f['10']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['95']++;if(!Globals$1.isReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['31'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['96']++;throw new Error('Rhubarb not initialized. Use init API first.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['31'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['97']++;if(!this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['32'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['98']++;WorkerBridge$1.destroy();}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['32'][1]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['99']++;Globals$1.server.destroy();}__cov_WCjh_uH92UZxCfll7ZHM6g.s['100']++;Globals$1.destroy();__cov_WCjh_uH92UZxCfll7ZHM6g.s['101']++;ReusableBufferCache$1.destroy();__cov_WCjh_uH92UZxCfll7ZHM6g.s['102']++;ProtocolParser$1.destroy();};__cov_WCjh_uH92UZxCfll7ZHM6g.s['103']++;Rhubarb.prototype._validateParameters=function(parameters){__cov_WCjh_uH92UZxCfll7ZHM6g.f['11']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['104']++;var protocolDefinitionPath=parameters.protocolDefinitionPath;__cov_WCjh_uH92UZxCfll7ZHM6g.s['105']++;var workerPath=parameters.workerPath;__cov_WCjh_uH92UZxCfll7ZHM6g.s['106']++;var isServer=parameters.isServer;__cov_WCjh_uH92UZxCfll7ZHM6g.s['107']++;var serverAddress=parameters.serverAddress;__cov_WCjh_uH92UZxCfll7ZHM6g.s['108']++;var serverListenPort=parameters.serverListenPort;__cov_WCjh_uH92UZxCfll7ZHM6g.s['109']++;var onReady=parameters.onReady;__cov_WCjh_uH92UZxCfll7ZHM6g.s['110']++;if(!protocolDefinitionPath){__cov_WCjh_uH92UZxCfll7ZHM6g.b['33'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['111']++;throw new Error('protocolDefinitionPath is not defined within parameters.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['33'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['112']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['35'][0]++,!this.IS_NODE)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['35'][1]++,!workerPath)){__cov_WCjh_uH92UZxCfll7ZHM6g.b['34'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['113']++;throw new Error('workerPath is not defined within parameters.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['34'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['114']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['37'][0]++,!this.IS_NODE)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['37'][1]++,isServer)){__cov_WCjh_uH92UZxCfll7ZHM6g.b['36'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['115']++;throw new Error('Cannot use browser as a server.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['36'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['116']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['39'][0]++,isServer)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['39'][1]++,!serverListenPort)){__cov_WCjh_uH92UZxCfll7ZHM6g.b['38'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['117']++;throw new Error('serverListenPort is not defined within parameters.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['38'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['118']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['41'][0]++,!isServer)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['41'][1]++,!serverAddress)){__cov_WCjh_uH92UZxCfll7ZHM6g.b['40'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['119']++;throw new Error('serverAddress is not defined within parameters.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['40'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['120']++;if(!this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['42'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['121']++;if(!onReady){__cov_WCjh_uH92UZxCfll7ZHM6g.b['43'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['122']++;throw new Error('onReady is not defined within parameters.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['43'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['123']++;if(!onReady instanceof Function){__cov_WCjh_uH92UZxCfll7ZHM6g.b['44'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['124']++;throw new Error('onReady parameter is not a Function.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['44'][1]++;}}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['42'][1]++;}};__cov_WCjh_uH92UZxCfll7ZHM6g.s['125']++;Rhubarb.prototype._initWorker=function(workerPath,serverAddress){__cov_WCjh_uH92UZxCfll7ZHM6g.f['12']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['126']++;if((__cov_WCjh_uH92UZxCfll7ZHM6g.b['46'][0]++,!this.IS_NODE)&&(__cov_WCjh_uH92UZxCfll7ZHM6g.b['46'][1]++,typeof Worker=='undefined')){__cov_WCjh_uH92UZxCfll7ZHM6g.b['45'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['127']++;throw new Error('This browser does not support web workers.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['45'][1]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['128']++;if(!this.IS_NODE){__cov_WCjh_uH92UZxCfll7ZHM6g.b['47'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['129']++;WorkerBridge$1.initialize(workerPath,serverAddress);}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['47'][1]++;}}};__cov_WCjh_uH92UZxCfll7ZHM6g.s['130']++;Rhubarb.prototype._initNode=function(parameters){__cov_WCjh_uH92UZxCfll7ZHM6g.f['13']++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['131']++;var protocolDefinitionPath=parameters.protocolDefinitionPath;__cov_WCjh_uH92UZxCfll7ZHM6g.s['132']++;var isServer=parameters.isServer;__cov_WCjh_uH92UZxCfll7ZHM6g.s['133']++;var serverListenPort=parameters.serverListenPort;__cov_WCjh_uH92UZxCfll7ZHM6g.s['134']++;var fs=require('fs');__cov_WCjh_uH92UZxCfll7ZHM6g.s['135']++;if(!fs.existsSync(protocolDefinitionPath)){__cov_WCjh_uH92UZxCfll7ZHM6g.b['48'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['136']++;throw new Error('Protocol definition file does not exist.');}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['48'][1]++;}__cov_WCjh_uH92UZxCfll7ZHM6g.s['137']++;var content=fs.readFileSync(protocolDefinitionPath,'utf8');__cov_WCjh_uH92UZxCfll7ZHM6g.s['138']++;var parsedJSON;__cov_WCjh_uH92UZxCfll7ZHM6g.s['139']++;try{__cov_WCjh_uH92UZxCfll7ZHM6g.s['140']++;parsedJSON=JSON.parse(content);}catch(err){__cov_WCjh_uH92UZxCfll7ZHM6g.s['141']++;throw new Error('Protocol definition file is not a valid JSON: '+err);}__cov_WCjh_uH92UZxCfll7ZHM6g.s['142']++;var protocols=ProtocolParser$1.parse(parsedJSON);__cov_WCjh_uH92UZxCfll7ZHM6g.s['143']++;Globals$1.set(protocols);__cov_WCjh_uH92UZxCfll7ZHM6g.s['144']++;var ws=require('ws');__cov_WCjh_uH92UZxCfll7ZHM6g.s['145']++;if(isServer){__cov_WCjh_uH92UZxCfll7ZHM6g.b['49'][0]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['146']++;var server=new Server(ws);__cov_WCjh_uH92UZxCfll7ZHM6g.s['147']++;server.init(serverListenPort);__cov_WCjh_uH92UZxCfll7ZHM6g.s['148']++;Globals$1.setServer(server);__cov_WCjh_uH92UZxCfll7ZHM6g.s['149']++;Globals$1.setReady();}else{__cov_WCjh_uH92UZxCfll7ZHM6g.b['49'][1]++;__cov_WCjh_uH92UZxCfll7ZHM6g.s['150']++;throw new Error('NodeJS clients are not yet supported.');}};var index = new Rhubarb();
+
+var Rhubarb = function Rhubarb() {
+  this.IS_NODE = typeof window == "undefined";
+};
+
+// PUBLIC APIs *****************************************************************
+
+Rhubarb.prototype.init = function (parameters) {
+  if (Globals$1.isReady) {
+    throw new Error("Rhubarb already initialized. Use destroy API first.");
+  }
+
+  this._validateParameters(parameters);
+
+  Globals$1.onReady = parameters.onReady;
+
+  if (this.IS_NODE) {
+    this._initNode(parameters);
+    return;
+  }
+
+  var protocolDefinitionPath = parameters.protocolDefinitionPath;
+  var workerPath = parameters.workerPath;
+  var serverAddress = parameters.serverAddress;
+  var onError = parameters.onError;
+
+  var xhttpRequest = new XMLHttpRequest();
+  xhttpRequest.overrideMimeType("application/json");
+  xhttpRequest.open("GET", protocolDefinitionPath, true);
+  xhttpRequest.onreadystatechange = function () {
+    if (xhttpRequest.readyState == 4 && xhttpRequest.status == "200") {
+      var parsedJSON;
+      try {
+        parsedJSON = JSON.parse(xhttpRequest.responseText);
+      } catch (err) {
+        onError("Protocol definition file is not a valid JSON: " + err);
+        return;
+      }
+      var protocols = ProtocolParser$1.parse(parsedJSON);
+      Globals$1.set(protocols);
+      WorkerBridge$1.onError = onError;
+      this.initWorker(workerPath, serverAddress);
+    } else if (xhttpRequest.readyState == 4) {
+      onError("Protocol definition file not found.");
+      return;
+    }
+  }.bind({ initWorker: this._initWorker });
+  xhttpRequest.send(null);
+};
+
+Rhubarb.prototype.send = function (protocolName, valuesByParameterName, clientID) {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb is not initialized yet.");
+  }
+  var protocol = Globals$1.protocolsByProtocolName[protocolName];
+  if (!protocol) {
+    throw new Error("No such protocol: " + protocolName);
+  }
+  for (var parameterName in protocol.parameters) {
+    var value = valuesByParameterName[parameterName];
+    if (value == undefined || value == null) {
+      throw new Error("Parameter value not defined: " + parameterName);
+    }
+    protocol.setParameterToBuffer(parameterName, valuesByParameterName[parameterName]);
+  }
+  if (!this.IS_NODE) {
+    WorkerBridge$1.sendProtocol(protocol);
+  } else {
+    Globals$1.server.sendProtocolToClient(clientID, protocol);
+  }
+};
+
+Rhubarb.prototype.onReceived = function (protocolName, callback) {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb is not initialized yet.");
+  }
+  var protocol = Globals$1.protocolsByProtocolName[protocolName];
+  if (!protocol) {
+    throw new Error("No such protocol: " + protocolName);
+  }
+  if (!callback) {
+    throw new Error("Callback not defined.");
+  }
+  if (!callback instanceof Function) {
+    throw new Error("Callback is not a function.");
+  }
+  protocol.onReceived = callback;
+};
+
+Rhubarb.prototype.onDisconnectedFromServer = function (callback) {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb is not initialized yet.");
+  }
+  if (this.IS_NODE) {
+    throw new Error("This Rhubarb instance is a server.");
+  }
+  if (!callback) {
+    throw new Error("Callback not defined.");
+  }
+  if (!callback instanceof Function) {
+    throw new Error("Callback is not a function.");
+  }
+  WorkerBridge$1.onDisconnectedFromServer = callback;
+};
+
+Rhubarb.prototype.onClientConnected = function (callback) {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb is not initialized yet.");
+  }
+  if (!this.IS_NODE) {
+    throw new Error("This Rhubarb instance is not a server.");
+  }
+  if (!callback) {
+    throw new Error("Callback not defined.");
+  }
+  if (!callback instanceof Function) {
+    throw new Error("Callback is not a function.");
+  }
+  Globals$1.server.onClientConnected = callback;
+};
+
+Rhubarb.prototype.onClientDisconnected = function (callback) {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb is not initialized yet.");
+  }
+  if (!this.IS_NODE) {
+    throw new Error("This Rhubarb instance is not a server.");
+  }
+  if (!callback) {
+    throw new Error("Callback not defined.");
+  }
+  if (!callback instanceof Function) {
+    throw new Error("Callback is not a function.");
+  }
+  Globals$1.server.onClientDisconnected = callback;
+};
+
+Rhubarb.prototype.onLatencyUpdated = function (callback) {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb is not initialized yet.");
+  }
+  if (this.IS_NODE) {
+    throw new Error("This Rhubarb instance is a server.");
+  }
+  if (!callback) {
+    throw new Error("Callback not defined.");
+  }
+  if (!callback instanceof Function) {
+    throw new Error("Callback is not a function.");
+  }
+  WorkerBridge$1.latencyCallback = callback;
+};
+
+Rhubarb.prototype.destroy = function () {
+  if (!Globals$1.isReady) {
+    throw new Error("Rhubarb not initialized. Use init API first.");
+  }
+
+  if (!this.IS_NODE) {
+    WorkerBridge$1.destroy();
+  } else {
+    Globals$1.server.destroy();
+  }
+
+  Globals$1.destroy();
+  ReusableBufferCache$1.destroy();
+  ProtocolParser$1.destroy();
+};
+
+// END OF PUBLIC APIs **********************************************************
+
+Rhubarb.prototype._validateParameters = function (parameters) {
+  var protocolDefinitionPath = parameters.protocolDefinitionPath;
+  var workerPath = parameters.workerPath;
+  var isServer = parameters.isServer;
+  var serverAddress = parameters.serverAddress;
+  var serverListenPort = parameters.serverListenPort;
+  var onReady = parameters.onReady;
+  var onError = parameters.onError;
+
+  if (!protocolDefinitionPath) {
+    throw new Error("protocolDefinitionPath is not defined within parameters.");
+  }
+  if (!this.IS_NODE && !workerPath) {
+    throw new Error("workerPath is not defined within parameters.");
+  }
+  if (!this.IS_NODE && isServer) {
+    throw new Error("Cannot use browser as a server.");
+  }
+  if (isServer && !serverListenPort) {
+    throw new Error("serverListenPort is not defined within parameters.");
+  }
+  if (!isServer && !serverAddress) {
+    throw new Error("serverAddress is not defined within parameters.");
+  }
+  if (!this.IS_NODE) {
+    if (!onReady) {
+      throw new Error("onReady is not defined within parameters.");
+    }
+    if (!onReady instanceof Function) {
+      throw new Error("onReady parameter is not a Function.");
+    }
+    if (!onError) {
+      throw new Error("onError is not defined within parameters.");
+    }
+    if (!onError instanceof Function) {
+      throw new Error("onError parameter is not a Function.");
+    }
+  }
+};
+
+Rhubarb.prototype._initWorker = function (workerPath, serverAddress) {
+  if (!this.IS_NODE && typeof Worker == "undefined") {
+    throw new Error("This browser does not support web workers.");
+  } else if (!this.IS_NODE) {
+    WorkerBridge$1.initialize(workerPath, serverAddress);
+  }
+};
+
+Rhubarb.prototype._initNode = function (parameters) {
+  var protocolDefinitionPath = parameters.protocolDefinitionPath;
+  var isServer = parameters.isServer;
+  var serverListenPort = parameters.serverListenPort;
+  var fs = require("fs");
+
+  if (!fs.existsSync(protocolDefinitionPath)) {
+    throw new Error("Protocol definition file does not exist.");
+  }
+  var content = fs.readFileSync(protocolDefinitionPath, "utf8");
+  var parsedJSON;
+  try {
+    parsedJSON = JSON.parse(content);
+  } catch (err) {
+    throw new Error("Protocol definition file is not a valid JSON: " + err);
+  }
+  var protocols = ProtocolParser$1.parse(parsedJSON);
+  Globals$1.set(protocols);
+
+  var ws = require("ws");
+  if (isServer) {
+    var server = new Server(ws);
+    server.init(serverListenPort);
+    Globals$1.setServer(server);
+    Globals$1.setReady();
+  } else {
+    throw new Error("NodeJS clients are not yet supported.");
+  }
+};
+
+var index = new Rhubarb();
 
 return index;
 
