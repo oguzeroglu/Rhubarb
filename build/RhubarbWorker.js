@@ -12,6 +12,7 @@ var WebSocketWorker = function WebSocketWorker() {
   this.intermediateBuffers = new Object();
   this.transferableList = [];
   this.transferables = new Object();
+  this.reusableArray = [];
 };
 
 WebSocketWorker.prototype.sendPing = function () {
@@ -41,26 +42,8 @@ WebSocketWorker.prototype.onWSMessage = function (event) {
       worker.hasPingTransferableOwnership = false;
     }
   } else {
-    var transferable = worker.transferables[view.length];
-    if (!transferable) {
-      var array = new Float32Array(view.length + 1);
-      transferable = {
-        array: array,
-        list: [array.buffer],
-        hasOwnership: true
-      };
-      worker.transferables[view.length] = transferable;
-    }
-    if (!transferable.hasOwnership) {
-      console.error('Worker does not have transferable ownership.');
-      return;
-    }
-    transferable.array[0] = -1;
-    for (var i = 0; i < view.length; i++) {
-      transferable.array[i + 1] = view[i];
-    }
-    postMessage(transferable.array, transferable.list);
-    transferable.hasOwnership = false;
+    worker.reusableArray[0] = view.buffer;
+    postMessage(view, worker.reusableArray);
   }
 };
 
@@ -91,13 +74,7 @@ self.onmessage = function (message) {
   if (data.serverURL) {
     worker.connect(data.serverURL);
   } else {
-    if (data[0] == -1) {
-      var transferable = worker.transferables[data.length - 1];
-      transferable.array = data;
-      transferable.list[0] = data.buffer;
-      transferable.hasOwnership = true;
-      return;
-    } else if (data[0] == -2) {
+    if (data[0] == -2) {
       worker.pingTransferable = data;
       worker.pingTransferableList[0] = data.buffer;
       worker.hasPingTransferableOwnership = true;

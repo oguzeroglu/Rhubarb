@@ -305,27 +305,22 @@ WorkerBridge.prototype.initialize = function (workerPath, serverURL) {
         }
       }
     } else {
-      if (data[0] == -1) {
-        var protocol = Globals$1.protocolsByProtocolID[data[1]];
-        for (var i = 1; i < data.length; i++) {
-          protocol.buffer[i - 1] = data[i];
-        }
-        this.reusableArray[0] = data.buffer;
-        this.worker.postMessage(data, this.reusableArray);
-        for (var parameterName in protocol.parameters) {
-          protocol.getParameterFromBuffer(parameterName);
-        }
-        protocol.onValuesReceived();
-        return;
-      } else if (data[0] == -2) {
+      if (data[0] == -2) {
         var latency = data[1];
         this.reusableArray[0] = data.buffer;
         this.worker.postMessage(data, this.reusableArray);
         this.onLatencyUpdated(latency);
         return;
+      } else {
+        var protocol = Globals$1.protocolsByProtocolID[data[0]];
+        protocol.buffer = data;
+        protocol.onOwnershipReceived(data);
+        for (var parameterName in protocol.parameters) {
+          protocol.getParameterFromBuffer(parameterName);
+        }
+        protocol.onValuesReceived();
+        return;
       }
-      var protocol = Globals$1.protocolsByProtocolID[data[0]];
-      protocol.onOwnershipReceived(data);
     }
   }.bind(this);
 
