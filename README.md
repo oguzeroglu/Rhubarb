@@ -6,6 +6,9 @@ Rhubarb is named after this [Aphex Twin track](https://www.youtube.com/watch?v=_
 
 Rhubarb works both on browsers and NodeJS.
 
+
+![](/rhubarb.gif?raw=true)    
+
 ## Philosophy
 
 Javascript is slow, therefore we want to have as much main-process-power as we can
