@@ -29,7 +29,7 @@ Rhubarb is designed to overcome these problems by:
 
 ## Usage
 
-To be written once the implementation is done.
+See [this tutorial](https://github.com/oguzeroglu/Rhubarb/wiki/Getting-started) to see how to use Rhubarb.
 
 ## Licence
 
