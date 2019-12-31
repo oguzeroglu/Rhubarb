@@ -31,6 +31,8 @@ Rhubarb is designed to overcome these problems by:
 
 See [this tutorial](https://github.com/oguzeroglu/Rhubarb/wiki/Getting-started) to see how to use Rhubarb.
 
+See [here](https://github.com/oguzeroglu/Rhubarb/wiki/API-reference) for the API reference.
+
 ## Licence
 
 Rhubarb uses MIT license.
