@@ -29,6 +29,12 @@ Rhubarb is designed to overcome these problems by:
 5. Allowing sharing same protocol definitions between server/client.
 6. Allocating objects only when being initialized. Reusing everything to prevent GC activity (That means *mutating* things, yeah get over it.)
 
+## Installation
+
+For clients: `<script src="PATH_TO_Rhubarb.min.js"> </script>`
+
+For servers: `npm install rhubarb-js`
+
 ## Usage
 
 See [this tutorial](https://github.com/oguzeroglu/Rhubarb/wiki/Getting-started) to see how to use Rhubarb.
