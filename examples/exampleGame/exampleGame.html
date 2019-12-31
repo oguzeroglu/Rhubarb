@@ -19,6 +19,22 @@
       canvas {
         display:block;
       }
+      .topright {
+        position:absolute;
+        top:0;
+        right:0;
+        background: rgba(0, 0, 0, 0.5);
+        color: lime;
+        padding: 1%;
+      }
+      .topleft {
+        position:absolute;
+        top:0;
+        left:0;
+        background: rgba(0, 0, 0, 0.5);
+        color: lime;
+        padding: 1%;
+      }
       .container {
         height: 200px;
         position: relative;
@@ -42,6 +58,10 @@
 
   <body>
     <canvas id="canvas"></canvas>
+    <div id="info" class="topright">
+      Use arrow keys to move your player
+    </div>
+    <div id="latency" class="topleft">Latency: 0 ms</div>
     <div id="container" class="container">
       <div class="center">
         <p>Choose a nickname</p>
@@ -56,12 +76,15 @@
       var button = document.getElementById("startButton");
       var input = document.getElementById("nickname");
       var canvas = document.getElementById("canvas");
+      var info = document.getElementById("info");
+      var latencyDIV = document.getElementById("latency");
       var context = canvas.getContext("2d");
 
       context.fillStyle = '#000';
 
       containerDIV.style.display = "none";
       canvas.style.display = "none";
+      info.style.display = "none";
 
       var SPEED = 2.5;
       var font = "30px Arial";
@@ -87,6 +110,10 @@
       function start(){
         console.log("Connected to server.");
         containerDIV.style.display = "";
+
+        Rhubarb.onLatencyUpdated(function(newLatency){
+          latencyDIV.innerHTML = "Latency: " + newLatency.toFixed(4) + " ms.";
+        });
 
         Rhubarb.onDisconnectedFromServer(function(){
           isDisconnected = true;
@@ -122,6 +149,7 @@
           Rhubarb.send("nicknameSelected", { value: input.value });
           containerDIV.parentNode.removeChild(containerDIV);
           canvas.style.display = "";
+          info.style.display = "";
           window.addEventListener('resize', resizeCanvas, false);
           resizeCanvas();
 
