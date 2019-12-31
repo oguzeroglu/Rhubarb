@@ -41,6 +41,17 @@ See [this tutorial](https://github.com/oguzeroglu/Rhubarb/wiki/Getting-started) 
 
 See [here](https://github.com/oguzeroglu/Rhubarb/wiki/API-reference) for the API reference.
 
+## Demo
+
+To run the demo.
+
+1) Clone the repository
+3) `npm install`
+2) `npm run exampleGame`
+3) With another terminal instance go to /examples/exampleGame/ folder and `node exampleGameServer.js`
+4) Using your favorite browser, go to localhost:8086
+5) Try with multiple browsers.
+
 ## Licence
 
 Rhubarb uses MIT license.
