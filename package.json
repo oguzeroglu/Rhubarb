@@ -8,7 +8,7 @@
   "jsnext:main": "build/Rhubarb.mjs",
   "scripts": {
     "prebuild": "eslint lib test",
-    "build": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production",
+    "build": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && minify ./build/Rhubarb.js -o ./build/Rhubarb.min.js && minify ./build/RhubarbWorker.js -o ./build/RhubarbWorker.min.js",
     "test": "echo not there yet",
     "prepublish": "BUILD=production npm test",
     "exampleGame": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && webpack-dev-server --config ./webpack.config.exampleGame.js"
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "babel-minify": "^0.5.1",
     "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-register": "^6.18.0",
