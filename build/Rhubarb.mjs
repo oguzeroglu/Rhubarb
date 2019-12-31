@@ -158,7 +158,7 @@ Protocol.prototype.init = function () {
     var parameter = this.parameters[parameterName];
     requiredBufferLen += parameter.requiredBufferLen;
     if (!parameter.isNumerical) {
-      ReusableBufferCache$1.notify(requiredBufferLen);
+      ReusableBufferCache$1.notify(parameter.requiredBufferLen);
     }
   }
   this.buffer = new Float32Array(requiredBufferLen + 1);
