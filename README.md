@@ -1,6 +1,6 @@
 # Rhubarb
 
-[wiki](https://github.com/oguzeroglu/Rhubarb/wiki)
+[See Wiki page](https://github.com/oguzeroglu/Rhubarb/wiki)
 
 Rhubarb is a lightweight WebSocket library for multiplayer HTML5 games. It is originally designed to be used by the [ROYGBIV Engine](https://github.com/oguzeroglu/ROYGBIV). However it can be used outside of ROYGBIV as well.
 
