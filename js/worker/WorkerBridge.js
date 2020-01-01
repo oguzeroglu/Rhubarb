@@ -6,6 +6,8 @@ var WorkerBridge = function(){
 }
 
 WorkerBridge.prototype.destroy = function(){
+  delete this.onDisconnectedFromServer;
+  delete this.latencyCallback;
   this.isWorkerInitialized = false;
   this.reusableArray = [];
   this.worker.terminate();

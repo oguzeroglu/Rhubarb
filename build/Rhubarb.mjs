@@ -261,6 +261,8 @@ var WorkerBridge = function WorkerBridge() {
 };
 
 WorkerBridge.prototype.destroy = function () {
+  delete this.onDisconnectedFromServer;
+  delete this.latencyCallback;
   this.isWorkerInitialized = false;
   this.reusableArray = [];
   this.worker.terminate();
@@ -338,6 +340,8 @@ var Server = function Server(wsLib) {
 };
 
 Server.prototype.destroy = function () {
+  delete this.onClientConnected;
+  delete this.onClientDisconnected;
   for (var clientID in this.wsByClientID) {
     var ws = this.wsByClientID[clientID];
     ws.terminate();

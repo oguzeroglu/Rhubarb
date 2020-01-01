@@ -7,6 +7,8 @@ var Server = function(wsLib){
 }
 
 Server.prototype.destroy = function(){
+  delete this.onClientConnected;
+  delete this.onClientDisconnected;
   for (var clientID in this.wsByClientID){
     var ws = this.wsByClientID[clientID];
     ws.terminate();
