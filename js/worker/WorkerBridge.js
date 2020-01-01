@@ -59,11 +59,11 @@ WorkerBridge.prototype.initialize = function(workerPath, serverURL){
       }else{
         var protocol = Globals.protocolsByProtocolID[data[0]];
         protocol.buffer = data;
-        protocol.onOwnershipReceived(data);
         for (var parameterName in protocol.parameters){
           protocol.getParameterFromBuffer(parameterName);
         }
         protocol.onValuesReceived();
+        protocol.onOwnershipReceived(data);
         return;
       }
     }

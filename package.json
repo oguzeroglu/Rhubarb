@@ -11,7 +11,8 @@
     "build": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && minify ./build/Rhubarb.js -o ./build/Rhubarb.min.js && minify ./build/RhubarbWorker.js -o ./build/RhubarbWorker.min.js",
     "test": "echo not there yet",
     "prepublish": "BUILD=production npm test",
-    "exampleGame": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && webpack-dev-server --config ./webpack.config.exampleGame.js"
+    "exampleGame": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && webpack-dev-server --config ./webpack.config.exampleGame.js",
+    "chatRoom": "rollup --config rollup.config.js --environment BUILD:production && rollup --config rollup.config.worker.js --environment BUILD:production && webpack-dev-server --config ./webpack.config.chatRoom.js"
   },
   "repository": "oguzeroglu/Rhubarb",
   "keywords": [

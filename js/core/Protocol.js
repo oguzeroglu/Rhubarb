@@ -21,7 +21,7 @@ Protocol.prototype.getter = function(parameterName){
 }
 
 Protocol.prototype.onValuesReceived = function(clientID){
-  if (this.onReceived){
+  if (this.onReceived && this.hasOwnership){
     this.onReceived(this.boundGetter, clientID);
   }
 }

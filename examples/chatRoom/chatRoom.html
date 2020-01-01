@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <script src="../../build/Rhubarb.min.js"></script>
+
+    <title>Rhubarb chatRoom example</title>
+
+    <style>
+      button {
+        width: 100px;
+      }
+      .container {
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 3px solid black;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 500px;
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container" class="container">
+      <div class="center">
+        <p id="paragraph">Choose a nickname</p>
+        <input maxlength="50" type="text" id="input" />
+        <br /><br />
+        <button id="button"> Start! </button>
+      </div>
+    </div>
+
+    <script>
+     var containerDIV = document.getElementById("container");
+     var button = document.getElementById("button");
+     var input = document.getElementById("input");
+     var paragraph = document.getElementById("paragraph");
+
+     var currentUserName;
+
+     containerDIV.style.display = "none";
+
+      Rhubarb.init({
+        protocolDefinitionPath: "./examples/chatRoom/protocol-definition.json",
+        workerPath: "./build/RhubarbWorker.min.js",
+        serverAddress: "ws://localhost:8087",
+        onReady: function(){
+
+          Rhubarb.onReceived("userConnected", function(getter){
+            console.log(getter("userName") + " connected.");
+          });
+
+          Rhubarb.onReceived("userDisconnected", function(getter){
+            console.log(getter("userName") + " disconnected.");
+          });
+
+          Rhubarb.onReceived("newMessage", function(getter){
+            console.log(getter("from") + " says: " + getter("message"));
+          });
+
+          containerDIV.style.display = "";
+          button.onclick = function(){
+            var nickname = input.value;
+            if (!nickname){
+              alert("Nickname must be a non-empty value.");
+            }else{
+              currentUserName = nickname;
+              Rhubarb.send("namePicked", { userName: nickname });
+              paragraph.innerHTML = "Open browser console to see received messages.";
+              button.innerHTML = "Send!";
+              input.value = "";
+              button.onclick = function(){
+                if (!input.value){
+                  alert("Must send a non-empty value.");
+                }
+                Rhubarb.send("newMessage", {
+                  from: currentUserName,
+                  message: input.value
+                });
+                input.value = "";
+              }
+            }
+          }
+        },
+        onError: function(err){
+          alert(err + " Make sure chatRoomServer.js is started.");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "userConnected": {
+    "userName": "char_50"
+  },
+  "userDisconnected": {
+    "userName": "char_50"
+  },
+  "newMessage": {
+    "from": "char_50",
+    "message": "char_100"
+  },
+  "namePicked": {
+    "userName": "char_50"
+  }
+}
